@@ -1,0 +1,65 @@
+/* ==========================================================================
+   custom styles
+   ========================================================================== */
+#sources {
+  border-left: 1px solid #ccc;
+}
+
+#content {
+  position:fixed;
+  top:0px;
+  bottom:0px;
+  left:0px;
+  right:0px;
+}
+
+body {
+  max-height:80%;
+}
+
+.output {
+  border-bottom:1px solid #ccc;
+  margin-top:30px;
+  margin-bottom:30px;
+}
+
+.out-imgs {
+  display:inline;
+}
+.out-img {
+  margin-bottom:20px;
+}
+
+.out-btns {
+  display:inline;
+  float:right;
+}
+
+.out-btn {
+  display:inline;
+}
+
+.btn-sqr {
+  height:70px;
+  width:70px;
+  margin:2px;
+  white-space:normal;
+  border-radius:15px;
+}
+
+.source-btn {
+  margin:5px;
+  height:90px;
+  width:90px;
+}
+
+
+
+
+
+
+
+
+
+
+
