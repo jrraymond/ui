@@ -3,6 +3,7 @@
    ========================================================================== */
 #sources {
   border-left: 1px solid #ccc;
+  height:380px;
 }
 
 #content {
@@ -28,6 +29,8 @@ body {
 }
 .out-img {
   margin-bottom:20px;
+  height:70px;
+  width:70px;
 }
 
 .out-btns {
@@ -40,8 +43,8 @@ body {
 }
 
 .btn-sqr {
-  height:70px;
-  width:70px;
+  height:55px;
+  width:55px;
   margin:2px;
   white-space:normal;
   border-radius:15px;
@@ -51,6 +54,16 @@ body {
   margin:5px;
   height:90px;
   width:90px;
+}
+
+.src-info {
+  display:none;
+}
+
+.src-img {
+  float:right;
+  height:80px;
+  width:80px;
 }
 
 
