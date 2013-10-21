@@ -5,15 +5,16 @@ $("img").on("dragstart", function(event) {
 
 
 /* Response to tapping of sources  */
-$(".source-btn").on("click", function() {
+$(".src-img").on("click", function() {
   var that = $(this);
   var othersHidden = new $.Deferred()
   $.when(othersHidden).then(function() {
-    that.parent().css("height", "90%");
-    that.parent().parent().css("height", "100%");
-    that.children("img").
-    that.animate({ height: "100%", width: "100%"});
-    that.parent().attr("class","col-xs-12");
+    //that.parent().parent().css("height", "90%");
+    //that.parent().parent().parent().css("height", "100%");
+    //that.children("img").
+    that.parent().animate({ height: "100%", width: "100%"});
+    that.parent().parent().attr("class","col-xs-12");
+    that.parent().children(".src-info").fadeIn();
     /*
     that.parent().parent().parent().children().last().animate({
       opacity : "show"}, function() {
@@ -26,13 +27,40 @@ $(".source-btn").on("click", function() {
   });
 
   //hide sources that were not selected
-  $(".source-btn").not(this).parent().hide({ 
+  $(".src-thumbnail").not($(this).parent()).parent().fadeOut({ 
     duration : "slow",
     //always : btnHidden(this),
-    done : function(){othersHidden.resolve();}
+    done : function(){
+      othersHidden.resolve();
+    }
   });
 });
 
+/* Closes view of source */
+$(".close-btn").on("click", function() {
+  var srcClosed = new $.Deferred()
+  //show hidded sources once selected source has been shrunk
+  $.when(srcClosed).then(function() {
+    console.log($(".src-thumbnail").not($(this).parent().parent()));
+    $(".src-thumbnail").not($(this).parent().parent()).each(function() {
+      $(this).parent().fadeIn({
+        duration : "slow"
+      });
+    });
+  });
+  //shrink current source
+  console.log($(this).parent());
+  console.log($(this).parent().parent());
+  console.log($(this).parent().parent().parent());
+  $(this).parent().fadeOut();
+  $(this).parent().parent().animate({height : "90px", width : "90px"});
+  $(this).parent().parent().parent().attr("class","col-xs-4");
+  srcClosed.resolve();
+
+  
+  
+
+});
 
 
 /* called when source btns are hidden */
