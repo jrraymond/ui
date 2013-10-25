@@ -26,29 +26,22 @@ html, body {
 }
 
 .out-imgs {
-  display:inline;
+
 }
 .out-img {
-  margin-bottom:20px;
-  height:70px;
-  width:70px;
-}
-
-.out-btns {
-  display:inline;
-  float:right;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .out-btn {
-  display:inline;
 }
 
-.btn-sqr {
-  height:55px;
-  width:55px;
-  margin:2px;
-  white-space:normal;
-  border-radius:15px;
+div.out-btns {
+  display:inline;
+  height: 100px;
+  width: 100px;
+  border-radius: 5px;
 }
 
 .src-thumbnail {
@@ -105,6 +98,6 @@ html, body {
 
 .container {
   margin: 3px;
-  border: 3px solid #cccccc;
+  border: 3px ridge #cccccc;
   border-radius: 10px;
 }

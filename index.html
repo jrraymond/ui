@@ -13,9 +13,12 @@
       padding-bottom: 20px;
       }
     </style>
+    <link rel="stylesheet" href="css/font-awesome.min.css">
     <link rel="stylesheet" href="css/bootstrap-theme.min.css">
     <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/power_button.css">
     <link rel="stylesheet" href="css/volume.css">
+    <link rel="stylesheet" href="css/videomutebuttom.css">
     <script src="js/vendor/modernizr-2.6.2.min.js"></script>
   </head>
   <body>
@@ -27,31 +30,26 @@
         <div class="col-xs-5" id="control">
 
           <div id="output-1" class="output">
-            <div class="out-imgs">
-              <img src="img/projector/off.png" alt="projector" width="100px">
-            </div>
+            <!--div class="out-imgs">
+              <img class="out-img" src="img/projector/off.png" alt="projector" width="100px">
+            </div-->
             <div class="out-btns">
-              <div class="out-btn">
-                <button id="out-1-pow" data-loading-text="loading..." class="btn btn-primary btn-sqr">Off</button>
-              </div>
-              <div class="out-btn">
-                <button id="out-1-vmute" data-loading-text="loading..." class="btn btn-primary btn-sqr">Mute Video</button>
-              </div>
-            </div>
-          </div>
 
-          <div id="output-2" class="output">
-            <div class="out-imgs">
-              <img src="img/screen.png" alt="tv" class="out-img" height="100px" width="100px">
-            </div>
-            <div class="out-btns">
-              <div class="out-btn">
-                <button id="out-2-power" data-loading-text="loading..." class="btn btn-primary out-btn btn-sqr">Off</button>
+              <div class="pwr-btn">
+                <input type="checkbox">
+                <label>
+                  <i class="fa fa-power-off fa-3x"></i>
+                </label>
               </div>
-              <div class="out-btn">
-                <button id="out-2-vmute" data-loading-text="loading..." class="btn btn-primary out-btn btn-sqr">Mute Video</button>
+              <div class="vm-btn">
+                <input type="checkbox">
+                <label>
+                  <span class="vm-x">|</span>
+                  <i class="fa fa-video-camera fa-3x"></i>
+                </label>
               </div>
             </div>
+
           </div>
 
         </div>
