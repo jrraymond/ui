@@ -3,6 +3,21 @@ $("img").on("dragstart", function(event) {
   event.preventDefault();
 }); 
 
+/* Changes color of volume knob ratchets */
+$(".vol-switch label").on("click", function() {
+
+  $(this).nextAll("label").each(function() {
+    $(this).children("span").children("i").removeClass("vol-checked");
+  });
+
+  $(this).prevAll("label").each(function() {
+    $(this).children("span").children("i").addClass("vol-checked");
+  });
+
+  $(this).children("span").children("span").addClass("vol-checked");
+
+});
+
 
 /* Response to tapping of sources  */
 $(".src-img").on("click", function() {

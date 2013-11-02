@@ -5,50 +5,50 @@
 * --------------------------------------------- */
 
 .vol-container {
-width: 230px;
-margin: 40px auto 0;
+  width: 230px;
+  margin: 40px auto 0;
 }
 
 .vol-container .vol-origin {
-position: absolute;
-left: 50%;
-top: 50%;
-z-index: 111;     /* determines which elemens cover the other when elements overlap. Larger covers smaller. */
-width: 2px;
-height: 2px;
-margin: -1px 0 0 -1px;
-background-color: #f50;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: 111;     /* determines which elemens cover the other when elements overlap. Larger covers smaller. */
+  width: 2px;
+  height: 2px;
+  margin: -1px 0 0 -1px;
+  background-color: #f50;
 }
 
 .vol-de {
--webkit-user-select: none;    /*controls the appearance only of selection.*/
-position: relative;
-width: 230px;
-height: 230px;
-border-radius: 100%;
-box-shadow: 0 0 25px rgba(0, 0, 0, .1);
-background-color: transparent;
+  -webkit-user-select: none;    /*controls the appearance only of selection.*/
+  position: relative;
+  width: 230px;
+  height: 230px;
+  border-radius: 100%;
+  box-shadow: 0 0 25px rgba(0, 0, 0, .1);
+  background-color: transparent;
 }
 
 .vol-de .vol-den, .vol-de .vol-dene, .vol-de .vol-denem, .vol-de .vol-deneme, .vol-de .vol-light, .vol-de .vol-dot {
-position: absolute;
-left: 50%;
-top: 50%;
+  position: absolute;
+  left: 50%;
+  top: 50%;
 }
 
 .vol-den {
-position: relative;
-width: 220px;
-height: 220px;
-margin: -110px 0 0 -110px;
-border-radius: 100%;
-box-shadow: inset 0 3px 10px rgba(0, 0, 0, .6), 0 2px 20px rgba(255, 255, 255, 1);
+  position: relative;
+  width: 220px;
+  height: 220px;
+  margin: -110px 0 0 -110px;
+  border-radius: 100%;
+  box-shadow: inset 0 3px 10px rgba(0, 0, 0, .6), 0 2px 20px rgba(255, 255, 255, 1);
 
-background: #888888;
-background: -moz-radial-gradient(center, ellipse cover, #888888 0%, #333333 100%);
-background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, #888888), color-stop(100%, #333333));
-background: -webkit-radial-gradient(center, ellipse cover, #888888 0%, #333333 100%);
-background: -o-radial-gradient(center, ellipse cover, #888888 0%, #333333 100%);
+  background: #888888;
+  background: -moz-radial-gradient(center, ellipse cover, #888888 0%, #333333 100%);
+  background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, #888888), color-stop(100%, #333333));
+  background: -webkit-radial-gradient(center, ellipse cover, #888888 0%, #333333 100%);
+  background: -o-radial-gradient(center, ellipse cover, #888888 0%, #333333 100%);
 }
 
 .vol-dene {
@@ -100,6 +100,10 @@ background: -o-linear-gradient(top, #eef7f6 0%, #8d989a 100%);
   left: 0;
   width: 100%;
   height: 100%;
+}
+
+.vol-switch label span i {
+  -webkit-transform: rotate(90deg);
 }
 
 #switch_mute {
@@ -244,7 +248,7 @@ background: -o-linear-gradient(top, #eef7f6 0%, #8d989a 100%);
 }
 
 .vol-den .vol-switch label:nth-child(1) span {
-right: 2px;
+right: 4px;
 font-size: 13px;
 -moz-transform: rotate(90deg);
 -webkit-transform: rotate(90deg);
@@ -256,7 +260,7 @@ font-size: 13px;
 -o-transform: rotate(-60deg);
 }
 .vol-den .vol-switch label:nth-child(2) span {
-font-size: 2px;
+font-size: 13px;
 -moz-transform: rotate(-90deg);
 -webkit-transform: rotate(-90deg);
 -o-transform: rotate(-90deg);
@@ -267,7 +271,7 @@ font-size: 2px;
 -o-transform: rotate(-50deg);
 }
 .vol-den .vol-switch label:nth-child(3) span {
-font-size: 2px;
+font-size: 13px;
 -moz-transform: rotate(-90deg);
 -webkit-transform: rotate(-90deg);
 -o-transform: rotate(-90deg);
@@ -278,7 +282,7 @@ font-size: 2px;
 -o-transform: rotate(-40deg);
 }
 .vol-den .vol-switch label:nth-child(4) span {
-font-size: 3px;
+font-size: 14px;
 -moz-transform: rotate(-90deg);
 -webkit-transform: rotate(-90deg);
 -o-transform: rotate(-90deg);
@@ -289,7 +293,7 @@ font-size: 3px;
 -o-transform: rotate(-30deg);
 }
 .vol-den .vol-switch label:nth-child(5) span {
-font-size: 3px;
+font-size: 14px;
 -moz-transform: rotate(-90deg);
 -webkit-transform: rotate(-90deg);
 -o-transform: rotate(-90deg);
@@ -300,7 +304,7 @@ font-size: 3px;
 -o-transform: rotate(-20deg);
 }
 .vol-den .vol-switch label:nth-child(6) span {
-font-size: 4px;
+font-size: 15px;
 -moz-transform: rotate(-90deg);
 -webkit-transform: rotate(-90deg);
 -o-transform: rotate(-90deg);
@@ -311,7 +315,7 @@ font-size: 4px;
 -o-transform: rotate(-10deg);
 }
 .vol-den .vol-switch label:nth-child(7) span {
-font-size: 4px;
+font-size: 15px;
 -moz-transform: rotate(-90deg);
 -webkit-transform: rotate(-90deg);
 -o-transform: rotate(-90deg);
@@ -322,7 +326,7 @@ font-size: 4px;
 -o-transform: rotate(0deg);
 }
 .vol-den .vol-switch label:nth-child(8) span {
-font-size: 5px;
+font-size: 15px;
 -moz-transform: rotate(-90deg);
 -webkit-transform: rotate(-90deg);
 -o-transform: rotate(-90deg);
@@ -333,7 +337,7 @@ font-size: 5px;
 -o-transform: rotate(10deg);
 }
 .vol-den .vol-switch label:nth-child(9) span {
-font-size: 5px;
+font-size: 16px;
 -moz-transform: rotate(-90deg);
 -webkit-transform: rotate(-90deg);
 -o-transform: rotate(-90deg);
@@ -344,7 +348,7 @@ font-size: 5px;
 -o-transform: rotate(20deg);
 }
 .vol-den .vol-switch label:nth-child(10) span {
-font-size: 6px;
+font-size: 17px;
 -moz-transform: rotate(-90deg);
 -webkit-transform: rotate(-90deg);
 -o-transform: rotate(-90deg);
@@ -355,7 +359,7 @@ font-size: 6px;
 -o-transform: rotate(30deg);
 }
 .vol-den .vol-switch label:nth-child(11) span {
-font-size: 6px;
+font-size: 18px;
 -moz-transform: rotate(-90deg);
 -webkit-transform: rotate(-90deg);
 -o-transform: rotate(-90deg);
@@ -366,7 +370,7 @@ font-size: 6px;
 -o-transform: rotate(40deg);
 }
 .vol-den .vol-switch label:nth-child(12) span {
-font-size: 7px;
+font-size: 18px;
 -moz-transform: rotate(-90deg);
 -webkit-transform: rotate(-90deg);
 -o-transform: rotate(-90deg);
@@ -377,7 +381,7 @@ font-size: 7px;
 -o-transform: rotate(50deg);
 }
 .vol-den .vol-switch label:nth-child(13) span {
-font-size: 7px;
+font-size: 19px;
 -moz-transform: rotate(-90deg);
 -webkit-transform: rotate(-90deg);
 -o-transform: rotate(-90deg);
@@ -388,7 +392,7 @@ font-size: 7px;
 -o-transform: rotate(60deg);
 }
 .vol-den .vol-switch label:nth-child(14) span {
-font-size: 8px;
+font-size: 19px;
 -moz-transform: rotate(-90deg);
 -webkit-transform: rotate(-90deg);
 -o-transform: rotate(-90deg);
@@ -399,7 +403,7 @@ font-size: 8px;
 -o-transform: rotate(70deg);
 }
 .vol-den .vol-switch label:nth-child(15) span {
-font-size: 8px;
+font-size: 19px;
 -moz-transform: rotate(-90deg);
 -webkit-transform: rotate(-90deg);
 -o-transform: rotate(-90deg);
@@ -410,7 +414,7 @@ font-size: 8px;
 -o-transform: rotate(80deg);
 }
 .vol-den .vol-switch label:nth-child(16) span {
-font-size: 9px;
+font-size: 20px;
 -moz-transform: rotate(-90deg);
 -webkit-transform: rotate(-90deg);
 -o-transform: rotate(-90deg);
@@ -421,7 +425,7 @@ font-size: 9px;
 -o-transform: rotate(90deg);
 }
 .vol-den .vol-switch label:nth-child(17) span {
-font-size: 9px;
+font-size: 21px;
 -moz-transform: rotate(-90deg);
 -webkit-transform: rotate(-90deg);
 -o-transform: rotate(-90deg);
@@ -432,7 +436,7 @@ font-size: 9px;
 -o-transform: rotate(100deg);
 }
 .vol-den .vol-switch label:nth-child(18) span {
-font-size: 10px;
+font-size: 21px;
 -moz-transform: rotate(-90deg);
 -webkit-transform: rotate(-90deg);
 -o-transform: rotate(-90deg);
@@ -443,7 +447,7 @@ font-size: 10px;
 -o-transform: rotate(110deg);
 }
 .vol-den .vol-switch label:nth-child(19) span {
-font-size: 10px;
+font-size: 22px;
 -moz-transform: rotate(-90deg);
 -webkit-transform: rotate(-90deg);
 -o-transform: rotate(-90deg);
@@ -454,7 +458,7 @@ font-size: 10px;
 -o-transform: rotate(120deg);
 }
 .vol-den .vol-switch label:nth-child(20) span {
-font-size: 11px;
+font-size: 22px;
 -moz-transform: rotate(-90deg);
 -webkit-transform: rotate(-90deg);
 -o-transform: rotate(-90deg);
@@ -465,7 +469,7 @@ font-size: 11px;
 -o-transform: rotate(130deg);
 }
 .vol-den .vol-switch label:nth-child(21) span {
-font-size: 11px;
+font-size: 22px;
 -moz-transform: rotate(-90deg);
 -webkit-transform: rotate(-90deg);
 -o-transform: rotate(-90deg);
@@ -476,7 +480,7 @@ font-size: 11px;
 -o-transform: rotate(140deg);
 }
 .vol-den .vol-switch label:nth-child(22) span {
-font-size: 12px;
+font-size: 23px;
 -moz-transform: rotate(-90deg);
 -webkit-transform: rotate(-90deg);
 -o-transform: rotate(-90deg);
@@ -487,7 +491,7 @@ font-size: 12px;
 -o-transform: rotate(150deg);
 }
 .vol-den .vol-switch label:nth-child(23) span {
-font-size: 12px;
+font-size: 23px;
 -moz-transform: rotate(-90deg);
 -webkit-transform: rotate(-90deg);
 -o-transform: rotate(-90deg);
@@ -498,7 +502,7 @@ font-size: 12px;
 -o-transform: rotate(160deg);
 }
 .vol-den .vol-switch label:nth-child(24) span {
-font-size: 13px;
+font-size: 24px;
 -moz-transform: rotate(-90deg);
 -webkit-transform: rotate(-90deg);
 -o-transform: rotate(-90deg);
@@ -509,7 +513,7 @@ font-size: 13px;
 -o-transform: rotate(170deg);
 }
 .vol-den .vol-switch label:nth-child(25) span {
-font-size: 13px;
+font-size: 25px;
 -moz-transform: rotate(-90deg);
 -webkit-transform: rotate(-90deg);
 -o-transform: rotate(-90deg);
@@ -520,7 +524,7 @@ font-size: 13px;
 -o-transform: rotate(180deg);
 }
 .vol-den .vol-switch label:nth-child(26) span {
-font-size: 13px;
+font-size: 24px;
 -moz-transform: rotate(-90deg);
 -webkit-transform: rotate(-90deg);
 -o-transform: rotate(-90deg);
@@ -531,7 +535,7 @@ font-size: 13px;
 -o-transform: rotate(190deg);
 }
 .vol-den .vol-switch label:nth-child(27) span {
-font-size: 14px;
+font-size: 25px;
 -moz-transform: rotate(-90deg);
 -webkit-transform: rotate(-90deg);
 -o-transform: rotate(-90deg);
@@ -542,7 +546,7 @@ font-size: 14px;
 -o-transform: rotate(200deg);
 }
 .vol-den .vol-switch label:nth-child(28) span {
-font-size: 14px;
+font-size: 26px;
 -moz-transform: rotate(-90deg);
 -webkit-transform: rotate(-90deg);
 -o-transform: rotate(-90deg);
@@ -553,7 +557,7 @@ font-size: 14px;
 -o-transform: rotate(210deg);
 }
 .vol-den .vol-switch label:nth-child(29) span {
-font-size: 14px;
+font-size: 27px;
 -moz-transform: rotate(-90deg);
 -webkit-transform: rotate(-90deg);
 -o-transform: rotate(-90deg);
@@ -564,7 +568,7 @@ font-size: 14px;
 -o-transform: rotate(220deg);
 }
 .vol-den .vol-switch label:nth-child(30) span {
-font-size: 14px;
+font-size: 28px;
 -moz-transform: rotate(-90deg);
 -webkit-transform: rotate(-90deg);
 -o-transform: rotate(-90deg);
@@ -575,7 +579,7 @@ font-size: 14px;
 -o-transform: rotate(230deg);
 }
 .vol-den .vol-switch label:nth-child(31) span {
-font-size: 15px;
+font-size: 29px;
 -moz-transform: rotate(-90deg);
 -webkit-transform: rotate(-90deg);
 -o-transform: rotate(-90deg);
@@ -586,7 +590,7 @@ font-size: 15px;
 -o-transform: rotate(240deg);
 }
 .vol-den .vol-switch label:nth-child(32) span {
-font-size: 15px;
+font-size: 30px;
 -moz-transform: rotate(-90deg);
 -webkit-transform: rotate(-90deg);
 -o-transform: rotate(-90deg);
@@ -853,7 +857,7 @@ background: -webkit-linear-gradient(top, #dae2e4 0%, #ecf5f4 100%);
 background: -o-linear-gradient(top, #dae2e4 0%, #ecf5f4 100%);
 }
 
-/* SWITCH LIGHT POSITION */
+/* SWITCH LIGHT DOT POSITION */
 
 .vol-den #switch_mute:checked ~ .vol-dot {
 -moz-transform: rotate(-90deg);
@@ -1268,6 +1272,14 @@ opacity: .9;
 -moz-transform: rotate(-240deg);
 -webkit-transform: rotate(-240deg);
 -o-transform: rotate(-240deg);
+}
+
+/* VOLUME LINES COLORING */
+.vol-switch label span i {
+  -webkit-transition: all 1.5s;
+}
+.vol-checked {
+  color: #0AFF00;
 }
 
 
