@@ -25,7 +25,7 @@
   text-shadow: 0 2px 1px rgba(0,0,0,0.25);
   border-radius: 10%;
   background: #b25244;
-  background: linear-gradient(#f7f2f6, #b2ac9e);
+  background: -webkit-linear-gradient(top, #eef7f6 0%, #8d989a 100%);
   transition: all 0.3s ease-out;
   z-index: -1;
   box-shadow:
@@ -75,7 +75,7 @@
   margin: -35% 0 0 -35%;
   border-radius: 10%;
   background: #d2cbc3; /* Fallback */
-  background: linear-gradient(#cbc7bc, #d2cbc3);
+  background: -webkit-linear-gradient(bottom, #eef7f6 0%, #8d989a 100%);
   box-shadow:
     0 -2px 5px rgba(255,255,255,0.05),
     0 2px 5px rgba(255,255,255,0.1);
