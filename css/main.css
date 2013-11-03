@@ -1,103 +1,124 @@
 /* ==========================================================================
    custom styles
    ========================================================================== */
-#sources {
-  border-left: 1px solid #ccc;
-  height:380px;
-}
-
-#content {
-  position:fixed;
-  top:0px;
-  bottom:0px;
-  left:0px;
-  right:0px;
-}
-
 html, body {
   height:100%;
+  width:100%;
+  padding: 0px;
+  margin: 0px;
 }
 
-
-.output {
-  border-bottom:1px solid #ccc;
-  margin-top:30px;
-  margin-bottom:30px;
+body {
+  height: 480px;
+  width: 800px;
+  padding: 0px;
 }
-
-.out-imgs {
-
-}
-.out-img {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.out-btn {
-}
-
-div.out-btns {
-  display:inline;
-  height: 100px;
-  width: 100px;
-  border-radius: 5px;
-}
-
-.src-thumbnail {
-  margin:5px;
-  height:90px;
-  width:90px;
-  -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.075);
-          box-shadow: 0 1px 2px rgba(0, 0, 0, 0.075);
-  display: inline-block;
-  display: block;
-  max-width: 100%;
-  padding: 4px;
-  line-height: 1.428571429;
-  background-color: #ffffff;
+/* INFO AND VOLUME */
+#control {
+  height: 480px;
+  width: 305px;
   border: 1px solid #dddddd;
-  border-radius: 4px;
-  -webkit-transition: all 0.2s ease-in-out;
-          transition: all 0.2s ease-in-out;
-}
-.src-thumbnail > img {
-  display: block;
-  height: auto;
-  max-width: 100%;
-  margin-right: auto;
-  margin-left: auto;
+  padding: 5px;
+  float: left;
+  background: #333333;
 }
 
-.src-thumbnail:hover,
-.src-thumbnail:focus {
-  border-color: #428bca;
+#info {
+  padding: 10px;
+  border: 1px solid #dddddd;
 }
 
-.src-thumbnail .caption {
-  padding: 9px;
-  color: #333333;
+
+
+#sources {
+  display: inline;
+  height: 480px;
+  width: 495px;
+  border: 1px solid #dddddd;
+  padding: 5px;
+  float: left;
+  background: #333333;
 }
 
-.src-info {
-  display:none;
+#cmdr-logo {
+  height: 90%;
+  width: 100%;
 }
 
+/* OUTPUT AND SOURCE CONTROL */
+.output {
+  margin: 5px;
+  margin-left: 10px;
+  margin-right: 10px;
+  border: 3px outset #3c3d3f;
+  border-bottom-color: #666769;
+  border-right-color: #666769;
+}
+
+/* output controls */
+.output {
+}
+
+.out-img {
+  width: 100px;
+  margin-right: 20px;
+  float: right;
+  margin-top: 10px;
+  border-right: 1px solid #3c3d3f;
+}
+.pwr-btn {
+  margin-top: 10px;
+}
+.vm-btn {
+  border-left: 1px solid #3c3d3f;
+  margin-top: 10px;
+}
+
+
+/* source selection */
+.src-group {
+  border-top: 1px solid #3c3d3f;
+  padding-top: 10px;
+  margin-left: 0px;
+  margin-right: 0px;
+  padding-left: 40px;
+  padding-right: 0px;
+}
+.src-arrow-left i {
+  vertical-align: middle;
+  color: #ffffff;
+  opacity: 0.7;
+  float: right;
+}
+.src-arrow-right i {
+  vertical-align: middle;
+  color: #ffffff;
+  opacity: 0.7;
+  float: left;
+}
 .src-img {
-  float:right;
-  height:80px;
-  width:80px;
+  text-align:center;
+  vertical-align: middle;
+}
+.src-img img{
+  width: 70px;
+}
+.src-left img {
+  width: 50px;
+  opacity: 0.2;
+  float: right;
+}
+.src-right img {
+  width: 50px;
+  opacity: 0.2;
+  float: left;
 }
 
-.src-alert {
-}
-.src-alert-success {
-}
-.src-alert-warning {
-}
-
-.container {
-  margin: 3px;
-  border: 3px ridge #cccccc;
-  border-radius: 10px;
+/* CHANGES TO BOOTSTRAP */
+.col-xs-1, .col-xs-2, .col-xs-3,
+.col-xs-4, .col-xs-5, .col-xs-6,
+.col-xs-7, .col-xs-8, .col-xs-9,
+.col-xs-10, .col-xs-11 {
+  padding: 0px;
+  margin: 0px;
 }

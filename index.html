@@ -24,37 +24,219 @@
   <body>
       
     <!-- The contents of the page. 7 spans for main, 5 for the sidebar.-->
-    <div class="container" id="content">
-      <div class="row">
+    <div id="content">
+      <div id="control">
+        <!-- CMDR LOGO -->
+        <div id="info">
+          <img id="cmdr-logo" alt="cmdr logo" src="img/cmdr1.png"/>
+        </div>
+        <!-- VOLUME KNOB -->
+        <div class="vol-container">
+          <!-- OUTER SHADOW -->
+          <div class="vol-de">
 
-        <div class="col-xs-5" id="control">
+            <!-- TEXT -->
+            <div class="vol-den">
 
-          <div id="output-1" class="output">
-            <!--div class="out-imgs">
-              <img class="out-img" src="img/projector/off.png" alt="projector" width="100px">
-            </div-->
-            <div class="out-btns">
+              <!-- LINE -->
+              <hr class="vol-line">
+              <hr class="vol-line">
+              <hr class="vol-line">
 
-              <div class="pwr-btn">
-                <input type="checkbox">
-                <label>
-                  <i class="fa fa-power-off fa-3x"></i>
-                </label>
-              </div>
-              <div class="vm-btn">
-                <input type="checkbox">
-                <label>
-                  <span class="vm-x">|</span>
-                  <i class="fa fa-video-camera fa-3x"></i>
-                </label>
+              <!-- SWITCH -->
+              <div class="vol-switch">
+
+                <!-- TEXT -->
+                <label for="switch_mute" id="switch_mute"><span>MUTE</span></label>
+                <label for="switch_1" id="switch_right_label" style="visibility:hidden;"><span><i class="fa fa-minus"></i></span></label>
+                <label for="switch_2" class="switch_label"><span><i class="fa fa-minus"></i></span></label>
+                <label for="switch_3" class="switch_label"><span><i class="fa fa-minus"></i></span></label>
+                <label for="switch_4" class="switch_label"><span><i class="fa fa-minus"></i></span></label>
+                <label for="switch_5" class="switch_label"><span><i class="fa fa-minus"></i></span></label>
+                <label for="switch_6" class="switch_label"><span><i class="fa fa-minus"></i></span></label>
+                <label for="switch_7" class="switch_label" style="visibility:hidden;"><span><i class="fa fa-minus"></i></span></label>
+                <label for="switch_8" class="switch_label"><span><i class="fa fa-minus"></i></span></label>
+                <label for="switch_9" class="switch_label"><span><i class="fa fa-minus"></i></span></label>
+                <label for="switch_10" class="switch_label"><span><i class="fa fa-minus"></i></span></label>
+                <label for="switch_11" class="switch_label"><span><i class="fa fa-minus"></i></span></label>
+                <label for="switch_12" class="switch_label"><span><i class="fa fa-minus"></i></span></label>
+                <label for="switch_13" class="switch_label" style="visibility:hidden;"><span><i class="fa fa-minus"></i></span></label>
+                <label for="switch_14" class="switch_label"><span><i class="fa fa-minus"></i></span></label>
+                <label for="switch_15" class="switch_label"><span><i class="fa fa-minus"></i></span></label>
+                <label for="switch_16" class="switch_label"><span><i class="fa fa-minus"></i></span></label>
+                <label for="switch_17" class="switch_label"><span><i class="fa fa-minus"></i></span></label>
+                <label for="switch_18" class="switch_label"><span><i class="fa fa-minus"></i></span></label>
+                <label for="switch_19" class="switch_label" style="visibility:hidden;"><span><i class="fa fa-minus"></i></span></label>
+                <label for="switch_20" class="switch_label"><span><i class="fa fa-minus"></i></span></label>
+                <label for="switch_21" class="switch_label"><span><i class="fa fa-minus"></i></span></label>
+                <label for="switch_22" class="switch_label"><span><i class="fa fa-minus"></i></span></label>
+                <label for="switch_23" class="switch_label"><span><i class="fa fa-minus"></i></span></label>
+                <label for="switch_24" class="switch_label"><span><i class="fa fa-minus"></i></span></label>
+                <label for="switch_25" class="switch_label" style="visibility:hidden;"><span><i class="fa fa-minus"></i></span></label>
+                <label for="switch_26" class="switch_label"><span><i class="fa fa-minus"></i></span></label>
+                <label for="switch_27" class="switch_label"><span><i class="fa fa-minus"></i></span></label>
+                <label for="switch_28" class="switch_label"><span><i class="fa fa-minus"></i></span></label>
+                <label for="switch_29" class="switch_label"><span><i class="fa fa-minus"></i></span></label>
+                <label for="switch_30" class="switch_label"><span><i class="fa fa-minus"></i></span></label>
+                <label for="switch_31" id="switch_left_label" style="visibility:hidden;"><span><i class="fa fa-minus"></i></span></label>
+
+                <!-- INPUT -->
+                <input id="switch_mute" name="switch" checked type="radio">
+                <input id="switch_1" name="switch" type="radio">
+                <input id="switch_2" name="switch" type="radio">
+                <input id="switch_3" name="switch" type="radio">
+                <input id="switch_4" name="switch" type="radio">
+                <input id="switch_5" name="switch" type="radio">
+                <input id="switch_6" name="switch" type="radio">
+                <input id="switch_7" name="switch" type="radio">
+                <input id="switch_8" name="switch" type="radio">
+                <input id="switch_9" name="switch" type="radio">
+                <input id="switch_10" name="switch" type="radio">
+                <input id="switch_11" name="switch" type="radio">
+                <input id="switch_12" name="switch" type="radio">
+                <input id="switch_13" name="switch" type="radio">
+                <input id="switch_14" name="switch" type="radio">
+                <input id="switch_15" name="switch" type="radio">
+                <input id="switch_16" name="switch" type="radio">
+                <input id="switch_17" name="switch" type="radio">
+                <input id="switch_18" name="switch" type="radio">
+                <input id="switch_19" name="switch" type="radio">
+                <input id="switch_20" name="switch" type="radio">
+                <input id="switch_21" name="switch" type="radio">
+                <input id="switch_22" name="switch" type="radio">
+                <input id="switch_23" name="switch" type="radio">
+                <input id="switch_24" name="switch" type="radio">
+                <input id="switch_25" name="switch" type="radio">
+                <input id="switch_26" name="switch" type="radio">
+                <input id="switch_27" name="switch" type="radio">
+                <input id="switch_28" name="switch" type="radio">
+                <input id="switch_29" name="switch" type="radio">
+                <input id="switch_30" name="switch" type="radio">
+                <input id="switch_31" name="switch" type="radio">
+
+                <!-- LIGHT -->
+                <div class="vol-light"><span></span></div>
+
+                  <!-- DOT -->
+                <div class="vol-dot"><span></span></div>
+
+                  <!-- CENTER -->
+                <div class="vol-dene">
+                  <div class="vol-denem">
+                    <div class="vol-deneme">
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
+          </div>
+        </div>
+      </div>
 
+
+
+      <div id="sources">
+        <div id="output-1" class="output">
+
+          <div class="container">
+            <div class="out-group row">
+              <div class="col-xs-4">
+                <div>
+                  <img class="out-img" src="img/projector/off.png" alt="projector" >
+                </div>
+              </div>
+              <div class="col-xs-4">
+                <div class="pwr-btn">
+                  <input type="checkbox">
+                  <label>
+                    <i class="fa fa-power-off fa-3x"></i>
+                  </label>
+                </div>
+              </div>
+              <div class="col-xs-4">
+                <div class="vm-btn">
+                  <input type="checkbox">
+                  <label>
+                    <span class="vm-x">|</span>
+                    <i class="fa fa-video-camera fa-3x"></i>
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row src-group">
+            <div class="col-xs-1 src-arrow-left">
+              <i class="fa fa-chevron-left fa-3x"></i>
+            </div>
+            <div class="col-xs-2 src-left">
+              <img src="img/Mac.png" />
+            </div>
+            <div class="col-xs-4 src-img">
+              <img src="img/PC.png" alt="source" />
+            </div>
+            <div class="col-xs-2 src-right">
+              <img src="img/Laptop.png" />
+            </div>
+            <div class="col-xs-1 src-arrow-right">
+              <i class="fa fa-chevron-right fa-3x"></i>
+            </div>
           </div>
 
         </div>
 
-        <div class="col-xs-7" id="sources">
+        <div id="output-2" class="output">
+
+          <div class="container">
+            <div class="out-group row">
+              <div class="col-xs-4">
+                <div>
+                  <img class="out-img" src="img/projector/off.png" alt="projector" >
+                </div>
+              </div>
+              <div class="col-xs-4">
+                <div class="pwr-btn">
+                  <input type="checkbox">
+                  <label>
+                    <i class="fa fa-power-off fa-3x"></i>
+                  </label>
+                </div>
+              </div>
+              <div class="col-xs-4">
+                <div class="vm-btn">
+                  <input type="checkbox">
+                  <label>
+                    <span class="vm-x">|</span>
+                    <i class="fa fa-video-camera fa-3x"></i>
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row src-group">
+            <div class="col-xs-1 src-arrow-left">
+              <i class="fa fa-chevron-left fa-3x"></i>
+            </div>
+            <div class="col-xs-2 src-left">
+              <img src="img/PC.png" />
+            </div>
+            <div class="col-xs-4 src-img">
+              <img src="img/Laptop.png" alt="source" />
+            </div>
+            <div class="col-xs-2 src-right">
+              <img src="img/Mac.png" />
+            </div>
+            <div class="col-xs-1 src-arrow-right">
+              <i class="fa fa-chevron-right fa-3x"></i>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+          <!--
           <div class="row">
             <div class="col-xs-4">
               <div class="src-thumbnail">
@@ -63,107 +245,7 @@
                   <div id="connection" class="alert alert-success">
                     <span>PC available</span>
                   </div>
-                  <div class="vol-container">
-                    <!-- OUTER SHADOW -->
-                    <div class="vol-de">
-
-                      <!-- TEXT -->
-                      <div class="vol-den">
-
-                        <!-- LINE -->
-                        <hr class="vol-line">
-                        <hr class="vol-line">
-                        <hr class="vol-line">
-
-                        <!-- SWITCH -->
-                        <div class="vol-switch">
-
-                          <!-- TEXT -->
-                          <label for="switch_mute" id="switch_mute"><span>MUTE</span></label>
-                          <label for="switch_1" id="switch_right_label" style="visibility:hidden;"><span><i class="fa fa-minus"></i></span></label>
-                          <label for="switch_2" class="switch_label"><span><i class="fa fa-minus"></i></span></label>
-                          <label for="switch_3" class="switch_label"><span><i class="fa fa-minus"></i></span></label>
-                          <label for="switch_4" class="switch_label"><span><i class="fa fa-minus"></i></span></label>
-                          <label for="switch_5" class="switch_label"><span><i class="fa fa-minus"></i></span></label>
-                          <label for="switch_6" class="switch_label"><span><i class="fa fa-minus"></i></span></label>
-                          <label for="switch_7" class="switch_label" style="visibility:hidden;"><span><i class="fa fa-minus"></i></span></label>
-                          <label for="switch_8" class="switch_label"><span><i class="fa fa-minus"></i></span></label>
-                          <label for="switch_9" class="switch_label"><span><i class="fa fa-minus"></i></span></label>
-                          <label for="switch_10" class="switch_label"><span><i class="fa fa-minus"></i></span></label>
-                          <label for="switch_11" class="switch_label"><span><i class="fa fa-minus"></i></span></label>
-                          <label for="switch_12" class="switch_label"><span><i class="fa fa-minus"></i></span></label>
-                          <label for="switch_13" class="switch_label" style="visibility:hidden;"><span><i class="fa fa-minus"></i></span></label>
-                          <label for="switch_14" class="switch_label"><span><i class="fa fa-minus"></i></span></label>
-                          <label for="switch_15" class="switch_label"><span><i class="fa fa-minus"></i></span></label>
-                          <label for="switch_16" class="switch_label"><span><i class="fa fa-minus"></i></span></label>
-                          <label for="switch_17" class="switch_label"><span><i class="fa fa-minus"></i></span></label>
-                          <label for="switch_18" class="switch_label"><span><i class="fa fa-minus"></i></span></label>
-                          <label for="switch_19" class="switch_label" style="visibility:hidden;"><span><i class="fa fa-minus"></i></span></label>
-                          <label for="switch_20" class="switch_label"><span><i class="fa fa-minus"></i></span></label>
-                          <label for="switch_21" class="switch_label"><span><i class="fa fa-minus"></i></span></label>
-                          <label for="switch_22" class="switch_label"><span><i class="fa fa-minus"></i></span></label>
-                          <label for="switch_23" class="switch_label"><span><i class="fa fa-minus"></i></span></label>
-                          <label for="switch_24" class="switch_label"><span><i class="fa fa-minus"></i></span></label>
-                          <label for="switch_25" class="switch_label" style="visibility:hidden;"><span><i class="fa fa-minus"></i></span></label>
-                          <label for="switch_26" class="switch_label"><span><i class="fa fa-minus"></i></span></label>
-                          <label for="switch_27" class="switch_label"><span><i class="fa fa-minus"></i></span></label>
-                          <label for="switch_28" class="switch_label"><span><i class="fa fa-minus"></i></span></label>
-                          <label for="switch_29" class="switch_label"><span><i class="fa fa-minus"></i></span></label>
-                          <label for="switch_30" class="switch_label"><span><i class="fa fa-minus"></i></span></label>
-                          <label for="switch_31" id="switch_left_label" style="visibility:hidden;"><span><i class="fa fa-minus"></i></span></label>
-
-                          <!-- INPUT -->
-                          <input id="switch_mute" name="switch" checked type="radio">
-                          <input id="switch_1" name="switch" type="radio">
-                          <input id="switch_2" name="switch" type="radio">
-                          <input id="switch_3" name="switch" type="radio">
-                          <input id="switch_4" name="switch" type="radio">
-                          <input id="switch_5" name="switch" type="radio">
-                          <input id="switch_6" name="switch" type="radio">
-                          <input id="switch_7" name="switch" type="radio">
-                          <input id="switch_8" name="switch" type="radio">
-                          <input id="switch_9" name="switch" type="radio">
-                          <input id="switch_10" name="switch" type="radio">
-                          <input id="switch_11" name="switch" type="radio">
-                          <input id="switch_12" name="switch" type="radio">
-                          <input id="switch_13" name="switch" type="radio">
-                          <input id="switch_14" name="switch" type="radio">
-                          <input id="switch_15" name="switch" type="radio">
-                          <input id="switch_16" name="switch" type="radio">
-                          <input id="switch_17" name="switch" type="radio">
-                          <input id="switch_18" name="switch" type="radio">
-                          <input id="switch_19" name="switch" type="radio">
-                          <input id="switch_20" name="switch" type="radio">
-                          <input id="switch_21" name="switch" type="radio">
-                          <input id="switch_22" name="switch" type="radio">
-                          <input id="switch_23" name="switch" type="radio">
-                          <input id="switch_24" name="switch" type="radio">
-                          <input id="switch_25" name="switch" type="radio">
-                          <input id="switch_26" name="switch" type="radio">
-                          <input id="switch_27" name="switch" type="radio">
-                          <input id="switch_28" name="switch" type="radio">
-                          <input id="switch_29" name="switch" type="radio">
-                          <input id="switch_30" name="switch" type="radio">
-                          <input id="switch_31" name="switch" type="radio">
-
-                          <!-- LIGHT -->
-                          <div class="vol-light"><span></span></div>
-
-                            <!-- DOT -->
-                          <div class="vol-dot"><span></span></div>
-
-                            <!-- CENTER -->
-                          <div class="vol-dene">
-                            <div class="vol-denem">
-                              <div class="vol-deneme">
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <button type="button" class="btn btn-danger close-btn">Close</button>
+                                    <button type="button" class="btn btn-danger close-btn">Close</button>
                 </div>
               </div>
             </div>
@@ -244,14 +326,9 @@
             <div class="col-xs-4">
             </div>
           </div>
-
-        </div>
-      </div>
-    
+      -->
 
 
-      <hr>
-    </div>
 
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
     <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.1.min.js"><\/script>')</script>
