@@ -60,11 +60,12 @@ body {
 }
 
 .out-img {
-  width: 100px;
-  margin-right: 20px;
+  width: 110px;
   float: right;
-  margin-top: 10px;
   border-right: 1px solid #3c3d3f;
+  padding-top: 10px;
+  margin-right: 10px;
+  padding-right: 10px;
 }
 .pwr-btn {
   margin-top: 10px;

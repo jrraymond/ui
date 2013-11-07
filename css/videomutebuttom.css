@@ -5,6 +5,7 @@
   position: relative;
   margin: 20px;
   display: inline-block;
+  margin-top: 25px;
 }
 .vm-btn input {
   position: absolute;
