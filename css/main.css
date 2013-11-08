@@ -1,6 +1,14 @@
 /* ==========================================================================
    custom styles
    ========================================================================== */
+/* CHANGES TO BOOTSTRAP */
+.col-xs-1, .col-xs-2, .col-xs-3,
+.col-xs-4, .col-xs-5, .col-xs-6,
+.col-xs-7, .col-xs-8, .col-xs-9,
+.col-xs-10, .col-xs-11 {
+  padding: 0px;
+  margin: 0px;
+}
 html, body {
   height:100%;
   width:100%;
@@ -45,6 +53,26 @@ body {
   width: 100%;
 }
 
+/* INFORMATION */
+@font-face {
+  font-family: "digitalfont";
+  src: url("../fonts/DS-DIGII.TTF");
+}
+#clock {
+  font-family: "digitalfont";
+  color: #ffffff;
+  font-size: 80px;
+}
+#date {
+  color: #ffffff;
+  width: 50%;
+  margin-left: 30px;
+}
+#location {
+  color: #ffffff;
+}
+
+
 /* OUTPUT AND SOURCE CONTROL */
 .output {
   margin: 5px;
@@ -85,41 +113,70 @@ body {
   padding-left: 40px;
   padding-right: 0px;
 }
-.src-arrow-left i {
+.src1 {
+  text-align: center;
   vertical-align: middle;
-  color: #ffffff;
-  opacity: 0.7;
-  float: right;
-}
-.src-arrow-right i {
-  vertical-align: middle;
-  color: #ffffff;
-  opacity: 0.7;
-  float: left;
-}
-.src-img {
-  text-align:center;
-  vertical-align: middle;
-}
-.src-img img{
   width: 70px;
-}
-.src-left img {
-  width: 50px;
-  opacity: 0.2;
-  float: right;
-}
-.src-right img {
-  width: 50px;
-  opacity: 0.2;
-  float: left;
+  margin-left: 10px;
+  margin-right: 10px;
+  height: 75px;
 }
 
-/* CHANGES TO BOOTSTRAP */
-.col-xs-1, .col-xs-2, .col-xs-3,
-.col-xs-4, .col-xs-5, .col-xs-6,
-.col-xs-7, .col-xs-8, .col-xs-9,
-.col-xs-10, .col-xs-11 {
-  padding: 0px;
-  margin: 0px;
+.src-img {
+  -webkit-transition: all 2s;
+  width: 50px;
+  opacity: 0.2;
+}
+
+.src1 input {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 200;
+  opacity: 0;
+}
+.src1 input:checked ~ label {
+  background: -webkit-radial-gradient(center, ellipse cover, rgba(184, 163, 204, 1) 0%, rgba(159, 197, 224, 0.42) 42%, rgba(111, 113, 179, 0) 72%, rgba(67, 34, 137, 0) 100%);
+}
+.src1 input:checked ~ label img {
+  opacity: 1;
+  width: 70px;
+}
+
+.src {
+  text-align: center;
+  vertical-align: middle;
+  width: 70px;
+  height: 75px;
+}
+
+.src input {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 200;
+  opacity: 0;
+}
+
+.src label {
+  opacity: 0.4;
+  color: #ffffff;
+  font-family: digitalfont;
+  font-weight: normal;
+  font-size: 22px;
+  border: 1px solid #222222;
+  border-radius: 10px;
+  height: 90%;
+  padding: 5px;
+}
+
+.src label:before {
+  content: "";
+  position: absolute;
+  box-shadow: inset 0 5px 5px rgba(0,0,0,0.13);
+}
+
+.src input:checked ~ label {
+  background: -webkit-radial-gradient(center, ellipse cover, rgba(184, 163, 204, 1) 0%, rgba(159, 197, 224, 0.42) 42%, rgba(111, 113, 179, 0) 72%, rgba(67, 34, 137, 0) 100%);
+  opacity: 1;
 }

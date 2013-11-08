@@ -26,9 +26,19 @@
     <!-- The contents of the page. 7 spans for main, 5 for the sidebar.-->
     <div id="content">
       <div id="control">
-        <!-- CMDR LOGO -->
-        <div id="info">
-          <img id="cmdr-logo" alt="cmdr logo" src="img/cmdr1.png"/>
+        <!-- CMDR INFO -->
+        <div id="info" class="container">
+          <div class="row">
+            <div id="date" class="col-xs-8">
+              <span id="month"></span><span id="day"></span><span id="daySuffix"></span>
+            </div>
+            <div id="location" class="col-xs-4">
+              <p>Allbritton 004</p>
+            </div>
+          </div>
+          <div class="row">
+            <div id="clock" class="col-xs-12"></div>
+          </div>
         </div>
         <!-- VOLUME KNOB -->
         <div class="vol-container">
@@ -157,8 +167,7 @@
                 <div class="vm-btn">
                   <input type="checkbox">
                   <label>
-                    <span class="vm-x">|</span>
-                    <i class="fa fa-video-camera fa-3x"></i>
+                    <span class="vm-txt">VIDEO MUTE</span>
                   </label>
                 </div>
               </div>
@@ -166,20 +175,29 @@
           </div>
 
           <div class="row src-group">
-            <div class="col-xs-1 src-arrow-left">
-              <i class="fa fa-chevron-left fa-3x"></i>
+            <div class="col-xs-3 src1">
+              <input type="radio" name="source1">
+              <label>
+                <img src="img/DVD.png" class="src-img" />
+              </label>
             </div>
-            <div class="col-xs-2 src-left">
-              <img src="img/Mac.png" />
+            <div class="col-xs-3 src1">
+              <input type="radio" name="source1">
+              <label>
+                <img src="img/Mac.png" class="src-img" />
+              </label>
             </div>
-            <div class="col-xs-4 src-img">
-              <img src="img/PC.png" alt="source" />
+            <div class="col-xs-3 src1">
+              <input type="radio" name="source1">
+              <label>
+                <img src="img/PC.png" alt="source" class="src-img" />
+              </label>
             </div>
-            <div class="col-xs-2 src-right">
-              <img src="img/Laptop.png" />
-            </div>
-            <div class="col-xs-1 src-arrow-right">
-              <i class="fa fa-chevron-right fa-3x"></i>
+            <div class="col-xs-3 src1">
+              <input type="radio" name="source1">
+              <label>
+                <img src="img/Laptop.png" class="src-img" />
+              </label>
             </div>
           </div>
 
@@ -206,8 +224,7 @@
                 <div class="vm-btn">
                   <input type="checkbox">
                   <label>
-                    <span class="vm-x">|</span>
-                    <i class="fa fa-video-camera fa-3x"></i>
+                    <span class="vm-txt">VIDEO MUTE</span>
                   </label>
                 </div>
               </div>
@@ -215,120 +232,41 @@
           </div>
 
           <div class="row src-group">
-            <div class="col-xs-1 src-arrow-left">
-              <i class="fa fa-chevron-left fa-3x"></i>
+            <div class="col-xs-2 src">
+              <input type="radio" name="source2">
+              <label>
+                <span>LAPTOP HMDI</span>
+              </label>
             </div>
-            <div class="col-xs-2 src-left">
-              <img src="img/PC.png" />
+            <div class="col-xs-2 src">
+              <input type="radio" name="source2">
+              <label>
+                <span>PC</span>
+              </label>
             </div>
-            <div class="col-xs-4 src-img">
-              <img src="img/Laptop.png" alt="source" />
+            <div class="col-xs-2 src">
+              <input type="radio" name="source2">
+              <label>
+                <span>LAPTOP VGA</span>
+              </label>
             </div>
-            <div class="col-xs-2 src-right">
-              <img src="img/Mac.png" />
+            <div class="col-xs-2 src">
+              <input type="radio" name="source2">
+              <label>
+                <span>MAC</span>
+              </label>
             </div>
-            <div class="col-xs-1 src-arrow-right">
-              <i class="fa fa-chevron-right fa-3x"></i>
+            <div class="col-xs-2 src">
+              <input type="radio" name="source2">
+              <label>
+                <span>BLURAY</span>
+              </label>
             </div>
           </div>
 
         </div>
       </div>
     </div>
-
-          <!--
-          <div class="row">
-            <div class="col-xs-4">
-              <div class="src-thumbnail">
-                <img src="img/PC.png" alt="pc" class="src-img img-responsive">
-                <div class="src-info">
-                  <div id="connection" class="alert alert-success">
-                    <span>PC available</span>
-                  </div>
-                                    <button type="button" class="btn btn-danger close-btn">Close</button>
-                </div>
-              </div>
-            </div>
-            <div class="col-xs-4">
-              <div class="src-thumbnail">
-                <img src="img/Mac.png" alt="" class="src-img img-responsive">
-                <div class="src-info">
-                  <div id="connection" class="alert alert-success">
-                    <span>Mac available</span>
-                  </div>
-                  <button type="button" class="btn btn-danger close-btn">Close</button>
-                </div>
-              </div>
-            </div>
-            <div class="col-xs-4">
-              <div class="src-thumbnail">
-                <img src="img/Laptop.png" alt="laptop" class="src-img img-responsive">
-                <div class="src-info">
-                  <div id="connection" class="alert alert-success">
-                    <span>Laptop available</span>
-                  </div>
-                  <button type="button" class="btn btn-danger close-btn">Close</button>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="row">
-            <div class="col-xs-4">
-              <div class="src-thumbnail">
-                <img src="img/LaptopHDMI.png" alt="laptopHDMI" class="src-img img-responsive">
-                <div class="src-info">
-                  <div id="connection" class="alert alert-success">
-                    <span>Laptop HDMI available</span>
-                  </div>
-                  <button type="button" class="btn btn-danger close-btn">Close</button>
-                </div>
-              </div>
-            </div>
-            <div class="col-xs-4">
-              <div class="src-thumbnail">
-                <img src="img/Bluray.png" alt="bluray" class="src-img img-responsive">
-                <div class="src-info">
-                  <div id="connection" class="alert alert-success">
-                    <span>Bluray available</span>
-                  </div>
-                  <button type="button" class="btn btn-danger close-btn">Close</button>
-                </div>
-              </div>
-            </div>
-            <div class="col-xs-4">
-              <div class="src-thumbnail">
-                <img src="img/DVD.png" alt="dvd" class="src-img img-responsive">
-                <div class="src-info">
-                  <div id="connection" class="alert alert-success">
-                    <span>DVD available</span>
-                  </div>
-                  <button type="button" class="btn btn-danger close-btn">Close</button>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="row">
-            <div class="col-xs-4">
-              <div class="src-thumbnail">
-                <img src="img/VCR.png" alt="vcr" class="src-img img-responsive">
-                <div class="src-info">
-                  <div id="connection" class="alert alert-success">
-                    <span>VCR available</span>
-                  </div>
-                  <button type="button" class="btn btn-danger close-btn">Close</button>
-                </div>
-              </div>
-            </div>
-            <div class="col-xs-4">
-            </div>
-            <div class="col-xs-4">
-            </div>
-          </div>
-      -->
-
-
 
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
     <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.1.min.js"><\/script>')</script>

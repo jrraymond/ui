@@ -78,8 +78,93 @@ $(".close-btn").on("click", function() {
 });
 
 
+
+/* Sets Date */
+
 /* called when source btns are hidden */
 function btnHidden(that) {
   console.log($(that).parent());
   //$(that).parent().attr("class", "col-xs-12");
 };
+
+var findMonth = function(num) {
+  switch (num) {
+    case 0 :
+      return "January";
+    case 1 :
+      return "Febuary";
+    case 2 :
+      return "March";
+    case 3 :
+      return "April";
+    case 4 :
+      return "May";
+    case 5 :
+      return "June";
+    case 6 :
+      return "July";
+    case 7 :
+      return "August";
+    case 8 :
+      return "September";
+    case 9 :
+      return "October";
+    case 10 :
+      return "November";
+    case 11 :
+      return "December";
+  }
+}
+var daySuffix = function(num) {
+  switch (num) {
+    case (num === 1 || num === 21 || num === 31) : 
+      return "st";
+    case (num === 2 || num === 22) : 
+      return "nd";
+    case (num === 3 || num === 23) :
+      return "rd";
+    default :
+      return "th";
+  }
+}
+
+/* Pads single digits with zeros */
+var pad = function(x) {
+  return x < 10 ? "0"+x : x;
+};
+var fromMilitary = function(hours) {
+  if (hours >= 12) {
+    hours = hours - 12;
+    hours = (hours === 0) ? 12 : hours;
+    return [hours , "pm"];
+  }
+  else {
+    return [hours , "am"];
+  }
+}
+
+var updateTime = function() {
+  var d = new Date();
+
+  var h = pad(d.getHours());
+  var m = pad(d.getMinutes());
+  var s = pad(d.getSeconds());
+
+  var h2 = fromMilitary(h);
+
+  var month = findMonth(d.getMonth());
+  var day = d.getDay();
+  var daySuff = daySuffix(day);
+
+  var current_time = [h2[0],m,s].join(":");
+
+  $("#clock").html(current_time);
+  $("#month").html(month + " ");
+  $("#day").html(day);
+  $("#daySuffix").html(daySuff);
+  console.log(current_time);
+};
+
+updateTime();
+
+setInterval(updateTime, 1000);
