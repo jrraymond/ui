@@ -132,14 +132,15 @@ var daySuffix = function(num) {
 var pad = function(x) {
   return x < 10 ? "0"+x : x;
 };
+
 var fromMilitary = function(hours) {
   if (hours >= 12) {
     hours = hours - 12;
     hours = (hours === 0) ? 12 : hours;
-    return [hours , "pm"];
+    return [pad(hours) , "pm"];
   }
   else {
-    return [hours , "am"];
+    return [pad(hours) , "am"];
   }
 }
 
@@ -156,13 +157,21 @@ var updateTime = function() {
   var day = d.getDate();
   var daySuff = daySuffix(day);
 
-  var current_time = [h2[0],m,s].join(":");
+  console.log(h2);
+  console.log(m);
+  console.log(typeof(m));
 
-  $("#clock").html(current_time);
+  $("#h0").html(h2[0].charAt(0));
+  $("#h1").html(h2[0].charAt(1));
+  $("#m0").html((m+'').charAt(0));
+  $("#m1").html((m+'').charAt(1));
+  $("#s0").html((s+'').charAt(0));
+  $("#s1").html((s+'').charAt(1));
+
+
   $("#month").html(month + " ");
   $("#day").html(day);
   $("#daySuffix").html(daySuff);
-  console.log(current_time);
 };
 
 updateTime();

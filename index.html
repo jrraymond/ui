@@ -37,7 +37,16 @@
             </div>
           </div>
           <div class="row">
-            <div id="clock" class="col-xs-12"></div>
+            <div id="clock" class="col-xs-12">
+              <span class="clock-number" id="h0"></span>
+              <span class="clock-number" id="h1"></span>
+              <span class="clock-colon">:</span>
+              <span class="clock-number" id="m0"></span>
+              <span class="clock-number" id="m1"></span>
+              <span class="clock-colon">:</span>
+              <span class="clock-number" id="s0"></span>
+              <span class="clock-number" id="s1"></span>
+            </div>
           </div>
         </div>
         <!-- VOLUME KNOB -->
@@ -150,10 +159,9 @@
 
           <div class="container">
             <div class="out-group row">
-              <div class="col-xs-4">
-                <div>
-                  <img class="out-img" src="img/projector/on.png" alt="projector" >
-                </div>
+              <div class="col-xs-4 out-info">
+                <p>Projector West</p>
+                <i class="fa fa-video-camera fa-5x"></i>
               </div>
               <div class="col-xs-4">
                 <div class="pwr-btn">
@@ -208,9 +216,7 @@
           <div class="container">
             <div class="out-group row">
               <div class="col-xs-4">
-                <div>
-                  <img class="out-img" src="img/projector/warming.png" alt="projector" >
-                </div>
+                <img class="out-img" src="img/movie_projector.gif" alt="projector" >
               </div>
               <div class="col-xs-4">
                 <div class="pwr-btn">
@@ -234,23 +240,53 @@
           <div class="row src-group">
             <div class="src">
               <input type="radio" name="source2">
-              <label><p>LAPTOP HMDI</p></label>
+              <label>
+                <div>
+                  <i class="fa fa-laptop"></i>
+                </div>
+                <div>
+                  <p>HMDI</p>
+                </div>
+              </label>
             </div>
             <div class="src">
               <input type="radio" name="source2">
-              <label><p>PC</p></label>
+              <label>
+                <div>
+                  <i class="fa fa-windows"></i>
+                </div>
+                <div>
+                  <p>PC</p>
+                </div>
+              </label>
             </div>
             <div class="src">
               <input type="radio" name="source2">
-              <label><p>LAPTOP VGA</p></label>
+              <label>
+                <div>
+                    <i class="fa fa-laptop"></i>
+                </div>
+                <div>
+                  <p>VGA</p>
+                </div>
+              </label>
             </div>
             <div class="src">
               <input type="radio" name="source2">
-              <label><p>MAC</p></label>
+              <label>
+                <div>
+                  <i class="fa fa-apple"></i>
+                </div>
+                <div>
+                  <p>MAC</p>
+                </div>
+              </label>
             </div>
             <div class="src">
               <input type="radio" name="source2">
-              <label><p>BLURAY</p></label>
+              <label>
+                  <p>BLURAY</p>
+              </label>
             </div>
           </div>
 

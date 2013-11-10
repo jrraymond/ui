@@ -72,6 +72,10 @@ body {
   color: #ffffff;
 }
 
+.clock-number {
+  width: 10%;
+}
+
 
 /* OUTPUT AND SOURCE CONTROL */
 .output {
@@ -86,11 +90,13 @@ body {
 /* output controls */
 .output {
 }
-
-.out-img {
-  width: 110px;
-  float: right;
+.out-info {
   border-right: 1px solid #3c3d3f;
+
+}
+.out-img {
+  width: 50px;
+  float: right;
   padding-top: 10px;
   margin-right: 10px;
   padding-right: 10px;
@@ -190,3 +196,11 @@ body {
   background: -webkit-radial-gradient(center, ellipse cover, rgba(184, 163, 204, 1) 0%, rgba(159, 197, 224, 0.42) 42%, rgba(111, 113, 179, 0) 72%, rgba(67, 34, 137, 0) 100%);
   opacity: 1;
 }
+
+.src label div {
+  width: 30px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
