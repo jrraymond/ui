@@ -110,8 +110,10 @@ body {
   padding-top: 10px;
   margin-left: 0px;
   margin-right: 0px;
-  padding-left: 40px;
+  padding-left: 0px;
   padding-right: 0px;
+  padding-left: 8px;
+  padding-bottom: 10px;
 }
 .src1 {
   text-align: center;
@@ -144,16 +146,16 @@ body {
 }
 
 .src {
-  text-align: center;
-  vertical-align: middle;
-  width: 70px;
+  width: 20%;
   height: 75px;
+  display: inline-block;
+  float: left;
 }
 
 .src input {
   position: absolute;
-  width: 100%;
-  height: 100%;
+  width: 85px;
+  height: 75px;
   z-index: 200;
   opacity: 0;
 }
@@ -166,8 +168,16 @@ body {
   font-size: 22px;
   border: 1px solid #222222;
   border-radius: 10px;
-  height: 90%;
+  height: 75px;
   padding: 5px;
+  width: 90%;
+  display: table;
+}
+
+.src label p {
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
 }
 
 .src label:before {

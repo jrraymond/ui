@@ -153,7 +153,7 @@ var updateTime = function() {
   var h2 = fromMilitary(h);
 
   var month = findMonth(d.getMonth());
-  var day = d.getDay();
+  var day = d.getDate();
   var daySuff = daySuffix(day);
 
   var current_time = [h2[0],m,s].join(":");
