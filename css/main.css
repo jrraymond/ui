@@ -61,7 +61,7 @@ body {
 #clock {
   font-family: "digitalfont";
   color: #ffffff;
-  font-size: 80px;
+  font-size: 59px;
 }
 #date {
   color: #ffffff;
@@ -73,7 +73,12 @@ body {
 }
 
 .clock-number {
-  width: 10%;
+  display: inline;
+  width: 20px;
+}
+.clock-colon {
+  display: inline;
+  width: 10px;
 }
 
 
