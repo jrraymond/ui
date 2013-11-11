@@ -209,3 +209,8 @@ body {
   text-align: center;
 }
 
+
+/* Custom fonts */
+.cf {
+  display: inline-block;
+}
