@@ -183,6 +183,9 @@ body {
   padding: 5px;
   width: 90%;
   display: table;
+  background: #333333;
+  box-shadow: 0 0px 0px rgba(0,0,0,0.13);
+  -webkit-transition: all 2s;
 }
 
 .src label p {
@@ -191,15 +194,11 @@ body {
   text-align: center;
 }
 
-.src label:before {
-  content: "";
-  position: absolute;
-  box-shadow: inset 0 5px 5px rgba(0,0,0,0.13);
-}
-
 .src input:checked ~ label {
-  background: -webkit-radial-gradient(center, ellipse cover, rgba(184, 163, 204, 1) 0%, rgba(159, 197, 224, 0.42) 42%, rgba(111, 113, 179, 0) 72%, rgba(67, 34, 137, 0) 100%);
+  background: #C7FBFD;
+  color: #000000;
   opacity: 1;
+  border: 2px solid #C7FBFD;
 }
 
 .src label div {
@@ -207,6 +206,10 @@ body {
   margin-left: auto;
   margin-right: auto;
   text-align: center;
+}
+.src-custom label {
+  padding: 0px;
+  padding-right: 12px;
 }
 
 
