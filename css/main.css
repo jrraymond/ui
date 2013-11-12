@@ -58,8 +58,13 @@ body {
   font-family: "digitalfont";
   src: url("../fonts/DS-DIGII.TTF");
 }
+@font-face {
+  font-family: "digitalfontmono";
+  src: url("../fonts/digital-7__mono_.ttf");
+}
+
 #clock {
-  font-family: "digitalfont";
+  font-family: "digitalfontmono";
   color: #ffffff;
   font-size: 59px;
 }
