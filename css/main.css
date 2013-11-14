@@ -66,7 +66,7 @@ body {
 #clock {
   font-family: "digitalfontmono";
   color: #ffffff;
-  font-size: 59px;
+  font-size: 58px;
 }
 #date {
   color: #ffffff;
@@ -272,8 +272,25 @@ body {
   padding-right: 12px;
 }
 
-
 /* Custom fonts */
 .cf {
   display: inline-block;
 }
+
+/* NAVIGATION BAR */
+.out-nav {
+}
+.out-nav-tab {
+  width: 33%;
+}
+.out-nav-tab a {
+  font-color: #ffffff;
+  color: #ffffff;
+  font-family: digitalfont;
+  text-decoration: none;
+}
+.out-tab-content {
+  font-color: #ffffff;
+  color: #ffffff;
+}
+
