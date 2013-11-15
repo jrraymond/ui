@@ -25,7 +25,6 @@ body {
 #control {
   height: 480px;
   width: 305px;
-  border: 1px solid #dddddd;
   padding: 5px;
   float: left;
   background: #333333;
@@ -33,20 +32,10 @@ body {
 
 #info {
   padding: 10px;
-  border: 1px solid #dddddd;
 }
 
 
 
-#sources {
-  display: inline;
-  height: 480px;
-  width: 495px;
-  border: 1px solid #dddddd;
-  padding: 5px;
-  float: left;
-  background: #333333;
-}
 
 #cmdr-logo {
   height: 90%;
@@ -271,6 +260,7 @@ body {
 
 /* NAVIGATION BAR */
 .out-nav {
+  margin-top:5px;
 }
 .out-nav-tab {
   width: 33%;
@@ -286,3 +276,46 @@ body {
   color: #ffffff;
 }
 
+#sources-border {
+  display: inline-block;
+  float: right;
+  width: 495px;
+  height: 480px;
+  position: relative;
+  background: #333333;
+}
+#sources {
+  display: block;
+  width: 98%;
+  height: 98%;
+  position: relative;
+  margin: 5px;
+  box-shadow: inset 0 2px 3px rgba(255,255,255,0.13),
+    0 5px 8px rgba(0,0,0,0.3),
+    0 10px 10px 4px rgba(0,0,0,0.3);
+ border-radius: 5px;
+  border: 1px solid #555555;
+}
+/*#sources:before {
+  content: "";
+  position: absolute;
+  left: -5px;
+  right: -5px;
+  bottom: -5px;
+  top: 0px;
+  border-radius: 0px;
+  box-shadow: inset 0 5px 5px rgba(0,0,0,0.13);
+  -webkit-filter: blur(1px);
+}
+#sources:after {
+  content: "";
+  position: absolute;
+  left : -10px;
+  right: -10px;
+  bottom: -10px;
+  top: -10px;
+  border-radius: 15px;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.1),
+    0 1px 2px rgba(0,0,0,0.3),
+    0 0 10px rgba(0,0,0,0.15);
+}*/
