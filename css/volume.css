@@ -28,6 +28,7 @@
   border-radius: 100%;
   box-shadow: 0 0 25px rgba(0, 0, 0, .1);
   background-color: transparent;
+  transition: all 0.5s;
 }
 
 .vol-de .vol-den, .vol-de .vol-dene, .vol-de .vol-denem, .vol-de .vol-deneme, .vol-de .vol-light, .vol-de .vol-dot {
@@ -45,10 +46,8 @@
   box-shadow: inset 0 3px 10px rgba(0, 0, 0, .6), 0 2px 20px rgba(255, 255, 255, 1);
 
   background: #888888;
-  background: -moz-radial-gradient(center, ellipse cover, #888888 0%, #333333 100%);
   background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, #888888), color-stop(100%, #333333));
   background: -webkit-radial-gradient(center, ellipse cover, #888888 0%, #333333 100%);
-  background: -o-radial-gradient(center, ellipse cover, #888888 0%, #333333 100%);
 }
 
 .vol-dene {
@@ -60,10 +59,8 @@ border-radius: 100%;
 box-shadow: inset 0 2px 2px rgba(255, 255, 255, .4), 0 3px 13px rgba(0, 0, 0, .85);
 
 background: #f2f6f5;
-background: -moz-linear-gradient(top, #f2f6f5 0%, #cbd5d6 100%);
 background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #f2f6f5), color-stop(100%, #cbd5d6));
 background: -webkit-linear-gradient(top, #f2f6f5 0%, #cbd5d6 100%);
-background: -o-linear-gradient(top, #f2f6f5 0%, #cbd5d6 100%);
 }
 
 .vol-denem {
@@ -73,10 +70,8 @@ margin: -60px 0 0 -60px;
 border-radius: 100%;
 
 background: #cbd5d6;
-background: -moz-linear-gradient(top, #cbd5d6 0%, #f2f6f5 100%);
 background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #cbd5d6), color-stop(100%, #f2f6f5));
 background: -webkit-linear-gradient(top, #cbd5d6 0%, #f2f6f5 100%);
-background: -o-linear-gradient(top, #cbd5d6 0%, #f2f6f5 100%);
 }
 
 .vol-deneme {
@@ -87,10 +82,8 @@ border-radius: 100%;
 box-shadow: inset 0 2px 3px rgba(255, 255, 255, .6), 0 8px 20px rgba(0, 0, 0, .9);
 
 background: #eef7f6;
-background: -moz-linear-gradient(top, #eef7f6 0%, #8d989a 100%);
 background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #eef7f6), color-stop(100%, #8d989a));
 background: -webkit-linear-gradient(top, #eef7f6 0%, #8d989a 100%);
-background: -o-linear-gradient(top, #eef7f6 0%, #8d989a 100%);
 }
 
 .vol-den .vol-switch {
@@ -114,9 +107,7 @@ background: -o-linear-gradient(top, #eef7f6 0%, #8d989a 100%);
   width: 50%;
   height: 70px;
   margin-top: -35px;
-  -moz-transform-origin: 0% 50%;
   -webkit-transform-origin: 0% 50%;
-  -o-transform-origin: 0% 50%;
 }
 .vol-den .vol-switch label:not(#switch_mute) {
   z-index: 2;
@@ -126,102 +117,9 @@ background: -o-linear-gradient(top, #eef7f6 0%, #8d989a 100%);
   width: 85px;
   height: 20px;
   margin-top: -35px;
-  -moz-transform-origin: 0% 50%;
   -webkit-transform-origin: 0% 50%;
-  -o-transform-origin: 0% 50%;
 }
 
-#switch_top_label:before {
-  content: "";
-  position: absolute;
-  top: 6px;
-  left: 1px;
-  width: 100%;
-  height: 30px;
-  -moz-transform: rotate(-30deg);
-  -webkit-transform: rotate(-30deg);
-  -o-transform: rotate(-30deg);
-}
-
-#switch_top_label:after {
-  content: "";
-  position: absolute;
-  top: 6px;
-  left: 1px;
-  width: 100%;
-  height: 30px;
-  -moz-transform: rotate(-30deg);
-  -webkit-transform: rotate(-30deg);
-  -o-transform: rotate(-30deg);
-}
-
-#switch_right_label:before {
-  content: "";
-  position: absolute;
-  top: 6px;
-  left: 1px;
-  width: 100%;
-  height: 30px;
-  -moz-transform: rotate(30deg);
-  -webkit-transform: rotate(30deg);
-  -o-transform: rotate(30deg);
-}
-
-#switch_right_label:after {
-  content: "";
-  position: absolute;
-  top: 6px;
-  left: 1px;
-  width: 100%;
-  height: 30px;
-  -moz-transform: rotate(-10deg);
-  -webkit-transform: rotate(-10deg);
-  -o-transform: rotate(-10deg);
-}
-#switch_left_label:before {
-  content: "";
-  position: absolute;
-  top: 6px;
-  left: 1px;
-  width: 100%;
-  height: 30px;
-  -moz-transform: rotate(10deg);
-  -webkit-transform: rotate(10deg);
-  -o-transform: rotate(10deg);
-}
-#switch_left_label:after {
-  content: "";
-  position: absolute;
-  top: 6px;
-  left: 1px;
-  width: 100%;
-  height: 30px;
-  -moz-transform: rotate(-30deg);
-  -webkit-transform: rotate(-30deg);
-  -o-transform: rotate(-30deg);
-}
-.switch_label:before {
-  content: "";
-  position: absolute;
-  bottom: 6px;
-  left: 1px;
-  width: 100%;
-  height: 30px;
-  -moz-transform: rotate(10deg);
-  -webkit-transform: rotate(10deg);
-  -o-transform: rotate(10deg);
-}
-.switch_label:after {
-  content: "";
-  position: absolute;
-  top: 6px;
-  left: 1px;
-  width: 100%;
-  height: 30px;
-  -moz-transform: rotate(-10deg);
-  -webkit-transform: rotate(-10deg);
-  -o-transform: rotate(-10deg);
-}
 
 .vol-den .vol-switch label span {
   z-index: 2;
@@ -242,358 +140,203 @@ background: -o-linear-gradient(top, #eef7f6 0%, #8d989a 100%);
     font-weight:bold;
 }
 .vol-den .vol-switch label:nth-child(1) {
-  -moz-transform: rotate(-90deg);
-  -webkit-transform: rotate(-90deg);
-  -o-transform: rotate(-90deg);
+  -webkit-transform: rotate(90deg);
 }
 
 .vol-den .vol-switch label:nth-child(1) span {
 right: 4px;
 font-size: 13px;
--moz-transform: rotate(90deg);
--webkit-transform: rotate(90deg);
--o-transform: rotate(90deg);
+-webkit-transform: rotate(270deg);
 }
 .vol-den .vol-switch label:nth-child(2) {
--moz-transform: rotate(-60deg);
--webkit-transform: rotate(-60deg);
--o-transform: rotate(-60deg);
+-webkit-transform: rotate(120deg);
 }
 .vol-den .vol-switch label:nth-child(2) span {
 font-size: 13px;
--moz-transform: rotate(-90deg);
--webkit-transform: rotate(-90deg);
--o-transform: rotate(-90deg);
 }
+.vol-den .vol-switch label span {
+-webkit-transform: rotate(-90deg);
+}
+
 .vol-den .vol-switch label:nth-child(3) {
--moz-transform: rotate(-50deg);
--webkit-transform: rotate(-50deg);
--o-transform: rotate(-50deg);
+-webkit-transform: rotate(130deg);
 }
 .vol-den .vol-switch label:nth-child(3) span {
 font-size: 13px;
--moz-transform: rotate(-90deg);
--webkit-transform: rotate(-90deg);
--o-transform: rotate(-90deg);
 }
 .vol-den .vol-switch label:nth-child(4) {
--moz-transform: rotate(-40deg);
--webkit-transform: rotate(-40deg);
--o-transform: rotate(-40deg);
+-webkit-transform: rotate(140deg);
 }
 .vol-den .vol-switch label:nth-child(4) span {
 font-size: 14px;
--moz-transform: rotate(-90deg);
--webkit-transform: rotate(-90deg);
--o-transform: rotate(-90deg);
 }
 .vol-den .vol-switch label:nth-child(5) {
--moz-transform: rotate(-30deg);
--webkit-transform: rotate(-30deg);
--o-transform: rotate(-30deg);
+-webkit-transform: rotate(150deg);
 }
 .vol-den .vol-switch label:nth-child(5) span {
 font-size: 14px;
--moz-transform: rotate(-90deg);
--webkit-transform: rotate(-90deg);
--o-transform: rotate(-90deg);
 }
 .vol-den .vol-switch label:nth-child(6) {
--moz-transform: rotate(-20deg);
--webkit-transform: rotate(-20deg);
--o-transform: rotate(-20deg);
+-webkit-transform: rotate(160deg);
 }
 .vol-den .vol-switch label:nth-child(6) span {
 font-size: 15px;
--moz-transform: rotate(-90deg);
--webkit-transform: rotate(-90deg);
--o-transform: rotate(-90deg);
 }
 .vol-den .vol-switch label:nth-child(7) {
--moz-transform: rotate(-10deg);
--webkit-transform: rotate(-10deg);
--o-transform: rotate(-10deg);
+-webkit-transform: rotate(170deg);
 }
 .vol-den .vol-switch label:nth-child(7) span {
 font-size: 15px;
--moz-transform: rotate(-90deg);
--webkit-transform: rotate(-90deg);
--o-transform: rotate(-90deg);
 }
 .vol-den .vol-switch label:nth-child(8) {
--moz-transform: rotate(0deg);
--webkit-transform: rotate(0deg);
--o-transform: rotate(0deg);
+-webkit-transform: rotate(180deg);
 }
 .vol-den .vol-switch label:nth-child(8) span {
 font-size: 15px;
--moz-transform: rotate(-90deg);
--webkit-transform: rotate(-90deg);
--o-transform: rotate(-90deg);
 }
 .vol-den .vol-switch label:nth-child(9) {
--moz-transform: rotate(10deg);
--webkit-transform: rotate(10deg);
--o-transform: rotate(10deg);
+-webkit-transform: rotate(190deg);
 }
 .vol-den .vol-switch label:nth-child(9) span {
 font-size: 16px;
--moz-transform: rotate(-90deg);
--webkit-transform: rotate(-90deg);
--o-transform: rotate(-90deg);
 }
 .vol-den .vol-switch label:nth-child(10) {
--moz-transform: rotate(20deg);
--webkit-transform: rotate(20deg);
--o-transform: rotate(20deg);
+-webkit-transform: rotate(200deg);
 }
 .vol-den .vol-switch label:nth-child(10) span {
 font-size: 17px;
--moz-transform: rotate(-90deg);
--webkit-transform: rotate(-90deg);
--o-transform: rotate(-90deg);
 }
 .vol-den .vol-switch label:nth-child(11) {
--moz-transform: rotate(30deg);
--webkit-transform: rotate(30deg);
--o-transform: rotate(30deg);
+-webkit-transform: rotate(210deg);
 }
 .vol-den .vol-switch label:nth-child(11) span {
 font-size: 18px;
--moz-transform: rotate(-90deg);
--webkit-transform: rotate(-90deg);
--o-transform: rotate(-90deg);
 }
 .vol-den .vol-switch label:nth-child(12) {
--moz-transform: rotate(40deg);
--webkit-transform: rotate(40deg);
--o-transform: rotate(40deg);
+-webkit-transform: rotate(220deg);
 }
 .vol-den .vol-switch label:nth-child(12) span {
 font-size: 18px;
--moz-transform: rotate(-90deg);
--webkit-transform: rotate(-90deg);
--o-transform: rotate(-90deg);
 }
 .vol-den .vol-switch label:nth-child(13) {
--moz-transform: rotate(50deg);
--webkit-transform: rotate(50deg);
--o-transform: rotate(50deg);
+-webkit-transform: rotate(230deg);
 }
 .vol-den .vol-switch label:nth-child(13) span {
 font-size: 19px;
--moz-transform: rotate(-90deg);
--webkit-transform: rotate(-90deg);
--o-transform: rotate(-90deg);
 }
 .vol-den .vol-switch label:nth-child(14) {
--moz-transform: rotate(60deg);
--webkit-transform: rotate(60deg);
--o-transform: rotate(60deg);
+-webkit-transform: rotate(240deg);
 }
 .vol-den .vol-switch label:nth-child(14) span {
 font-size: 19px;
--moz-transform: rotate(-90deg);
--webkit-transform: rotate(-90deg);
--o-transform: rotate(-90deg);
 }
 .vol-den .vol-switch label:nth-child(15) {
--moz-transform: rotate(70deg);
--webkit-transform: rotate(70deg);
--o-transform: rotate(70deg);
+-webkit-transform: rotate(250deg);
 }
 .vol-den .vol-switch label:nth-child(15) span {
 font-size: 19px;
--moz-transform: rotate(-90deg);
--webkit-transform: rotate(-90deg);
--o-transform: rotate(-90deg);
 }
 .vol-den .vol-switch label:nth-child(16) {
--moz-transform: rotate(80deg);
--webkit-transform: rotate(80deg);
--o-transform: rotate(80deg);
+-webkit-transform: rotate(260deg);
 }
 .vol-den .vol-switch label:nth-child(16) span {
 font-size: 20px;
--moz-transform: rotate(-90deg);
--webkit-transform: rotate(-90deg);
--o-transform: rotate(-90deg);
 }
 .vol-den .vol-switch label:nth-child(17) {
--moz-transform: rotate(90deg);
--webkit-transform: rotate(90deg);
--o-transform: rotate(90deg);
+-webkit-transform: rotate(270deg);
 }
 .vol-den .vol-switch label:nth-child(17) span {
 font-size: 21px;
--moz-transform: rotate(-90deg);
--webkit-transform: rotate(-90deg);
--o-transform: rotate(-90deg);
 }
 .vol-den .vol-switch label:nth-child(18) {
--moz-transform: rotate(100deg);
--webkit-transform: rotate(100deg);
--o-transform: rotate(100deg);
+-webkit-transform: rotate(280deg);
 }
 .vol-den .vol-switch label:nth-child(18) span {
 font-size: 21px;
--moz-transform: rotate(-90deg);
--webkit-transform: rotate(-90deg);
--o-transform: rotate(-90deg);
 }
 .vol-den .vol-switch label:nth-child(19) {
--moz-transform: rotate(110deg);
--webkit-transform: rotate(110deg);
--o-transform: rotate(110deg);
+-webkit-transform: rotate(290deg);
 }
 .vol-den .vol-switch label:nth-child(19) span {
 font-size: 22px;
--moz-transform: rotate(-90deg);
--webkit-transform: rotate(-90deg);
--o-transform: rotate(-90deg);
 }
 .vol-den .vol-switch label:nth-child(20) {
--moz-transform: rotate(120deg);
--webkit-transform: rotate(120deg);
--o-transform: rotate(120deg);
+-webkit-transform: rotate(300deg);
 }
 .vol-den .vol-switch label:nth-child(20) span {
 font-size: 22px;
--moz-transform: rotate(-90deg);
--webkit-transform: rotate(-90deg);
--o-transform: rotate(-90deg);
 }
 .vol-den .vol-switch label:nth-child(21) {
--moz-transform: rotate(130deg);
--webkit-transform: rotate(130deg);
--o-transform: rotate(130deg);
+-webkit-transform: rotate(310deg);
 }
 .vol-den .vol-switch label:nth-child(21) span {
 font-size: 22px;
--moz-transform: rotate(-90deg);
--webkit-transform: rotate(-90deg);
--o-transform: rotate(-90deg);
 }
 .vol-den .vol-switch label:nth-child(22) {
--moz-transform: rotate(140deg);
--webkit-transform: rotate(140deg);
--o-transform: rotate(140deg);
+-webkit-transform: rotate(320deg);
 }
 .vol-den .vol-switch label:nth-child(22) span {
 font-size: 23px;
--moz-transform: rotate(-90deg);
--webkit-transform: rotate(-90deg);
--o-transform: rotate(-90deg);
 }
 .vol-den .vol-switch label:nth-child(23) {
--moz-transform: rotate(150deg);
--webkit-transform: rotate(150deg);
--o-transform: rotate(150deg);
+-webkit-transform: rotate(330deg);
 }
 .vol-den .vol-switch label:nth-child(23) span {
 font-size: 23px;
--moz-transform: rotate(-90deg);
--webkit-transform: rotate(-90deg);
--o-transform: rotate(-90deg);
 }
 .vol-den .vol-switch label:nth-child(24) {
--moz-transform: rotate(160deg);
--webkit-transform: rotate(160deg);
--o-transform: rotate(160deg);
+-webkit-transform: rotate(340deg);
 }
 .vol-den .vol-switch label:nth-child(24) span {
 font-size: 24px;
--moz-transform: rotate(-90deg);
--webkit-transform: rotate(-90deg);
--o-transform: rotate(-90deg);
 }
 .vol-den .vol-switch label:nth-child(25) {
--moz-transform: rotate(170deg);
--webkit-transform: rotate(170deg);
--o-transform: rotate(170deg);
+-webkit-transform: rotate(350deg);
 }
 .vol-den .vol-switch label:nth-child(25) span {
 font-size: 25px;
--moz-transform: rotate(-90deg);
--webkit-transform: rotate(-90deg);
--o-transform: rotate(-90deg);
 }
 .vol-den .vol-switch label:nth-child(26) {
--moz-transform: rotate(180deg);
--webkit-transform: rotate(180deg);
--o-transform: rotate(180deg);
+-webkit-transform: rotate(0deg);
 }
 .vol-den .vol-switch label:nth-child(26) span {
 font-size: 24px;
--moz-transform: rotate(-90deg);
--webkit-transform: rotate(-90deg);
--o-transform: rotate(-90deg);
 }
 .vol-den .vol-switch label:nth-child(27) {
--moz-transform: rotate(190deg);
--webkit-transform: rotate(190deg);
--o-transform: rotate(190deg);
+-webkit-transform: rotate(10deg);
 }
 .vol-den .vol-switch label:nth-child(27) span {
 font-size: 25px;
--moz-transform: rotate(-90deg);
--webkit-transform: rotate(-90deg);
--o-transform: rotate(-90deg);
 }
 .vol-den .vol-switch label:nth-child(28) {
--moz-transform: rotate(200deg);
--webkit-transform: rotate(200deg);
--o-transform: rotate(200deg);
+-webkit-transform: rotate(20deg);
 }
 .vol-den .vol-switch label:nth-child(28) span {
 font-size: 26px;
--moz-transform: rotate(-90deg);
--webkit-transform: rotate(-90deg);
--o-transform: rotate(-90deg);
 }
 .vol-den .vol-switch label:nth-child(29) {
--moz-transform: rotate(210deg);
--webkit-transform: rotate(210deg);
--o-transform: rotate(210deg);
+-webkit-transform: rotate(30deg);
 }
 .vol-den .vol-switch label:nth-child(29) span {
 font-size: 27px;
--moz-transform: rotate(-90deg);
--webkit-transform: rotate(-90deg);
--o-transform: rotate(-90deg);
 }
 .vol-den .vol-switch label:nth-child(30) {
--moz-transform: rotate(220deg);
--webkit-transform: rotate(220deg);
--o-transform: rotate(220deg);
+-webkit-transform: rotate(40deg);
 }
 .vol-den .vol-switch label:nth-child(30) span {
 font-size: 28px;
--moz-transform: rotate(-90deg);
--webkit-transform: rotate(-90deg);
--o-transform: rotate(-90deg);
 }
 .vol-den .vol-switch label:nth-child(31) {
--moz-transform: rotate(230deg);
--webkit-transform: rotate(230deg);
--o-transform: rotate(230deg);
+-webkit-transform: rotate(50deg);
 }
 .vol-den .vol-switch label:nth-child(31) span {
 font-size: 29px;
--moz-transform: rotate(-90deg);
--webkit-transform: rotate(-90deg);
--o-transform: rotate(-90deg);
 }
 .vol-den .vol-switch label:nth-child(32) {
--moz-transform: rotate(240deg);
--webkit-transform: rotate(240deg);
--o-transform: rotate(240deg);
+-webkit-transform: rotate(60deg);
 }
 .vol-den .vol-switch label:nth-child(32) span {
 font-size: 30px;
--moz-transform: rotate(-90deg);
--webkit-transform: rotate(-90deg);
--o-transform: rotate(-90deg);
 }
 
 .vol-den .vol-switch input {
@@ -609,15 +352,9 @@ z-index: 1;
 width: 50%;
 height: 100px;
 margin-top: -50px;
--moz-transform-origin: 0% 50%;
 -webkit-transform-origin: 0% 50%;
--o-transform-origin: 0% 50%;
--moz-transform: rotate(-90deg);
 -webkit-transform: rotate(-90deg);
--o-transform: rotate(-90deg);
 -webkit-transition: all 1s;
--moz-transition: all 1s;
--o-transition: all 1s;
 }
 
 .vol-den .vol-light span {
@@ -627,204 +364,138 @@ top: 0;
 left: 15px;
 width: 100px;
 height: 100px;
-background: -moz-radial-gradient(center, ellipse cover, rgba(184, 163, 204, 1) 0%, rgba(159, 197, 224, 0.42) 42%, rgba(111, 113, 179, 0) 72%, rgba(67, 34, 137, 0) 100%);
 background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, rgba(184, 163, 204, 1)), color-stop(42%, rgba(159, 197, 224, 0.42)), color-stop(72%, rgba(111, 113, 179, 0)), color-stop(100%, rgba(67, 34, 137, 0)));
 background: -webkit-radial-gradient(center, ellipse cover, rgba(184, 163, 204, 1) 0%, rgba(159, 197, 224, 0.42) 42%, rgba(111, 113, 179, 0) 72%, rgba(67, 34, 137, 0) 100%);
-background: -o-radial-gradient(center, ellipse cover, rgba(184, 163, 204, 1) 0%, rgba(159, 197, 224, 0.42) 42%, rgba(111, 113, 179, 0) 72%, rgba(67, 34, 137, 0) 100%);
 }
 
 /* SWITCH LIGHT POSITION */
 
 .vol-den #switch_mute:checked ~ .vol-light {
--moz-transform: rotate(-90deg);
--webkit-transform: rotate(-90deg);
--o-transform: rotate(-90deg);
+-webkit-transform: rotate(-270deg);
 }
 
 .vol-den #switch_1:checked ~ .vol-light {
--moz-transform: rotate(-80deg);
--webkit-transform: rotate(-80deg);
--o-transform: rotate(-80deg);
+-webkit-transform: rotate(-240deg);
 }
 
 .vol-den #switch_2:checked ~ .vol-light {
--moz-transform: rotate(-50deg);
--webkit-transform: rotate(-50deg);
--o-transform: rotate(-50deg);
+-webkit-transform: rotate(-230deg);
 }
 
 .vol-den #switch_3:checked ~ .vol-light {
--moz-transform: rotate(-40deg);
--webkit-transform: rotate(-40deg);
--o-transform: rotate(-40deg);
+-webkit-transform: rotate(-220deg);
 }
 
 .vol-den #switch_4:checked ~ .vol-light {
--moz-transform: rotate(-30deg);
--webkit-transform: rotate(-30deg);
--o-transform: rotate(-30deg);
+-webkit-transform: rotate(-210deg);
 }
 
 .vol-den #switch_5:checked ~ .vol-light {
--moz-transform: rotate(-20deg);
--webkit-transform: rotate(-20deg);
--o-transform: rotate(-20deg);
+-webkit-transform: rotate(-200deg);
 }
 
 .vol-den #switch_6:checked ~ .vol-light {
--moz-transform: rotate(-10deg);
--webkit-transform: rotate(-10deg);
--o-transform: rotate(-10deg);
+-webkit-transform: rotate(-190deg);
 }
 
 .vol-den #switch_7:checked ~ .vol-light {
--moz-transform: rotate(0deg);
--webkit-transform: rotate(0deg);
--o-transform: rotate(0deg);
+-webkit-transform: rotate(-180deg);
 }
 
 .vol-den #switch_8:checked ~ .vol-light {
--moz-transform: rotate(10deg);
--webkit-transform: rotate(10deg);
--o-transform: rotate(10deg);
+-webkit-transform: rotate(-170deg);
 }
 
 .vol-den #switch_9:checked ~ .vol-light {
--moz-transform: rotate(20deg);
--webkit-transform: rotate(20deg);
--o-transform: rotate(20deg);
+-webkit-transform: rotate(-160deg);
 }
 
 .vol-den #switch_10:checked ~ .vol-light {
--moz-transform: rotate(30deg);
--webkit-transform: rotate(30deg);
--o-transform: rotate(30deg);
+-webkit-transform: rotate(-150deg);
 }
 
 .vol-den #switch_11:checked ~ .vol-light {
--moz-transform: rotate(40deg);
--webkit-transform: rotate(40deg);
--o-transform: rotate(40deg);
+-webkit-transform: rotate(-140deg);
 }
 
 .vol-den #switch_12:checked ~ .vol-light {
--moz-transform: rotate(50deg);
--webkit-transform: rotate(50deg);
--o-transform: rotate(50deg);
+-webkit-transform: rotate(-130deg);
 }
 
 .vol-den #switch_13:checked ~ .vol-light {
--moz-transform: rotate(60deg);
--webkit-transform: rotate(60deg);
--o-transform: rotate(60deg);
+-webkit-transform: rotate(-120deg);
 }
 
 .vol-den #switch_14:checked ~ .vol-light {
--moz-transform: rotate(70deg);
--webkit-transform: rotate(70deg);
--o-transform: rotate(70deg);
+-webkit-transform: rotate(-110deg);
 }
 
 .vol-den #switch_15:checked ~ .vol-light {
--moz-transform: rotate(80deg);
--webkit-transform: rotate(80deg);
--o-transform: rotate(80deg);
+-webkit-transform: rotate(-100deg);
 }
 
 .vol-den #switch_16:checked ~ .vol-light {
--moz-transform: rotate(90deg);
--webkit-transform: rotate(90deg);
--o-transform: rotate(90deg);
+-webkit-transform: rotate(-90deg);
 }
 
 .vol-den #switch_17:checked ~ .vol-light {
--moz-transform: rotate(100deg);
--webkit-transform: rotate(100deg);
--o-transform: rotate(100deg);
+-webkit-transform: rotate(-80deg);
 }
 
 .vol-den #switch_18:checked ~ .vol-light {
--moz-transform: rotate(110deg);
--webkit-transform: rotate(110deg);
--o-transform: rotate(110deg);
+-webkit-transform: rotate(-70deg);
 }
 
 .vol-den #switch_19:checked ~ .vol-light {
--moz-transform: rotate(120deg);
--webkit-transform: rotate(120deg);
--o-transform: rotate(120deg);
+-webkit-transform: rotate(-60deg);
 }
 
 .vol-den #switch_20:checked ~ .vol-light {
--moz-transform: rotate(130deg);
--webkit-transform: rotate(130deg);
--o-transform: rotate(130deg);
+-webkit-transform: rotate(-50deg);
 }
 
 .vol-den #switch_21:checked ~ .vol-light {
--moz-transform: rotate(140deg);
--webkit-transform: rotate(140deg);
--o-transform: rotate(140deg);
+-webkit-transform: rotate(-40deg);
 }
 
 .vol-den #switch_22:checked ~ .vol-light {
--moz-transform: rotate(150deg);
--webkit-transform: rotate(150deg);
--o-transform: rotate(150deg);
+-webkit-transform: rotate(-30deg);
 }
 
 .vol-den #switch_23:checked ~ .vol-light {
--moz-transform: rotate(160deg);
--webkit-transform: rotate(160deg);
--o-transform: rotate(160deg);
+-webkit-transform: rotate(-20deg);
 }
 
 .vol-den #switch_24:checked ~ .vol-light {
--moz-transform: rotate(170deg);
--webkit-transform: rotate(170deg);
--o-transform: rotate(170deg);
+-webkit-transform: rotate(-10deg);
 }
 
 .vol-den #switch_25:checked ~ .vol-light {
--moz-transform: rotate(180deg);
--webkit-transform: rotate(180deg);
--o-transform: rotate(180deg);
+-webkit-transform: rotate(0deg);
 }
 
 .vol-den #switch_26:checked ~ .vol-light {
--moz-transform: rotate(190deg);
--webkit-transform: rotate(190deg);
--o-transform: rotate(190deg);
+-webkit-transform: rotate(10deg);
 }
 
 .vol-den #switch_27:checked ~ .vol-light {
--moz-transform: rotate(200deg);
--webkit-transform: rotate(200deg);
--o-transform: rotate(200deg);
+-webkit-transform: rotate(20deg);
 }
 
 .vol-den #switch_28:checked ~ .vol-light {
--moz-transform: rotate(210deg);
--webkit-transform: rotate(210deg);
--o-transform: rotate(210deg);
+-webkit-transform: rotate(30deg);
 }
 
 .vol-den #switch_29:checked ~ .vol-light {
--moz-transform: rotate(220deg);
--webkit-transform: rotate(220deg);
--o-transform: rotate(220deg);
+-webkit-transform: rotate(40deg);
 }
 
 .vol-den #switch_30:checked ~ .vol-light {
--moz-transform: rotate(230deg);
--webkit-transform: rotate(230deg);
--o-transform: rotate(230deg);
+-webkit-transform: rotate(50deg);
 }
 
 .vol-den #switch_31:checked ~ .vol-light {
--moz-transform: rotate(240deg);
--webkit-transform: rotate(240deg);
--o-transform: rotate(240deg);
+-webkit-transform: rotate(60deg);
 }
 
 
@@ -835,14 +506,9 @@ z-index: 6;
 width: 50%;
 height: 12px;
 margin-top: -6px;
--moz-transform-origin: 0% 50%;
 -webkit-transform-origin: 0% 50%;
--o-transform-origin: 0% 50%;
 -webkit-transition: all 1s;
--moz-transition: all 1s;
--o-transition: all 1s;
 }
-
 .vol-den .vol-dot span {
 position: absolute;
 top: 0;
@@ -851,427 +517,297 @@ width: 12px;
 height: 12px;
 border-radius: 100%;
 background: #dae2e4;
-background: -moz-linear-gradient(top, #dae2e4 0%, #ecf5f4 100%);
 background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #dae2e4), color-stop(100%, #ecf5f4));
 background: -webkit-linear-gradient(top, #dae2e4 0%, #ecf5f4 100%);
-background: -o-linear-gradient(top, #dae2e4 0%, #ecf5f4 100%);
 }
 
 /* SWITCH LIGHT DOT POSITION */
 
 .vol-den #switch_mute:checked ~ .vol-dot {
--moz-transform: rotate(-90deg);
--webkit-transform: rotate(-90deg);
--o-transform: rotate(-90deg);
+-webkit-transform: rotate(-270deg);
 }
 
 .vol-den #switch_mute:checked ~ .vol-dot span {
--moz-transform: rotate(90deg);
--webkit-transform: rotate(90deg);
--o-transform: rotate(90deg);
+-webkit-transform: rotate(-180deg);
 }
 
 .vol-den #switch_1:checked ~ .vol-dot {
--moz-transform: rotate(-80deg);
--webkit-transform: rotate(-80deg);
--o-transform: rotate(-80deg);
+-webkit-transform: rotate(-240deg);
 }
 
 .vol-den #switch_1:checked ~ .vol-dot span {
 opacity: .9;
--moz-transform: rotate(60deg);
 -webkit-transform: rotate(60deg);
--o-transform: rotate(60deg);
 }
 
 .vol-den #switch_2:checked ~ .vol-dot {
--moz-transform: rotate(-70deg);
--webkit-transform: rotate(-70deg);
--o-transform: rotate(-70deg);
+-webkit-transform: rotate(-230deg);
 }
 
 .vol-den #switch_2:checked ~ .vol-dot span {
 opacity: .5;
--moz-transform: rotate(50deg);
 -webkit-transform: rotate(50deg);
--o-transform: rotate(50deg);
 }
 
 .vol-den #switch_3:checked ~ .vol-dot {
--moz-transform: rotate(-60deg);
--webkit-transform: rotate(-60deg);
--o-transform: rotate(-60deg);
+-webkit-transform: rotate(-220deg);
 }
 
 .vol-den #switch_3:checked ~ .vol-dot span {
 opacity: .4;
--moz-transform: rotate(40deg);
 -webkit-transform: rotate(40deg);
--o-transform: rotate(40deg);
 }
 
 .vol-den #switch_4:checked ~ .vol-dot {
--moz-transform: rotate(-50deg);
--webkit-transform: rotate(-50deg);
--o-transform: rotate(-50deg);
+-webkit-transform: rotate(-210deg);
 }
 
 .vol-den #switch_4:checked ~ .vol-dot span {
 opacity: .5;
--moz-transform: rotate(30deg);
 -webkit-transform: rotate(30deg);
--o-transform: rotate(30deg);
 }
 
 .vol-den #switch_5:checked ~ .vol-dot {
--moz-transform: rotate(-40deg);
--webkit-transform: rotate(-40deg);
--o-transform: rotate(-40deg);
+-webkit-transform: rotate(-200deg);
 }
 
 .vol-den #switch_5:checked ~ .vol-dot span {
 opacity: .9;
--moz-transform: rotate(20deg);
 -webkit-transform: rotate(20deg);
--o-transform: rotate(20deg);
 }
 
 .vol-den #switch_6:checked ~ .vol-dot {
--moz-transform: rotate(-30deg);
--webkit-transform: rotate(-30deg);
--o-transform: rotate(-30deg);
+-webkit-transform: rotate(-190deg);
 }
 
 .vol-den #switch_6:checked ~ .vol-dot span {
 opacity: .9;
--moz-transform: rotate(10deg);
 -webkit-transform: rotate(10deg);
--o-transform: rotate(10deg);
 }
 
 .vol-den #switch_7:checked ~ .vol-dot {
--moz-transform: rotate(0deg);
--webkit-transform: rotate(0deg);
--o-transform: rotate(0deg);
+-webkit-transform: rotate(-180deg);
 }
 
 .vol-den #switch_7:checked ~ .vol-dot span {
 opacity: .5;
--moz-transform: rotate(0deg);
 -webkit-transform: rotate(0deg);
--o-transform: rotate(0deg);
 }
 
 .vol-den #switch_8:checked ~ .vol-dot {
--moz-transform: rotate(10deg);
--webkit-transform: rotate(10deg);
--o-transform: rotate(10deg);
+-webkit-transform: rotate(-170deg);
 }
 
 .vol-den #switch_8:checked ~ .vol-dot span {
 opacity: .9;
--moz-transform: rotate(-10deg);
 -webkit-transform: rotate(-10deg);
--o-transform: rotate(-10deg);
 }
 
 .vol-den #switch_9:checked ~ .vol-dot {
--moz-transform: rotate(20deg);
--webkit-transform: rotate(20deg);
--o-transform: rotate(20deg);
+-webkit-transform: rotate(-160deg);
 }
 
 .vol-den #switch_9:checked ~ .vol-dot span {
 opacity: .9;
--moz-transform: rotate(-20deg);
 -webkit-transform: rotate(-20deg);
--o-transform: rotate(-20deg);
 }
 
 .vol-den #switch_10:checked ~ .vol-dot {
--moz-transform: rotate(30deg);
--webkit-transform: rotate(30deg);
--o-transform: rotate(30deg);
+-webkit-transform: rotate(-150deg);
 }
 
 .vol-den #switch_10:checked ~ .vol-dot span {
 opacity: .9;
--moz-transform: rotate(-30deg);
 -webkit-transform: rotate(-30deg);
--o-transform: rotate(-30deg);
 }
 
 .vol-den #switch_11:checked ~ .vol-dot {
--moz-transform: rotate(40deg);
--webkit-transform: rotate(40deg);
--o-transform: rotate(40deg);
+-webkit-transform: rotate(-140deg);
 }
 
 .vol-den #switch_11:checked ~ .vol-dot span {
 opacity: .9;
--moz-transform: rotate(-40deg);
 -webkit-transform: rotate(-40deg);
--o-transform: rotate(-40deg);
 }
 
 .vol-den #switch_12:checked ~ .vol-dot {
--moz-transform: rotate(50deg);
--webkit-transform: rotate(50deg);
--o-transform: rotate(50deg);
+-webkit-transform: rotate(-130deg);
 }
 
 .vol-den #switch_12:checked ~ .vol-dot span {
 opacity: .9;
--moz-transform: rotate(-50deg);
 -webkit-transform: rotate(-50deg);
--o-transform: rotate(-50deg);
 }
 
 .vol-den #switch_13:checked ~ .vol-dot {
--moz-transform: rotate(60deg);
--webkit-transform: rotate(60deg);
--o-transform: rotate(60deg);
+-webkit-transform: rotate(-120deg);
 }
 
 .vol-den #switch_13:checked ~ .vol-dot span {
 opacity: .9;
--moz-transform: rotate(-60deg);
 -webkit-transform: rotate(-60deg);
--o-transform: rotate(-60deg);
 }
 
 .vol-den #switch_14:checked ~ .vol-dot {
--moz-transform: rotate(70deg);
--webkit-transform: rotate(70deg);
--o-transform: rotate(70deg);
+-webkit-transform: rotate(-110deg);
 }
 
 .vol-den #switch_14:checked ~ .vol-dot span {
 opacity: .9;
--moz-transform: rotate(-70deg);
 -webkit-transform: rotate(-70deg);
--o-transform: rotate(-70deg);
 }
 
 .vol-den #switch_15:checked ~ .vol-dot {
--moz-transform: rotate(80deg);
--webkit-transform: rotate(80deg);
--o-transform: rotate(80deg);
+-webkit-transform: rotate(-100deg);
 }
 
 .vol-den #switch_15:checked ~ .vol-dot span {
 opacity: .9;
--moz-transform: rotate(-80deg);
 -webkit-transform: rotate(-80deg);
--o-transform: rotate(-80deg);
 }
 
 .vol-den #switch_16:checked ~ .vol-dot {
--moz-transform: rotate(90deg);
--webkit-transform: rotate(90deg);
--o-transform: rotate(90deg);
+-webkit-transform: rotate(-90deg);
 }
 
 .vol-den #switch_16:checked ~ .vol-dot span {
 opacity: .9;
--moz-transform: rotate(-90deg);
 -webkit-transform: rotate(-90deg);
--o-transform: rotate(-90deg);
 }
 
 .vol-den #switch_17:checked ~ .vol-dot {
--moz-transform: rotate(100deg);
--webkit-transform: rotate(100deg);
--o-transform: rotate(100deg);
+-webkit-transform: rotate(-80deg);
 }
 
 .vol-den #switch_17:checked ~ .vol-dot span {
 opacity: .9;
--moz-transform: rotate(-100deg);
 -webkit-transform: rotate(-100deg);
--o-transform: rotate(-100deg);
 }
 
 .vol-den #switch_18:checked ~ .vol-dot {
--moz-transform: rotate(110deg);
--webkit-transform: rotate(110deg);
--o-transform: rotate(110deg);
+-webkit-transform: rotate(-70deg);
 }
 
 .vol-den #switch_18:checked ~ .vol-dot span {
 opacity: .9;
--moz-transform: rotate(-110deg);
 -webkit-transform: rotate(-110deg);
--o-transform: rotate(-110deg);
 }
 
 .vol-den #switch_19:checked ~ .vol-dot {
--moz-transform: rotate(120deg);
--webkit-transform: rotate(120deg);
--o-transform: rotate(120deg);
+-webkit-transform: rotate(-60deg);
 }
 
 .vol-den #switch_19:checked ~ .vol-dot span {
 opacity: .9;
--moz-transform: rotate(-120deg);
 -webkit-transform: rotate(-120deg);
--o-transform: rotate(-120deg);
 }
 
 .vol-den #switch_20:checked ~ .vol-dot {
--moz-transform: rotate(130deg);
--webkit-transform: rotate(130deg);
--o-transform: rotate(130deg);
+-webkit-transform: rotate(-50deg);
 }
 
 .vol-den #switch_20:checked ~ .vol-dot span {
 opacity: .9;
--moz-transform: rotate(-130deg);
 -webkit-transform: rotate(-130deg);
--o-transform: rotate(-130deg);
 }
 
 .vol-den #switch_21:checked ~ .vol-dot {
--moz-transform: rotate(140deg);
--webkit-transform: rotate(140deg);
--o-transform: rotate(140deg);
+-webkit-transform: rotate(-40deg);
 }
 
 .vol-den #switch_21:checked ~ .vol-dot span {
 opacity: .9;
--moz-transform: rotate(-140deg);
 -webkit-transform: rotate(-140deg);
--o-transform: rotate(-140deg);
 }
 
 .vol-den #switch_22:checked ~ .vol-dot {
--moz-transform: rotate(150deg);
--webkit-transform: rotate(150deg);
--o-transform: rotate(150deg);
+-webkit-transform: rotate(-30deg);
 }
 
 .vol-den #switch_22:checked ~ .vol-dot span {
 opacity: .9;
--moz-transform: rotate(-150deg);
 -webkit-transform: rotate(-150deg);
--o-transform: rotate(-150deg);
 }
 
 .vol-den #switch_23:checked ~ .vol-dot {
--moz-transform: rotate(160deg);
--webkit-transform: rotate(160deg);
--o-transform: rotate(160deg);
+-webkit-transform: rotate(-20deg);
 }
 
 .vol-den #switch_23:checked ~ .vol-dot span {
 opacity: .9;
--moz-transform: rotate(-160deg);
 -webkit-transform: rotate(-160deg);
--o-transform: rotate(-160deg);
 }
 
 .vol-den #switch_24:checked ~ .vol-dot {
--moz-transform: rotate(170deg);
--webkit-transform: rotate(170deg);
--o-transform: rotate(170deg);
+-webkit-transform: rotate(-10deg);
 }
 
 .vol-den #switch_24:checked ~ .vol-dot span {
 opacity: .9;
--moz-transform: rotate(-170deg);
 -webkit-transform: rotate(-170deg);
--o-transform: rotate(-170deg);
 }
 
 .vol-den #switch_25:checked ~ .vol-dot {
--moz-transform: rotate(180deg);
--webkit-transform: rotate(180deg);
--o-transform: rotate(180deg);
+-webkit-transform: rotate(0deg);
 }
 
 .vol-den #switch_25:checked ~ .vol-dot span {
 opacity: .9;
--moz-transform: rotate(-180deg);
 -webkit-transform: rotate(-180deg);
--o-transform: rotate(-180deg);
 }
 
 .vol-den #switch_26:checked ~ .vol-dot {
--moz-transform: rotate(190deg);
--webkit-transform: rotate(190deg);
--o-transform: rotate(190deg);
+-webkit-transform: rotate(10deg);
 }
 
 .vol-den #switch_26:checked ~ .vol-dot span {
 opacity: .9;
--moz-transform: rotate(-190deg);
 -webkit-transform: rotate(-190deg);
--o-transform: rotate(-190deg);
 }
 
 .vol-den #switch_27:checked ~ .vol-dot {
--moz-transform: rotate(200deg);
--webkit-transform: rotate(200deg);
--o-transform: rotate(200deg);
+-webkit-transform: rotate(20deg);
 }
 
 .vol-den #switch_27:checked ~ .vol-dot span {
 opacity: .9;
--moz-transform: rotate(-200deg);
 -webkit-transform: rotate(-200deg);
--o-transform: rotate(-200deg);
 }
 
 .vol-den #switch_28:checked ~ .vol-dot {
--moz-transform: rotate(210deg);
--webkit-transform: rotate(210deg);
--o-transform: rotate(210deg);
+-webkit-transform: rotate(30deg);
 }
 
 .vol-den #switch_28:checked ~ .vol-dot span {
 opacity: .9;
--moz-transform: rotate(-210deg);
 -webkit-transform: rotate(-210deg);
--o-transform: rotate(-210deg);
 }
 
 .vol-den #switch_29:checked ~ .vol-dot {
--moz-transform: rotate(220deg);
--webkit-transform: rotate(220deg);
--o-transform: rotate(220deg);
+-webkit-transform: rotate(40deg);
 }
 
 .vol-den #switch_29:checked ~ .vol-dot span {
 opacity: .9;
--moz-transform: rotate(-220deg);
 -webkit-transform: rotate(-220deg);
--o-transform: rotate(-220deg);
 }
 
 .vol-den #switch_30:checked ~ .vol-dot {
--moz-transform: rotate(230deg);
--webkit-transform: rotate(230deg);
--o-transform: rotate(230deg);
+-webkit-transform: rotate(50deg);
 }
 
 .vol-den #switch_30:checked ~ .vol-dot span {
 opacity: .9;
--moz-transform: rotate(-230deg);
 -webkit-transform: rotate(-230deg);
--o-transform: rotate(-230deg);
 }
 
 .vol-den #switch_31:checked ~ .vol-dot {
--moz-transform: rotate(240deg);
--webkit-transform: rotate(240deg);
--o-transform: rotate(240deg);
+-webkit-transform: rotate(60deg);
 }
 
 .vol-den #switch_31:checked ~ .vol-dot span {
 opacity: .9;
--moz-transform: rotate(-240deg);
 -webkit-transform: rotate(-240deg);
--o-transform: rotate(-240deg);
 }
 
 /* VOLUME LINES COLORING */
@@ -1299,13 +835,16 @@ border-bottom-color: #666769;
 }
 
 .vol-den hr.vol-line:nth-child(1) {
--moz-transform: rotate(-60deg);
 -webkit-transform: rotate(-60deg);
--o-transform: rotate(-60deg);
 }
 
 .vol-den hr.vol-line:nth-child(2) {
--moz-transform: rotate(60deg);
 -webkit-transform: rotate(60deg);
--o-transform: rotate(60deg);
+}
+
+
+/* COLOR CHANGES WHEN MUTED */
+.red-shadow {
+  box-shadow: inset 0 3px 10px rgba(78, 78, 78, 0.6),
+                    0 2px 20px rgba(255, 0, 0, 1);
 }
