@@ -174,3 +174,13 @@ $(".out-nav-tab a").on("click", function(e) {
   e.preventDefault();
   $(this).tab("show");
 });
+
+/* TURNS OUTLINE OF KNOB WHEN MUTED */
+$("#switch_mute").on("click", function() {
+  if ($(this).is(':checked')) {
+    $("#vol-den").addClass("red-shadow");
+  }
+  else {
+    $("#vol-den").removeClass("red-shadow");
+  }
+});
