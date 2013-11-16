@@ -370,35 +370,35 @@ background: -webkit-radial-gradient(center, ellipse cover, rgba(184, 163, 204, 1
 /* SWITCH LIGHT POSITION */
 
 .vol-den #switch_mute:checked ~ .vol-light {
--webkit-transform: rotate(90deg);
+-webkit-transform: rotate(-270deg);
 }
 
 .vol-den #switch_1:checked ~ .vol-light {
--webkit-transform: rotate(120deg);
+-webkit-transform: rotate(-240deg);
 }
 
 .vol-den #switch_2:checked ~ .vol-light {
--webkit-transform: rotate(1300deg);
+-webkit-transform: rotate(-230deg);
 }
 
 .vol-den #switch_3:checked ~ .vol-light {
--webkit-transform: rotate(140deg);
+-webkit-transform: rotate(-220deg);
 }
 
 .vol-den #switch_4:checked ~ .vol-light {
--webkit-transform: rotate(150deg);
+-webkit-transform: rotate(-210deg);
 }
 
 .vol-den #switch_5:checked ~ .vol-light {
--webkit-transform: rotate(160deg);
+-webkit-transform: rotate(-200deg);
 }
 
 .vol-den #switch_6:checked ~ .vol-light {
--webkit-transform: rotate(170deg);
+-webkit-transform: rotate(-190deg);
 }
 
 .vol-den #switch_7:checked ~ .vol-light {
--webkit-transform: rotate(180deg);
+-webkit-transform: rotate(-180deg);
 }
 
 .vol-den #switch_8:checked ~ .vol-light {
@@ -523,15 +523,15 @@ background: -webkit-linear-gradient(top, #dae2e4 0%, #ecf5f4 100%);
 /* SWITCH LIGHT DOT POSITION */
 
 .vol-den #switch_mute:checked ~ .vol-dot {
--webkit-transform: rotate(180deg);
+-webkit-transform: rotate(-270deg);
 }
 
 .vol-den #switch_mute:checked ~ .vol-dot span {
--webkit-transform: rotate(90deg);
+-webkit-transform: rotate(-180deg);
 }
 
 .vol-den #switch_1:checked ~ .vol-dot {
--webkit-transform: rotate(-80deg);
+-webkit-transform: rotate(-240deg);
 }
 
 .vol-den #switch_1:checked ~ .vol-dot span {
@@ -540,7 +540,7 @@ opacity: .9;
 }
 
 .vol-den #switch_2:checked ~ .vol-dot {
--webkit-transform: rotate(-70deg);
+-webkit-transform: rotate(-230deg);
 }
 
 .vol-den #switch_2:checked ~ .vol-dot span {
@@ -549,7 +549,7 @@ opacity: .5;
 }
 
 .vol-den #switch_3:checked ~ .vol-dot {
--webkit-transform: rotate(-60deg);
+-webkit-transform: rotate(-220deg);
 }
 
 .vol-den #switch_3:checked ~ .vol-dot span {
@@ -558,7 +558,7 @@ opacity: .4;
 }
 
 .vol-den #switch_4:checked ~ .vol-dot {
--webkit-transform: rotate(-50deg);
+-webkit-transform: rotate(-210deg);
 }
 
 .vol-den #switch_4:checked ~ .vol-dot span {
@@ -567,7 +567,7 @@ opacity: .5;
 }
 
 .vol-den #switch_5:checked ~ .vol-dot {
--webkit-transform: rotate(-40deg);
+-webkit-transform: rotate(-200deg);
 }
 
 .vol-den #switch_5:checked ~ .vol-dot span {
@@ -576,7 +576,7 @@ opacity: .9;
 }
 
 .vol-den #switch_6:checked ~ .vol-dot {
--webkit-transform: rotate(-30deg);
+-webkit-transform: rotate(-190deg);
 }
 
 .vol-den #switch_6:checked ~ .vol-dot span {
@@ -585,7 +585,7 @@ opacity: .9;
 }
 
 .vol-den #switch_7:checked ~ .vol-dot {
--webkit-transform: rotate(0deg);
+-webkit-transform: rotate(-180deg);
 }
 
 .vol-den #switch_7:checked ~ .vol-dot span {
@@ -594,7 +594,7 @@ opacity: .5;
 }
 
 .vol-den #switch_8:checked ~ .vol-dot {
--webkit-transform: rotate(10deg);
+-webkit-transform: rotate(-170deg);
 }
 
 .vol-den #switch_8:checked ~ .vol-dot span {
@@ -603,7 +603,7 @@ opacity: .9;
 }
 
 .vol-den #switch_9:checked ~ .vol-dot {
--webkit-transform: rotate(20deg);
+-webkit-transform: rotate(-160deg);
 }
 
 .vol-den #switch_9:checked ~ .vol-dot span {
@@ -612,7 +612,7 @@ opacity: .9;
 }
 
 .vol-den #switch_10:checked ~ .vol-dot {
--webkit-transform: rotate(30deg);
+-webkit-transform: rotate(-150deg);
 }
 
 .vol-den #switch_10:checked ~ .vol-dot span {
@@ -621,7 +621,7 @@ opacity: .9;
 }
 
 .vol-den #switch_11:checked ~ .vol-dot {
--webkit-transform: rotate(40deg);
+-webkit-transform: rotate(-140deg);
 }
 
 .vol-den #switch_11:checked ~ .vol-dot span {
@@ -630,7 +630,7 @@ opacity: .9;
 }
 
 .vol-den #switch_12:checked ~ .vol-dot {
--webkit-transform: rotate(50deg);
+-webkit-transform: rotate(-130deg);
 }
 
 .vol-den #switch_12:checked ~ .vol-dot span {
@@ -639,7 +639,7 @@ opacity: .9;
 }
 
 .vol-den #switch_13:checked ~ .vol-dot {
--webkit-transform: rotate(60deg);
+-webkit-transform: rotate(-120deg);
 }
 
 .vol-den #switch_13:checked ~ .vol-dot span {
@@ -648,7 +648,7 @@ opacity: .9;
 }
 
 .vol-den #switch_14:checked ~ .vol-dot {
--webkit-transform: rotate(70deg);
+-webkit-transform: rotate(-110deg);
 }
 
 .vol-den #switch_14:checked ~ .vol-dot span {
@@ -657,7 +657,7 @@ opacity: .9;
 }
 
 .vol-den #switch_15:checked ~ .vol-dot {
--webkit-transform: rotate(80deg);
+-webkit-transform: rotate(-100deg);
 }
 
 .vol-den #switch_15:checked ~ .vol-dot span {
@@ -666,7 +666,7 @@ opacity: .9;
 }
 
 .vol-den #switch_16:checked ~ .vol-dot {
--webkit-transform: rotate(90deg);
+-webkit-transform: rotate(-90deg);
 }
 
 .vol-den #switch_16:checked ~ .vol-dot span {
@@ -675,7 +675,7 @@ opacity: .9;
 }
 
 .vol-den #switch_17:checked ~ .vol-dot {
--webkit-transform: rotate(100deg);
+-webkit-transform: rotate(-80deg);
 }
 
 .vol-den #switch_17:checked ~ .vol-dot span {
@@ -684,7 +684,7 @@ opacity: .9;
 }
 
 .vol-den #switch_18:checked ~ .vol-dot {
--webkit-transform: rotate(110deg);
+-webkit-transform: rotate(-70deg);
 }
 
 .vol-den #switch_18:checked ~ .vol-dot span {
@@ -693,7 +693,7 @@ opacity: .9;
 }
 
 .vol-den #switch_19:checked ~ .vol-dot {
--webkit-transform: rotate(120deg);
+-webkit-transform: rotate(-60deg);
 }
 
 .vol-den #switch_19:checked ~ .vol-dot span {
@@ -702,7 +702,7 @@ opacity: .9;
 }
 
 .vol-den #switch_20:checked ~ .vol-dot {
--webkit-transform: rotate(130deg);
+-webkit-transform: rotate(-50deg);
 }
 
 .vol-den #switch_20:checked ~ .vol-dot span {
@@ -711,7 +711,7 @@ opacity: .9;
 }
 
 .vol-den #switch_21:checked ~ .vol-dot {
--webkit-transform: rotate(140deg);
+-webkit-transform: rotate(-40deg);
 }
 
 .vol-den #switch_21:checked ~ .vol-dot span {
@@ -720,7 +720,7 @@ opacity: .9;
 }
 
 .vol-den #switch_22:checked ~ .vol-dot {
--webkit-transform: rotate(150deg);
+-webkit-transform: rotate(-30deg);
 }
 
 .vol-den #switch_22:checked ~ .vol-dot span {
@@ -729,7 +729,7 @@ opacity: .9;
 }
 
 .vol-den #switch_23:checked ~ .vol-dot {
--webkit-transform: rotate(160deg);
+-webkit-transform: rotate(-20deg);
 }
 
 .vol-den #switch_23:checked ~ .vol-dot span {
@@ -738,7 +738,7 @@ opacity: .9;
 }
 
 .vol-den #switch_24:checked ~ .vol-dot {
--webkit-transform: rotate(170deg);
+-webkit-transform: rotate(-10deg);
 }
 
 .vol-den #switch_24:checked ~ .vol-dot span {
@@ -747,7 +747,7 @@ opacity: .9;
 }
 
 .vol-den #switch_25:checked ~ .vol-dot {
--webkit-transform: rotate(180deg);
+-webkit-transform: rotate(0deg);
 }
 
 .vol-den #switch_25:checked ~ .vol-dot span {
@@ -756,7 +756,7 @@ opacity: .9;
 }
 
 .vol-den #switch_26:checked ~ .vol-dot {
--webkit-transform: rotate(190deg);
+-webkit-transform: rotate(10deg);
 }
 
 .vol-den #switch_26:checked ~ .vol-dot span {
@@ -765,7 +765,7 @@ opacity: .9;
 }
 
 .vol-den #switch_27:checked ~ .vol-dot {
--webkit-transform: rotate(200deg);
+-webkit-transform: rotate(20deg);
 }
 
 .vol-den #switch_27:checked ~ .vol-dot span {
@@ -774,7 +774,7 @@ opacity: .9;
 }
 
 .vol-den #switch_28:checked ~ .vol-dot {
--webkit-transform: rotate(210deg);
+-webkit-transform: rotate(30deg);
 }
 
 .vol-den #switch_28:checked ~ .vol-dot span {
@@ -783,7 +783,7 @@ opacity: .9;
 }
 
 .vol-den #switch_29:checked ~ .vol-dot {
--webkit-transform: rotate(220deg);
+-webkit-transform: rotate(40deg);
 }
 
 .vol-den #switch_29:checked ~ .vol-dot span {
@@ -792,7 +792,7 @@ opacity: .9;
 }
 
 .vol-den #switch_30:checked ~ .vol-dot {
--webkit-transform: rotate(230deg);
+-webkit-transform: rotate(50deg);
 }
 
 .vol-den #switch_30:checked ~ .vol-dot span {
@@ -801,7 +801,7 @@ opacity: .9;
 }
 
 .vol-den #switch_31:checked ~ .vol-dot {
--webkit-transform: rotate(240deg);
+-webkit-transform: rotate(60deg);
 }
 
 .vol-den #switch_31:checked ~ .vol-dot span {
