@@ -173,10 +173,10 @@ $("#switch_mute").on("click", function() {
   }
   else {
     $("#vol-den").removeClass("red-shadow");
-    $(".switch_mute_label span").removeClass("vol-checked-muted");
+    $("#switch_mute_label span").removeClass("vol-checked-muted");
     $(".switch_label").each(function() {
       if ($(this).children("span").children("i").hasClass("vol-checked-muted")) {
-        $(this).children("span").children("i").removeClass("vol-checked-muted")
+        $(this).children("span").children("i").removeClass("vol-checked-muted");
       }
     });
   }
