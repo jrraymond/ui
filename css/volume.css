@@ -3,10 +3,16 @@
 
 /* SWITCH
 * --------------------------------------------- */
-
+#volume-knob {
+  position: absolute;
+  left: 0px;
+  top: 183px;
+  height: 297px;
+  width: 305px;
+}
 .vol-container {
   width: 230px;
-  margin: 40px auto 0;
+  margin: 30px auto 0;
 }
 
 .vol-container .vol-origin {
@@ -152,7 +158,8 @@ background: -webkit-linear-gradient(top, #eef7f6 0%, #8d989a 100%);
 }
 
 .vol-den .vol-switch label:nth-child(1) span {
-  right: -2px;
+  right: 0px;
+  width: 47px;
   font-size: 13px;
   -webkit-transform: rotate(270deg);
 }

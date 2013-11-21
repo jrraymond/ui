@@ -25,13 +25,14 @@ body {
 #control {
   height: 480px;
   width: 305px;
-  padding: 5px;
   float: left;
   background: #333333;
 }
 
 #info {
+  height: 183px;
   padding: 10px;
+  border-bottom: 1px solid #444444;
 }
 
 
