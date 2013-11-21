@@ -9,6 +9,9 @@
   padding: 0px;
   margin: 0px;
 }
+.row {
+  margin: 0px auto;
+}
 html, body {
   height:100%;
   width:100%;
@@ -55,9 +58,15 @@ body {
 
 #clock {
   font-family: "digitalfontmono";
-  color: #ffffff;
+  color: #000000;
   font-size: 58px;
   padding: 0px;
+  width: 280px;
+  height: 80px;
+  border-radius: 40px;
+  text-align: center;
+  background: -webkit-linear-gradient(bottom, #eef7f6 0%, #8d989a 100%);
+  box-shadow: inset 0 2px 3px rgba(255,255,255,0.13), 0 5px 8px rgba(0,0,0,0.3), 0 10px 10px 4px rgba(0,0,0,0.3);
 }
 #date {
   color: #ffffff;
