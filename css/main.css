@@ -283,6 +283,18 @@ body {
 }
 
 /* NAVIGATION BAR */
+.nav-tabs .nav-justified > .active > a {
+  border-bottom-color: #333333;
+}
+.nav-tabs .nav-justified > li > a {
+  border-bottom-color: #333333 !important;
+}
+.nav-tabs .nav-justified > li > a {
+  color: #ffffff;
+  background-color: #333333;
+  border: 0px;
+  border-bottom-color: none;
+}
 .out-nav {
   margin-top:5px;
   height: 90px;
@@ -295,6 +307,8 @@ body {
   color: #ffffff;
   text-decoration: none;
   font-family: 'Open Sans Condensed', sans-serif;
+  background: none;
+  border-bottom: none;
 }
 .out-tab-content {
   font-color: #ffffff;
