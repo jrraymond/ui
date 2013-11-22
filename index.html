@@ -31,15 +31,14 @@
         <!-- CMDR INFO -->
         <div id="info" class="container">
           <div class="row">
+            <div id="clock" class="col-xs-12"></div>
+          </div>
+          <div class="row">
             <div id="date" class="col-xs-8">
               <span id="month"></span><span id="day"></span><span id="daySuffix"></span>
             </div>
             <div id="location" class="col-xs-4">
               <p>Allbritton 004</p>
-            </div>
-          </div>
-          <div class="row">
-            <div id="clock" class="col-xs-12">
             </div>
           </div>
         </div>
@@ -149,12 +148,9 @@
 
 
       <div id="sources" class="container">
-        <ul class="nav nav-tabs nav-justified navbar-inverse out-nav">
-          <li class="active out-nav-tab"><a href="#projector-north">PROJECTOR NORTH</a></li>
-          <li class="out-nav-tab"><a href="#projector-west">PROJECTOR WEST</a></li>
-          <li class="out-nav-tab"><a href="#projector-narnia">PROJECTOR NARNIA</a></li>
-        </ul>
-        <div class="container">
+
+        <div class="container" id="out-group">
+
           <div class="out-group row">
             <div class="col-xs-6 out-info">
               <div class="tab-content">
@@ -205,9 +201,7 @@
               </div>
             </div>
           </div>
-        </div>
-
-        <div class="container">
+            
           <div class="row src-group">
             <div class="src src-custom">
               <input type="radio" name="source2">
@@ -265,8 +259,15 @@
               </label>
             </div>
           </div>
+
+          <ul class="nav nav-tabs nav-justified navbar-inverse out-nav">
+            <li class="active out-nav-tab"><a href="#projector-north">PROJECTOR NORTH</a></li>
+            <li class="out-nav-tab"><a href="#projector-west">PROJECTOR WEST</a></li>
+            <li class="out-nav-tab"><a href="#projector-narnia">PROJECTOR NARNIA</a></li>
+          </ul>
         </div>
       </div>
+
 
         <!--div id="output-1" class="output">
 

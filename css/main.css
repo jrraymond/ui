@@ -5,12 +5,10 @@
 .col-xs-1, .col-xs-2, .col-xs-3,
 .col-xs-4, .col-xs-5, .col-xs-6,
 .col-xs-7, .col-xs-8, .col-xs-9,
-.col-xs-10, .col-xs-11 {
+.col-xs-10, .col-xs-11, .container,
+.row {
   padding: 0px;
   margin: 0px;
-}
-.row {
-  margin: 0px auto;
 }
 html, body {
   height:100%;
@@ -272,6 +270,7 @@ body {
 /* NAVIGATION BAR */
 .out-nav {
   margin-top:5px;
+  height: 90px;
 }
 .out-nav-tab {
   width: 33%;
@@ -298,6 +297,20 @@ body {
   background: #333333;
   border-left: 1px solid #444444;
 }
+
+#out-group {
+  margin: 10px;
+  border-left: 5px solid #444444;
+  border-top: 5px solid #555555;
+  border-right: 5px solid #222222;
+  border-bottom: 5px solid #111111;
+}
+
+
+
+
+
+
 /*#sources:before {
   content: "";
   position: absolute;
