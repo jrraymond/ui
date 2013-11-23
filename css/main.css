@@ -283,35 +283,35 @@ body {
 }
 
 /* NAVIGATION BAR */
-.nav-tabs .nav-justified > .active > a {
-  border-bottom-color: #333333;
-}
-.nav-tabs .nav-justified > li > a {
-  border-bottom-color: #333333 !important;
-}
-.nav-tabs .nav-justified > li > a {
-  color: #ffffff;
-  background-color: #333333;
-  border: 0px;
-  border-bottom-color: none;
-}
 .out-nav {
+  width: 100%;
+  list-style: none;
   margin-top:5px;
   height: 90px;
 }
+.out-nav:before {
+  display: table;
+  content: "";
+}
+.out-nav:after {
+  clear: both;
+}
 .out-nav-tab {
+  display: table-cell;
+  float: none;
+  position: relative;
   width: 33%;
 }
 .out-nav-tab a {
-  font-color: #ffffff;
-  color: #ffffff;
+  text-align: center;
   text-decoration: none;
   font-family: 'Open Sans Condensed', sans-serif;
-  background: none;
-  border-bottom: none;
+  background-color: #333333;
+  line-height: 1.428571429;
+  display: block;
+  color: #ffffff;
 }
 .out-tab-content {
-  font-color: #ffffff;
   color: #ffffff;
 }
 
