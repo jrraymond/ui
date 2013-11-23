@@ -284,6 +284,7 @@ body {
 
 /* NAVIGATION BAR */
 .out-nav {
+  padding: 0px;
   width: 100%;
   list-style: none;
   margin-top:5px;
@@ -298,11 +299,11 @@ body {
 }
 .out-nav-tab {
   display: table-cell;
-  float: none;
+  float: left;
   position: relative;
   width: 33%;
 }
-.out-nav-tab a {
+.out-nav-tab > a {
   text-align: center;
   text-decoration: none;
   font-family: 'Open Sans Condensed', sans-serif;
@@ -310,9 +311,14 @@ body {
   line-height: 1.428571429;
   display: block;
   color: #ffffff;
+  font-size: 30px;
+  border-right: 1px solid #222222;
 }
-.out-tab-content {
-  color: #ffffff;
+.out-nav-tab > a > i {
+  margin-right: 10px;
+}
+.out-nav-tab > a > span {
+  font
 }
 
 #sources-border {
