@@ -216,6 +216,9 @@ body {
   padding-top: 10px;
   margin-left: 0px;
   margin-right: 0px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  padding-top: 20px;
   padding-left: 0px;
   padding-right: 0px;
   padding-left: 8px;
@@ -288,7 +291,7 @@ body {
   width: 100%;
   list-style: none;
   margin-top:5px;
-  height: 90px;
+  height: 60px;
 }
 .out-nav:before {
   display: table;
@@ -318,7 +321,11 @@ body {
   margin-right: 10px;
 }
 .out-nav-tab > a > span {
-  font
+}
+
+.out-group {
+  margin-top: 15px;
+  margin-bottom: 25px;
 }
 
 #sources-border {
@@ -333,11 +340,12 @@ body {
 }
 
 #out-group {
-  margin: 10px;
-  border-left: 5px solid #444444;
+  border-left: 10px solid #444444;
   border-top: 5px solid #555555;
   border-right: 5px solid #222222;
   border-bottom: 5px solid #111111;
+  height: 98%;
+  margin: 5px 5px 5px 0px;
 }
 
 
