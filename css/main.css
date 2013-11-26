@@ -130,6 +130,8 @@ body {
   font-size: 30px;
   text-align: center;
   width: 50%;
+  margin-top: 10px;
+  box-shadow: inset 0 2px 3px rgba(255,255,255,0.13), 0 5px 8px rgba(0,0,0,0.3), 0 10px 10px 4px rgba(0,0,0,0.3);
 }
 #location {
   color: #ffffff;
@@ -137,6 +139,8 @@ body {
   font-size: 30px;
   text-align: center;
   width: 50%;
+  margin-top: 10px;
+  box-shadow: inset 0 2px 3px rgba(255,255,255,0.13), 0 5px 8px rgba(0,0,0,0.3), 0 10px 10px 4px rgba(0,0,0,0.3);
 }
 
 .clock-number {
@@ -392,11 +396,8 @@ body {
 
 #out-group {
   border-left: 10px solid #444444;
-  border-top: 5px solid #555555;
-  border-right: 5px solid #222222;
-  border-bottom: 5px solid #111111;
-  height: 98%;
-  margin: 5px 5px 5px 0px;
+  height: 100%;
+  margin: 0px 0px 0px 0px;
 }
 
 
