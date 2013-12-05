@@ -199,3 +199,8 @@ $(".vol-switch label").not("#switch_mute_label").on("click", function() {
   }
 });
 
+
+
+$('#switch_mute').click();
+$('#switch_mute').click();
+$('#switch_1').click();

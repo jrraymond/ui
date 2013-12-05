@@ -4,10 +4,7 @@
 /* SWITCH
 * --------------------------------------------- */
 #volume-knob {
-  position: absolute;
-  left: 0px;
-  top: 183px;
-  height: 297px;
+  height: 275px;
   width: 305px;
 }
 .vol-container {
@@ -33,7 +30,6 @@
   height: 230px;
   border-radius: 100%;
   box-shadow: 0 0 25px rgba(0, 0, 0, .1);
-  background-color: transparent;
   transition: all 0.5s;
 }
 
@@ -49,48 +45,32 @@
   height: 220px;
   margin: -110px 0 0 -110px;
   border-radius: 100%;
-  box-shadow: inset 0 3px 10px rgba(0, 0, 0, .6), 0 2px 20px rgba(255, 255, 255, 1);
-
-  background: #888888;
-  background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, #888888), color-stop(100%, #333333));
-  background: -webkit-radial-gradient(center, ellipse cover, #888888 0%, #333333 100%);
   transition: all 0.5s;
+  border: 1px solid #555555;
 }
 
 .vol-dene {
-z-index: 4;
-width: 140px;
-height: 140px;
-margin: -70px 0 0 -70px;
-border-radius: 100%;
-box-shadow: inset 0 2px 2px rgba(255, 255, 255, .4), 0 3px 13px rgba(0, 0, 0, .85);
-
-background: #f2f6f5;
-background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #f2f6f5), color-stop(100%, #cbd5d6));
-background: -webkit-linear-gradient(top, #f2f6f5 0%, #cbd5d6 100%);
+  z-index: 4;
+  width: 140px;
+  height: 140px;
+  margin: -70px 0 0 -70px;
+  border-radius: 100%;
+  background: #333333;
+  border: 1px solid #555555;
 }
 
 .vol-denem {
-width: 120px;
-height: 120px;
-margin: -60px 0 0 -60px;
-border-radius: 100%;
-
-background: #cbd5d6;
-background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #cbd5d6), color-stop(100%, #f2f6f5));
-background: -webkit-linear-gradient(top, #cbd5d6 0%, #f2f6f5 100%);
+  width: 120px;
+  height: 120px;
+  margin: -60px 0 0 -60px;
+  border-radius: 100%;
 }
 
 .vol-deneme {
-width: 100px;
-height: 100px;
-margin: -50px 0 0 -50px;
-border-radius: 100%;
-box-shadow: inset 0 2px 3px rgba(255, 255, 255, .6), 0 8px 20px rgba(0, 0, 0, .9);
-
-background: #eef7f6;
-background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #eef7f6), color-stop(100%, #8d989a));
-background: -webkit-linear-gradient(top, #eef7f6 0%, #8d989a 100%);
+  width: 100px;
+  height: 100px;
+  margin: -50px 0 0 -50px;
+  border-radius: 100%;
 }
 
 .vol-den .vol-switch {
@@ -119,7 +99,7 @@ background: -webkit-linear-gradient(top, #eef7f6 0%, #8d989a 100%);
 #switch_mute_label span {
   -webkit-transition: all 0.5s;
   transition: all 0.5s;
-  color:#ffffff;
+  color: #444444;
 }
 
 
@@ -146,8 +126,6 @@ background: -webkit-linear-gradient(top, #eef7f6 0%, #8d989a 100%);
   font-size: 15px;
   line-height: 70px;
   text-align: center;
-  color: #eee;
-  text-shadow: 0 1px 0 #444;
 }
 
 .vol-den .vol-switch label:not(:first-child) span{
@@ -167,274 +145,272 @@ background: -webkit-linear-gradient(top, #eef7f6 0%, #8d989a 100%);
   -webkit-transform: rotate(120deg);
 }
 .vol-den .vol-switch label:nth-child(2) span {
-font-size: 13px;
+  font-size: 13px;
 }
 .vol-den .vol-switch label span {
--webkit-transform: rotate(-90deg);
+  -webkit-transform: rotate(-90deg);
 }
 
 .vol-den .vol-switch label:nth-child(3) {
--webkit-transform: rotate(130deg);
+  -webkit-transform: rotate(130deg);
 }
 .vol-den .vol-switch label:nth-child(3) span {
-font-size: 13px;
+  font-size: 13px;
 }
 .vol-den .vol-switch label:nth-child(4) {
--webkit-transform: rotate(140deg);
+  -webkit-transform: rotate(140deg);
 }
 .vol-den .vol-switch label:nth-child(4) span {
-font-size: 14px;
+  font-size: 14px;
 }
 .vol-den .vol-switch label:nth-child(5) {
--webkit-transform: rotate(150deg);
+  -webkit-transform: rotate(150deg);
 }
 .vol-den .vol-switch label:nth-child(5) span {
-font-size: 14px;
+  font-size: 14px;
 }
 .vol-den .vol-switch label:nth-child(6) {
--webkit-transform: rotate(160deg);
+  -webkit-transform: rotate(160deg);
 }
 .vol-den .vol-switch label:nth-child(6) span {
-font-size: 15px;
+  font-size: 15px;
 }
 .vol-den .vol-switch label:nth-child(7) {
--webkit-transform: rotate(170deg);
+  -webkit-transform: rotate(170deg);
 }
 .vol-den .vol-switch label:nth-child(7) span {
-font-size: 15px;
+  font-size: 15px;
 }
 .vol-den .vol-switch label:nth-child(8) {
--webkit-transform: rotate(180deg);
+  -webkit-transform: rotate(180deg);
 }
 .vol-den .vol-switch label:nth-child(8) span {
-font-size: 15px;
+  font-size: 15px;
 }
 .vol-den .vol-switch label:nth-child(9) {
--webkit-transform: rotate(190deg);
+  -webkit-transform: rotate(190deg);
 }
 .vol-den .vol-switch label:nth-child(9) span {
-font-size: 16px;
+  font-size: 16px;
 }
 .vol-den .vol-switch label:nth-child(10) {
--webkit-transform: rotate(200deg);
+  -webkit-transform: rotate(200deg);
 }
 .vol-den .vol-switch label:nth-child(10) span {
-font-size: 17px;
+  font-size: 17px;
 }
 .vol-den .vol-switch label:nth-child(11) {
--webkit-transform: rotate(210deg);
+  -webkit-transform: rotate(210deg);
 }
 .vol-den .vol-switch label:nth-child(11) span {
-font-size: 18px;
+  font-size: 18px;
 }
 .vol-den .vol-switch label:nth-child(12) {
--webkit-transform: rotate(220deg);
+  -webkit-transform: rotate(220deg);
 }
 .vol-den .vol-switch label:nth-child(12) span {
-font-size: 18px;
+  font-size: 18px;
 }
 .vol-den .vol-switch label:nth-child(13) {
--webkit-transform: rotate(230deg);
+  -webkit-transform: rotate(230deg);
 }
 .vol-den .vol-switch label:nth-child(13) span {
-font-size: 19px;
+  font-size: 19px;
 }
 .vol-den .vol-switch label:nth-child(14) {
--webkit-transform: rotate(240deg);
+  -webkit-transform: rotate(240deg);
 }
 .vol-den .vol-switch label:nth-child(14) span {
-font-size: 19px;
+  font-size: 19px;
 }
 .vol-den .vol-switch label:nth-child(15) {
--webkit-transform: rotate(250deg);
+  -webkit-transform: rotate(250deg);
 }
 .vol-den .vol-switch label:nth-child(15) span {
-font-size: 19px;
+  font-size: 19px;
 }
 .vol-den .vol-switch label:nth-child(16) {
--webkit-transform: rotate(260deg);
+  -webkit-transform: rotate(260deg);
 }
 .vol-den .vol-switch label:nth-child(16) span {
-font-size: 20px;
+  font-size: 20px;
 }
 .vol-den .vol-switch label:nth-child(17) {
--webkit-transform: rotate(270deg);
+  -webkit-transform: rotate(270deg);
 }
 .vol-den .vol-switch label:nth-child(17) span {
-font-size: 21px;
+  font-size: 21px;
 }
 .vol-den .vol-switch label:nth-child(18) {
--webkit-transform: rotate(280deg);
+  -webkit-transform: rotate(280deg);
 }
 .vol-den .vol-switch label:nth-child(18) span {
-font-size: 21px;
+  font-size: 21px;
 }
 .vol-den .vol-switch label:nth-child(19) {
--webkit-transform: rotate(290deg);
+  -webkit-transform: rotate(290deg);
 }
 .vol-den .vol-switch label:nth-child(19) span {
-font-size: 22px;
+  font-size: 22px;
 }
 .vol-den .vol-switch label:nth-child(20) {
--webkit-transform: rotate(300deg);
+  -webkit-transform: rotate(300deg);
 }
 .vol-den .vol-switch label:nth-child(20) span {
-font-size: 22px;
+  font-size: 22px;
 }
 .vol-den .vol-switch label:nth-child(21) {
--webkit-transform: rotate(310deg);
+  -webkit-transform: rotate(310deg);
 }
 .vol-den .vol-switch label:nth-child(21) span {
-font-size: 22px;
+  font-size: 22px;
 }
 .vol-den .vol-switch label:nth-child(22) {
--webkit-transform: rotate(320deg);
+  -webkit-transform: rotate(320deg);
 }
 .vol-den .vol-switch label:nth-child(22) span {
-font-size: 23px;
+  font-size: 23px;
 }
 .vol-den .vol-switch label:nth-child(23) {
--webkit-transform: rotate(330deg);
+  -webkit-transform: rotate(330deg);
 }
 .vol-den .vol-switch label:nth-child(23) span {
-font-size: 23px;
+  font-size: 23px;
 }
 .vol-den .vol-switch label:nth-child(24) {
--webkit-transform: rotate(340deg);
+  -webkit-transform: rotate(340deg);
 }
 .vol-den .vol-switch label:nth-child(24) span {
-font-size: 24px;
+  font-size: 24px;
 }
 .vol-den .vol-switch label:nth-child(25) {
--webkit-transform: rotate(350deg);
+  -webkit-transform: rotate(350deg);
 }
 .vol-den .vol-switch label:nth-child(25) span {
-font-size: 25px;
+  font-size: 25px;
 }
 .vol-den .vol-switch label:nth-child(26) {
--webkit-transform: rotate(0deg);
+  -webkit-transform: rotate(0deg);
 }
 .vol-den .vol-switch label:nth-child(26) span {
-font-size: 24px;
+  font-size: 24px;
 }
 .vol-den .vol-switch label:nth-child(27) {
--webkit-transform: rotate(10deg);
+  -webkit-transform: rotate(10deg);
 }
 .vol-den .vol-switch label:nth-child(27) span {
-font-size: 25px;
+  font-size: 25px;
 }
 .vol-den .vol-switch label:nth-child(28) {
--webkit-transform: rotate(20deg);
+  -webkit-transform: rotate(20deg);
 }
 .vol-den .vol-switch label:nth-child(28) span {
-font-size: 26px;
+  font-size: 26px;
 }
 .vol-den .vol-switch label:nth-child(29) {
--webkit-transform: rotate(30deg);
+  -webkit-transform: rotate(30deg);
 }
 .vol-den .vol-switch label:nth-child(29) span {
-font-size: 27px;
+  font-size: 27px;
 }
 .vol-den .vol-switch label:nth-child(30) {
--webkit-transform: rotate(40deg);
+  -webkit-transform: rotate(40deg);
 }
 .vol-den .vol-switch label:nth-child(30) span {
-font-size: 28px;
+  font-size: 28px;
 }
 .vol-den .vol-switch label:nth-child(31) {
--webkit-transform: rotate(50deg);
+  -webkit-transform: rotate(50deg);
 }
 .vol-den .vol-switch label:nth-child(31) span {
-font-size: 29px;
+  font-size: 29px;
 }
 .vol-den .vol-switch label:nth-child(32) {
--webkit-transform: rotate(60deg);
+  -webkit-transform: rotate(60deg);
 }
 .vol-den .vol-switch label:nth-child(32) span {
-font-size: 30px;
+  font-size: 30px;
 }
 
 .vol-den .vol-switch input {
-position: absolute;
-opacity: 0;
-visibility: hidden;
+  position: absolute;
+  opacity: 0;
+  visibility: hidden;
 }
 
 /* SWITCH LIGHT */
 
 .vol-den .vol-light {
-z-index: 1;
-width: 50%;
-height: 100px;
-margin-top: -50px;
--webkit-transform-origin: 0% 50%;
--webkit-transform: rotate(-90deg);
--webkit-transition: all 0.5s;
+  z-index: 1;
+  width: 50%;
+  height: 100px;
+  margin-top: -50px;
+  -webkit-transform-origin: 0% 50%;
+  -webkit-transform: rotate(-90deg);
+  -webkit-transition: all 0.5s;
 }
 
 .vol-den .vol-light span {
-opacity: .4;
-position: absolute;
-top: 0;
-left: 15px;
-width: 100px;
-height: 100px;
-background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, rgba(184, 163, 204, 1)), color-stop(42%, rgba(159, 197, 224, 0.42)), color-stop(72%, rgba(111, 113, 179, 0)), color-stop(100%, rgba(67, 34, 137, 0)));
-background: -webkit-radial-gradient(center, ellipse cover, rgba(184, 163, 204, 1) 0%, rgba(159, 197, 224, 0.42) 42%, rgba(111, 113, 179, 0) 72%, rgba(67, 34, 137, 0) 100%);
+  opacity: .4;
+  position: absolute;
+  top: 0;
+  left: 15px;
+  width: 100px;
+  height: 100px;
 }
 
 /* SWITCH LIGHT POSITION */
 
 .vol-den #switch_mute:checked ~ .vol-light {
--webkit-transform: rotate(-270deg);
+  -webkit-transform: rotate(-270deg);
 }
 
 .vol-den #switch_1:checked ~ .vol-light {
--webkit-transform: rotate(-240deg);
+  -webkit-transform: rotate(-240deg);
 }
 
 .vol-den #switch_2:checked ~ .vol-light {
--webkit-transform: rotate(-230deg);
+  -webkit-transform: rotate(-230deg);
 }
 
 .vol-den #switch_3:checked ~ .vol-light {
--webkit-transform: rotate(-220deg);
+  -webkit-transform: rotate(-220deg);
 }
 
 .vol-den #switch_4:checked ~ .vol-light {
--webkit-transform: rotate(-210deg);
+  -webkit-transform: rotate(-210deg);
 }
 
 .vol-den #switch_5:checked ~ .vol-light {
--webkit-transform: rotate(-200deg);
+  -webkit-transform: rotate(-200deg);
 }
 
 .vol-den #switch_6:checked ~ .vol-light {
--webkit-transform: rotate(-190deg);
+  -webkit-transform: rotate(-190deg);
 }
 
 .vol-den #switch_7:checked ~ .vol-light {
--webkit-transform: rotate(-180deg);
+  -webkit-transform: rotate(-180deg);
 }
 
 .vol-den #switch_8:checked ~ .vol-light {
--webkit-transform: rotate(-170deg);
+  -webkit-transform: rotate(-170deg);
 }
 
 .vol-den #switch_9:checked ~ .vol-light {
--webkit-transform: rotate(-160deg);
+  -webkit-transform: rotate(-160deg);
 }
 
 .vol-den #switch_10:checked ~ .vol-light {
--webkit-transform: rotate(-150deg);
+  -webkit-transform: rotate(-150deg);
 }
 
 .vol-den #switch_11:checked ~ .vol-light {
--webkit-transform: rotate(-140deg);
+  -webkit-transform: rotate(-140deg);
 }
 
 .vol-den #switch_12:checked ~ .vol-light {
--webkit-transform: rotate(-130deg);
+  -webkit-transform: rotate(-130deg);
 }
 
 .vol-den #switch_13:checked ~ .vol-light {
@@ -517,23 +493,21 @@ background: -webkit-radial-gradient(center, ellipse cover, rgba(184, 163, 204, 1
 /* SWITCH LIGHT */
 
 .vol-den .vol-dot {
-z-index: 6;
-width: 50%;
-height: 12px;
-margin-top: -6px;
--webkit-transform-origin: 0% 50%;
--webkit-transition: all 0.5s;
+  z-index: 6;
+  width: 50%;
+  height: 12px;
+  margin-top: -6px;
+  -webkit-transform-origin: 0% 50%;
+  -webkit-transition: all 0.5s;
 }
 .vol-den .vol-dot span {
-position: absolute;
-top: 0;
-left: 30px;
-width: 12px;
-height: 12px;
-border-radius: 100%;
-background: #dae2e4;
-background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #dae2e4), color-stop(100%, #ecf5f4));
-background: -webkit-linear-gradient(top, #dae2e4 0%, #ecf5f4 100%);
+  position: absolute;
+  top: 0;
+  left: 30px;
+  width: 12px;
+  height: 12px;
+  border-radius: 100%;
+  background: #dae2e4;
 }
 
 /* SWITCH LIGHT DOT POSITION */
@@ -677,8 +651,8 @@ opacity: .9;
 }
 
 .vol-den #switch_15:checked ~ .vol-dot span {
-opacity: .9;
--webkit-transform: rotate(-80deg);
+  opacity: .9;
+  -webkit-transform: rotate(-80deg);
 }
 
 .vol-den #switch_16:checked ~ .vol-dot {
@@ -830,7 +804,8 @@ opacity: .9;
   -webkit-transition: all 0.5s;
 }
 .vol-checked {
-  color: #0AFF00;
+  color: #C7FBFD;
+  text-shadow: #C7FBFD 1px 1px 13px;
 }
 
 

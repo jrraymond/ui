@@ -28,25 +28,15 @@
     <!-- The contents of the page. 7 spans for main, 5 for the sidebar.
      THIS COMMENT MEANS NOTHING -->
     <div id="content">
-      <div id="control">
+      <div id="control" class="container">
         <!-- CMDR INFO -->
-        <div id="info" class="container">
-          <div class="row row-2">
-            <div id="clock-border">
-              <div id="clock" class="col-xs-12"></div>
-            </div>
-          </div>
-          <div class="row row-2">
-            <div id="date" class="col-xs-6">
-              <span id="month"></span><span id="day"></span><span id="daySuffix"></span>
-            </div>
-            <div id="location" class="col-xs-6">
-              <p>Allb 004</p>
-            </div>
+        <div id="info" class="row">
+          <div id="clock-border" class="col-xs-12">
+            <div id="clock"></div>
           </div>
         </div>
         <!-- VOLUME KNOB -->
-        <div id="volume-knob">
+        <div id="volume-knob" class="row">
           <div class="vol-container">
             <!-- OUTER SHADOW -->
             <div class="vol-de">
@@ -97,7 +87,7 @@
                   <label for="switch_31" id="switch_left_label" style="visibility:hidden;"><span><i class="fa fa-minus"></i></span></label>
 
                   <!-- INPUT -->
-                  <input id="switch_mute" checked type="checkbox">
+                  <input id="switch_mute" type="checkbox">
                   <input id="switch_1" name="switch" type="radio">
                   <input id="switch_2" name="switch" type="radio">
                   <input id="switch_3" name="switch" type="radio">
@@ -146,6 +136,17 @@
               </div>
             </div>
           </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-12">
+            <div id="date" class="col-xs-6">
+              <span id="month"></span><span id="day"></span><span id="daySuffix"></span>
+            </div>
+            <div id="location" class="col-xs-6">
+              <p>Allb 004</p>
+            </div>
+          </div>
+
         </div>
       </div>
 
