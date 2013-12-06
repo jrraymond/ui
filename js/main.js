@@ -155,9 +155,11 @@ updateTime();
 setInterval(updateTime, 1000);
 
 /* TAB NAVIGATION */
-$(".out-nav-tab a").on("click", function(e) {
-  e.preventDefault();
-  $(this).tab("show");
+$(document).on("click", ".out-nav-item", function() {
+  $(".nav-selected").removeClass("nav-selected");
+  $(this).addClass("nav-selected");
+  $(".active").removeClass("active");
+  $("#" + this.dataset.tab).addClass("active");
 });
 
 /* TURNS OUTLINE OF KNOB WHEN MUTED */
