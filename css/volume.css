@@ -7,39 +7,26 @@
   height: 275px;
   width: 305px;
 }
-.vol-container {
+#vol-container {
   width: 230px;
   margin: 30px auto 0;
-}
-
-.vol-container .vol-origin {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  z-index: 111;     /* determines which elemens cover the other when elements overlap. Larger covers smaller. */
-  width: 2px;
-  height: 2px;
-  margin: -1px 0 0 -1px;
-  background-color: #f50;
-}
-
-.vol-de {
   -webkit-user-select: none;    /*controls the appearance only of selection.*/
-  position: relative;
-  width: 230px;
   height: 230px;
   border-radius: 100%;
   box-shadow: 0 0 25px rgba(0, 0, 0, .1);
   transition: all 0.5s;
+  position: absolute;
+  left: 36px;
+  top: 100px;
 }
 
-.vol-de .vol-den, .vol-de .vol-dene, .vol-de .vol-light, .vol-de .vol-dot {
+#vol-knob, #vol-center, #vol-light, #vol-dot {
   position: absolute;
   left: 50%;
   top: 50%;
 }
 
-.vol-den {
+#vol-knob {
   position: relative;
   width: 220px;
   height: 220px;
@@ -49,17 +36,8 @@
   border: 1px solid #555555;
 }
 
-.vol-dene {
-  z-index: 4;
-  width: 140px;
-  height: 140px;
-  margin: -70px 0 0 -70px;
-  border-radius: 100%;
-  background: #333333;
-  border: 1px solid #555555;
-}
 
-.vol-den .vol-switch {
+#vol-switches {
   z-index: 3;
   position: absolute;
   top: 0;
@@ -67,29 +45,106 @@
   width: 100%;
   height: 100%;
 }
-
-.vol-switch label span i {
-  -webkit-transform: rotate(90deg);
-}
-
-#switch_mute_label {
+#vol-switches label {
   z-index: 2;
   position: absolute;
   top: 50%;
   left: 50%;
   width: 50%;
   height: 70px;
-  margin-top: -33px;
+  margin-top: -35px;
   -webkit-transform-origin: 0% 50%;
 }
-#switch_mute_label span {
-  -webkit-transition: all 0.5s;
-  transition: all 0.5s;
+#vol-switches label:after {
+  content: "";
+  position: absolute;
+  top: 6px;
+  left: 1px;
+  width: 100%;
+  height: 30px;
+  -webkit-transform: rotate(-30deg);
+}
+
+#vol-switches label:before {
+  content: "";
+  position: absolute;
+  bottom: 6px;
+  left: 1px;
+  width: 100%;
+  height: 30px;
+  -webkit-transform: rotate(30deg);
+}
+#vol-switches label > div {
+  z-index: 2;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 40px;
+  height: 100%;
+  font-weight: bold;
+  font-size: 15px;
+  line-height: 70px;
+  text-align: center;
+  color: #eee;
+  text-shadow: 0 1px 0 #444;
+}
+#vol-switches label:nth-child(1) {
+  -webkit-transform: rotate(90deg);
+}
+#vol-switches label:nth-child(1) div {
   color: #444444;
+  -webkit-transform: rotate(-90deg);
+}
+
+#vol-switches label:nth-child(2) {
+  -webkit-transform: rotate(149deg);
+}
+#vol-switches label:nth-child(2) div {
+  -webkit-transform: rotate(-90deg);
+}
+
+#vol-switches label:nth-child(3) {
+  -webkit-transform: rotate(210deg);
+}
+#vol-switches label:nth-child(3) div {
+  -webkit-transform: rotate(-90deg);
+}
+#vol-switches label:nth-child(4) {
+  -webkit-transform: rotate(270deg);
+}
+#vol-switches label:nth-child(4) div {
+  -webkit-transform: rotate(-90deg);
+}
+#vol-switches label:nth-child(5) {
+  -webkit-transform: rotate(328deg);
+}
+#vol-switches label:nth-child(5) div {
+  -webkit-transform: rotate(-90deg);
+}
+#vol-switches label:nth-child(6) {
+  -webkit-transform: rotate(390deg);
+}
+#vol-switches label:nth-child(6) div {
+  -webkit-transform: rotate(-90deg);
+}
+
+.vol-c {
+  background-color: #000000;
+  height: 39px;
+  width: 39px;
+  border-radius: 50%;
+  position: absolute;
+  bottom: 0;
+  border: 1px solid #555555;
+}
+#vol-s-1 .vol-slice {
+  background-color: #000000;
+  -webkit-transform: rotate(50deg);
 }
 
 
-.vol-den .vol-switch label:not(#switch_mute_label) {
+/*
+#vol-knob #vol-switches label:not(#switch-m-l) {
   z-index: 2;
   position: absolute;
   top: 60%;
@@ -101,7 +156,7 @@
 }
 
 
-.vol-den .vol-switch label span {
+#vol-knob #vol-switches label span {
   z-index: 2;
   position: absolute;
   top: 0;
@@ -114,219 +169,21 @@
   text-align: center;
 }
 
-.vol-den .vol-switch label:not(:first-child) span{
+#vol-knob #vol-switches label:not(:first-child) span{
     font-weight:bold;
 }
-.vol-den .vol-switch label:nth-child(1) {
+#vol-s-1 {
   -webkit-transform: rotate(90deg);
 }
 
-.vol-den .vol-switch label:nth-child(1) span {
+#vol-knob #vol-switches label:nth-child(1) span {
   right: 0px;
   width: 47px;
   font-size: 13px;
   -webkit-transform: rotate(270deg);
 }
-.vol-den .vol-switch label:nth-child(2) {
-  -webkit-transform: rotate(120deg);
-}
-.vol-den .vol-switch label:nth-child(2) span {
-  font-size: 13px;
-}
-.vol-den .vol-switch label span {
-  -webkit-transform: rotate(-90deg);
-}
-
-.vol-den .vol-switch label:nth-child(3) {
-  -webkit-transform: rotate(130deg);
-}
-.vol-den .vol-switch label:nth-child(3) span {
-  font-size: 13px;
-}
-.vol-den .vol-switch label:nth-child(4) {
-  -webkit-transform: rotate(140deg);
-}
-.vol-den .vol-switch label:nth-child(4) span {
-  font-size: 14px;
-}
-.vol-den .vol-switch label:nth-child(5) {
-  -webkit-transform: rotate(150deg);
-}
-.vol-den .vol-switch label:nth-child(5) span {
-  font-size: 14px;
-}
-.vol-den .vol-switch label:nth-child(6) {
-  -webkit-transform: rotate(160deg);
-}
-.vol-den .vol-switch label:nth-child(6) span {
-  font-size: 15px;
-}
-.vol-den .vol-switch label:nth-child(7) {
-  -webkit-transform: rotate(170deg);
-}
-.vol-den .vol-switch label:nth-child(7) span {
-  font-size: 15px;
-}
-.vol-den .vol-switch label:nth-child(8) {
-  -webkit-transform: rotate(180deg);
-}
-.vol-den .vol-switch label:nth-child(8) span {
-  font-size: 15px;
-}
-.vol-den .vol-switch label:nth-child(9) {
-  -webkit-transform: rotate(190deg);
-}
-.vol-den .vol-switch label:nth-child(9) span {
-  font-size: 16px;
-}
-.vol-den .vol-switch label:nth-child(10) {
-  -webkit-transform: rotate(200deg);
-}
-.vol-den .vol-switch label:nth-child(10) span {
-  font-size: 17px;
-}
-.vol-den .vol-switch label:nth-child(11) {
-  -webkit-transform: rotate(210deg);
-}
-.vol-den .vol-switch label:nth-child(11) span {
-  font-size: 18px;
-}
-.vol-den .vol-switch label:nth-child(12) {
-  -webkit-transform: rotate(220deg);
-}
-.vol-den .vol-switch label:nth-child(12) span {
-  font-size: 18px;
-}
-.vol-den .vol-switch label:nth-child(13) {
-  -webkit-transform: rotate(230deg);
-}
-.vol-den .vol-switch label:nth-child(13) span {
-  font-size: 19px;
-}
-.vol-den .vol-switch label:nth-child(14) {
-  -webkit-transform: rotate(240deg);
-}
-.vol-den .vol-switch label:nth-child(14) span {
-  font-size: 19px;
-}
-.vol-den .vol-switch label:nth-child(15) {
-  -webkit-transform: rotate(250deg);
-}
-.vol-den .vol-switch label:nth-child(15) span {
-  font-size: 19px;
-}
-.vol-den .vol-switch label:nth-child(16) {
-  -webkit-transform: rotate(260deg);
-}
-.vol-den .vol-switch label:nth-child(16) span {
-  font-size: 20px;
-}
-
-.vol-den .vol-switch label:nth-child(17):before {
-  content: "";
-  position: absolute;
-  border-radius: 50%;
-  color:#000000;
-}
-
-.vol-den .vol-switch label:nth-child(17) {
-  -webkit-transform: rotate(270deg);
-}
-.vol-den .vol-switch label:nth-child(17) span {
-  font-size: 21px;
-}
-.vol-den .vol-switch label:nth-child(18) {
-  -webkit-transform: rotate(280deg);
-}
-.vol-den .vol-switch label:nth-child(18) span {
-  font-size: 21px;
-}
-.vol-den .vol-switch label:nth-child(19) {
-  -webkit-transform: rotate(290deg);
-}
-.vol-den .vol-switch label:nth-child(19) span {
-  font-size: 22px;
-}
-.vol-den .vol-switch label:nth-child(20) {
-  -webkit-transform: rotate(300deg);
-}
-.vol-den .vol-switch label:nth-child(20) span {
-  font-size: 22px;
-}
-.vol-den .vol-switch label:nth-child(21) {
-  -webkit-transform: rotate(310deg);
-}
-.vol-den .vol-switch label:nth-child(21) span {
-  font-size: 22px;
-}
-.vol-den .vol-switch label:nth-child(22) {
-  -webkit-transform: rotate(320deg);
-}
-.vol-den .vol-switch label:nth-child(22) span {
-  font-size: 23px;
-}
-.vol-den .vol-switch label:nth-child(23) {
-  -webkit-transform: rotate(330deg);
-}
-.vol-den .vol-switch label:nth-child(23) span {
-  font-size: 23px;
-}
-.vol-den .vol-switch label:nth-child(24) {
-  -webkit-transform: rotate(340deg);
-}
-.vol-den .vol-switch label:nth-child(24) span {
-  font-size: 24px;
-}
-.vol-den .vol-switch label:nth-child(25) {
-  -webkit-transform: rotate(350deg);
-}
-.vol-den .vol-switch label:nth-child(25) span {
-  font-size: 25px;
-}
-.vol-den .vol-switch label:nth-child(26) {
-  -webkit-transform: rotate(0deg);
-}
-.vol-den .vol-switch label:nth-child(26) span {
-  font-size: 24px;
-}
-.vol-den .vol-switch label:nth-child(27) {
-  -webkit-transform: rotate(10deg);
-}
-.vol-den .vol-switch label:nth-child(27) span {
-  font-size: 25px;
-}
-.vol-den .vol-switch label:nth-child(28) {
-  -webkit-transform: rotate(20deg);
-}
-.vol-den .vol-switch label:nth-child(28) span {
-  font-size: 26px;
-}
-.vol-den .vol-switch label:nth-child(29) {
-  -webkit-transform: rotate(30deg);
-}
-.vol-den .vol-switch label:nth-child(29) span {
-  font-size: 27px;
-}
-.vol-den .vol-switch label:nth-child(30) {
-  -webkit-transform: rotate(40deg);
-}
-.vol-den .vol-switch label:nth-child(30) span {
-  font-size: 28px;
-}
-.vol-den .vol-switch label:nth-child(31) {
-  -webkit-transform: rotate(50deg);
-}
-.vol-den .vol-switch label:nth-child(31) span {
-  font-size: 29px;
-}
-.vol-den .vol-switch label:nth-child(32) {
-  -webkit-transform: rotate(60deg);
-}
-.vol-den .vol-switch label:nth-child(32) span {
-  font-size: 30px;
-}
-
-.vol-den .vol-switch input {
+*/
+#vol-knob #vol-switches input {
   position: absolute;
   opacity: 0;
   visibility: hidden;
@@ -334,7 +191,7 @@
 
 /* SWITCH LIGHT */
 
-.vol-den .vol-light {
+#vol-knob #vol-light {
   z-index: 1;
   width: 50%;
   height: 100px;
@@ -344,7 +201,7 @@
   -webkit-transition: all 0.5s;
 }
 
-.vol-den .vol-light span {
+#vol-knob #vol-light span {
   opacity: .4;
   position: absolute;
   top: 0;
@@ -354,139 +211,9 @@
 }
 
 /* SWITCH LIGHT POSITION */
+/* SWITCH DOT */
 
-.vol-den #switch_mute:checked ~ .vol-light {
-  -webkit-transform: rotate(-270deg);
-}
-
-.vol-den #switch_1:checked ~ .vol-light {
-  -webkit-transform: rotate(-240deg);
-}
-
-.vol-den #switch_2:checked ~ .vol-light {
-  -webkit-transform: rotate(-230deg);
-}
-
-.vol-den #switch_3:checked ~ .vol-light {
-  -webkit-transform: rotate(-220deg);
-}
-
-.vol-den #switch_4:checked ~ .vol-light {
-  -webkit-transform: rotate(-210deg);
-}
-
-.vol-den #switch_5:checked ~ .vol-light {
-  -webkit-transform: rotate(-200deg);
-}
-
-.vol-den #switch_6:checked ~ .vol-light {
-  -webkit-transform: rotate(-190deg);
-}
-
-.vol-den #switch_7:checked ~ .vol-light {
-  -webkit-transform: rotate(-180deg);
-}
-
-.vol-den #switch_8:checked ~ .vol-light {
-  -webkit-transform: rotate(-170deg);
-}
-
-.vol-den #switch_9:checked ~ .vol-light {
-  -webkit-transform: rotate(-160deg);
-}
-
-.vol-den #switch_10:checked ~ .vol-light {
-  -webkit-transform: rotate(-150deg);
-}
-
-.vol-den #switch_11:checked ~ .vol-light {
-  -webkit-transform: rotate(-140deg);
-}
-
-.vol-den #switch_12:checked ~ .vol-light {
-  -webkit-transform: rotate(-130deg);
-}
-
-.vol-den #switch_13:checked ~ .vol-light {
--webkit-transform: rotate(-120deg);
-}
-
-.vol-den #switch_14:checked ~ .vol-light {
--webkit-transform: rotate(-110deg);
-}
-
-.vol-den #switch_15:checked ~ .vol-light {
--webkit-transform: rotate(-100deg);
-}
-
-.vol-den #switch_16:checked ~ .vol-light {
--webkit-transform: rotate(-90deg);
-}
-
-.vol-den #switch_17:checked ~ .vol-light {
--webkit-transform: rotate(-80deg);
-}
-
-.vol-den #switch_18:checked ~ .vol-light {
--webkit-transform: rotate(-70deg);
-}
-
-.vol-den #switch_19:checked ~ .vol-light {
--webkit-transform: rotate(-60deg);
-}
-
-.vol-den #switch_20:checked ~ .vol-light {
--webkit-transform: rotate(-50deg);
-}
-
-.vol-den #switch_21:checked ~ .vol-light {
--webkit-transform: rotate(-40deg);
-}
-
-.vol-den #switch_22:checked ~ .vol-light {
--webkit-transform: rotate(-30deg);
-}
-
-.vol-den #switch_23:checked ~ .vol-light {
--webkit-transform: rotate(-20deg);
-}
-
-.vol-den #switch_24:checked ~ .vol-light {
--webkit-transform: rotate(-10deg);
-}
-
-.vol-den #switch_25:checked ~ .vol-light {
--webkit-transform: rotate(0deg);
-}
-
-.vol-den #switch_26:checked ~ .vol-light {
--webkit-transform: rotate(10deg);
-}
-
-.vol-den #switch_27:checked ~ .vol-light {
--webkit-transform: rotate(20deg);
-}
-
-.vol-den #switch_28:checked ~ .vol-light {
--webkit-transform: rotate(30deg);
-}
-
-.vol-den #switch_29:checked ~ .vol-light {
--webkit-transform: rotate(40deg);
-}
-
-.vol-den #switch_30:checked ~ .vol-light {
--webkit-transform: rotate(50deg);
-}
-
-.vol-den #switch_31:checked ~ .vol-light {
--webkit-transform: rotate(60deg);
-}
-
-
-/* SWITCH LIGHT */
-
-.vol-den .vol-dot {
+#vol-knob #vol-dot {
   z-index: 6;
   width: 50%;
   height: 12px;
@@ -494,7 +221,7 @@
   -webkit-transform-origin: 0% 50%;
   -webkit-transition: all 0.5s;
 }
-.vol-den .vol-dot span {
+#vol-knob #vol-dot span {
   position: absolute;
   top: 0;
   left: 30px;
@@ -506,295 +233,8 @@
 
 /* SWITCH LIGHT DOT POSITION */
 
-.vol-den #switch_mute:checked ~ .vol-dot {
-  -webkit-transform: rotate(-270deg);
-}
-
-.vol-den #switch_mute:checked ~ .vol-dot span {
-  -webkit-transform: rotate(-180deg);
-}
-
-.vol-den #switch_1:checked ~ .vol-dot {
-  -webkit-transform: rotate(-240deg);
-}
-
-.vol-den #switch_1:checked ~ .vol-dot span {
-  opacity: .9;
-  -webkit-transform: rotate(60deg);
-}
-
-.vol-den #switch_2:checked ~ .vol-dot {
--webkit-transform: rotate(-230deg);
-}
-
-.vol-den #switch_2:checked ~ .vol-dot span {
-opacity: .5;
--webkit-transform: rotate(50deg);
-}
-
-.vol-den #switch_3:checked ~ .vol-dot {
--webkit-transform: rotate(-220deg);
-}
-
-.vol-den #switch_3:checked ~ .vol-dot span {
-opacity: .4;
--webkit-transform: rotate(40deg);
-}
-
-.vol-den #switch_4:checked ~ .vol-dot {
--webkit-transform: rotate(-210deg);
-}
-
-.vol-den #switch_4:checked ~ .vol-dot span {
-opacity: .5;
--webkit-transform: rotate(30deg);
-}
-
-.vol-den #switch_5:checked ~ .vol-dot {
--webkit-transform: rotate(-200deg);
-}
-
-.vol-den #switch_5:checked ~ .vol-dot span {
-opacity: .9;
--webkit-transform: rotate(20deg);
-}
-
-.vol-den #switch_6:checked ~ .vol-dot {
--webkit-transform: rotate(-190deg);
-}
-
-.vol-den #switch_6:checked ~ .vol-dot span {
-opacity: .9;
--webkit-transform: rotate(10deg);
-}
-
-.vol-den #switch_7:checked ~ .vol-dot {
--webkit-transform: rotate(-180deg);
-}
-
-.vol-den #switch_7:checked ~ .vol-dot span {
-opacity: .5;
--webkit-transform: rotate(0deg);
-}
-
-.vol-den #switch_8:checked ~ .vol-dot {
--webkit-transform: rotate(-170deg);
-}
-
-.vol-den #switch_8:checked ~ .vol-dot span {
-opacity: .9;
--webkit-transform: rotate(-10deg);
-}
-
-.vol-den #switch_9:checked ~ .vol-dot {
--webkit-transform: rotate(-160deg);
-}
-
-.vol-den #switch_9:checked ~ .vol-dot span {
-opacity: .9;
--webkit-transform: rotate(-20deg);
-}
-
-.vol-den #switch_10:checked ~ .vol-dot {
--webkit-transform: rotate(-150deg);
-}
-
-.vol-den #switch_10:checked ~ .vol-dot span {
-opacity: .9;
--webkit-transform: rotate(-30deg);
-}
-
-.vol-den #switch_11:checked ~ .vol-dot {
--webkit-transform: rotate(-140deg);
-}
-
-.vol-den #switch_11:checked ~ .vol-dot span {
-opacity: .9;
--webkit-transform: rotate(-40deg);
-}
-
-.vol-den #switch_12:checked ~ .vol-dot {
--webkit-transform: rotate(-130deg);
-}
-
-.vol-den #switch_12:checked ~ .vol-dot span {
-opacity: .9;
--webkit-transform: rotate(-50deg);
-}
-
-.vol-den #switch_13:checked ~ .vol-dot {
--webkit-transform: rotate(-120deg);
-}
-
-.vol-den #switch_13:checked ~ .vol-dot span {
-opacity: .9;
--webkit-transform: rotate(-60deg);
-}
-
-.vol-den #switch_14:checked ~ .vol-dot {
--webkit-transform: rotate(-110deg);
-}
-
-.vol-den #switch_14:checked ~ .vol-dot span {
-opacity: .9;
--webkit-transform: rotate(-70deg);
-}
-
-.vol-den #switch_15:checked ~ .vol-dot {
--webkit-transform: rotate(-100deg);
-}
-
-.vol-den #switch_15:checked ~ .vol-dot span {
-  opacity: .9;
-  -webkit-transform: rotate(-80deg);
-}
-
-.vol-den #switch_16:checked ~ .vol-dot {
--webkit-transform: rotate(-90deg);
-}
-
-.vol-den #switch_16:checked ~ .vol-dot span {
-opacity: .9;
--webkit-transform: rotate(-90deg);
-}
-
-.vol-den #switch_17:checked ~ .vol-dot {
--webkit-transform: rotate(-80deg);
-}
-
-.vol-den #switch_17:checked ~ .vol-dot span {
-opacity: .9;
--webkit-transform: rotate(-100deg);
-}
-
-.vol-den #switch_18:checked ~ .vol-dot {
--webkit-transform: rotate(-70deg);
-}
-
-.vol-den #switch_18:checked ~ .vol-dot span {
-opacity: .9;
--webkit-transform: rotate(-110deg);
-}
-
-.vol-den #switch_19:checked ~ .vol-dot {
--webkit-transform: rotate(-60deg);
-}
-
-.vol-den #switch_19:checked ~ .vol-dot span {
-opacity: .9;
--webkit-transform: rotate(-120deg);
-}
-
-.vol-den #switch_20:checked ~ .vol-dot {
--webkit-transform: rotate(-50deg);
-}
-
-.vol-den #switch_20:checked ~ .vol-dot span {
-opacity: .9;
--webkit-transform: rotate(-130deg);
-}
-
-.vol-den #switch_21:checked ~ .vol-dot {
--webkit-transform: rotate(-40deg);
-}
-
-.vol-den #switch_21:checked ~ .vol-dot span {
-opacity: .9;
--webkit-transform: rotate(-140deg);
-}
-
-.vol-den #switch_22:checked ~ .vol-dot {
--webkit-transform: rotate(-30deg);
-}
-
-.vol-den #switch_22:checked ~ .vol-dot span {
-opacity: .9;
--webkit-transform: rotate(-150deg);
-}
-
-.vol-den #switch_23:checked ~ .vol-dot {
--webkit-transform: rotate(-20deg);
-}
-
-.vol-den #switch_23:checked ~ .vol-dot span {
-opacity: .9;
--webkit-transform: rotate(-160deg);
-}
-
-.vol-den #switch_24:checked ~ .vol-dot {
--webkit-transform: rotate(-10deg);
-}
-
-.vol-den #switch_24:checked ~ .vol-dot span {
-opacity: .9;
--webkit-transform: rotate(-170deg);
-}
-
-.vol-den #switch_25:checked ~ .vol-dot {
--webkit-transform: rotate(0deg);
-}
-
-.vol-den #switch_25:checked ~ .vol-dot span {
-opacity: .9;
--webkit-transform: rotate(-180deg);
-}
-
-.vol-den #switch_26:checked ~ .vol-dot {
--webkit-transform: rotate(10deg);
-}
-
-.vol-den #switch_26:checked ~ .vol-dot span {
-opacity: .9;
--webkit-transform: rotate(-190deg);
-}
-
-.vol-den #switch_27:checked ~ .vol-dot {
--webkit-transform: rotate(20deg);
-}
-
-.vol-den #switch_27:checked ~ .vol-dot span {
-opacity: .9;
--webkit-transform: rotate(-200deg);
-}
-
-.vol-den #switch_28:checked ~ .vol-dot {
--webkit-transform: rotate(30deg);
-}
-
-.vol-den #switch_28:checked ~ .vol-dot span {
-opacity: .9;
--webkit-transform: rotate(-210deg);
-}
-
-.vol-den #switch_29:checked ~ .vol-dot {
--webkit-transform: rotate(40deg);
-}
-
-.vol-den #switch_29:checked ~ .vol-dot span {
-opacity: .9;
--webkit-transform: rotate(-220deg);
-}
-
-.vol-den #switch_30:checked ~ .vol-dot {
--webkit-transform: rotate(50deg);
-}
-
-.vol-den #switch_30:checked ~ .vol-dot span {
-opacity: .9;
--webkit-transform: rotate(-230deg);
-}
-
-.vol-den #switch_31:checked ~ .vol-dot {
--webkit-transform: rotate(60deg);
-}
-
-.vol-den #switch_31:checked ~ .vol-dot span {
-opacity: .9;
--webkit-transform: rotate(-240deg);
-}
-
 /* VOLUME LINES COLORING */
-.vol-switch label span i {
+#vol-switches label span i {
   -webkit-transition: all 0.5s;
 }
 .vol-checked {
@@ -805,7 +245,7 @@ opacity: .9;
 
 /* LINE */
 
-.vol-den hr.vol-line {
+#vol-knob hr.vol-line {
   z-index: 1;
   position: absolute;
   top: 50%;
@@ -818,11 +258,11 @@ opacity: .9;
   border-bottom-color: #666769;
 }
 
-.vol-den hr.vol-line:nth-child(1) {
+#vol-knob hr.vol-line:nth-child(1) {
   -webkit-transform: rotate(-60deg);
 }
 
-.vol-den hr.vol-line:nth-child(2) {
+#vol-knob hr.vol-line:nth-child(2) {
   -webkit-transform: rotate(60deg);
 }
 
@@ -834,4 +274,43 @@ opacity: .9;
 }
 .vol-checked-muted {
   color: #942020 !important;
+}
+
+/* CIRCLES */
+#vol-center {
+  z-index: 4;
+  width: 140px;
+  height: 140px;
+  margin: -70px 0 0 -70px;
+  border-radius: 100%;
+  background: #333333;
+  border: 1px solid #555555;
+}
+.vol-circle {
+  height: 39px;
+  width: 39px;
+  border-radius: 50%;
+  border: 1px solid #555555;
+  position: absolute;
+  z-index: 0;
+}
+#vol-circle-1 {
+  top: 95px;
+  left: -27px;
+}
+#vol-circle-2 {
+  top: 4px;
+  left: -28px;
+}
+#vol-circle-3 {
+  top: -40px;
+  left: 50px;
+}
+#vol-circle-4 {
+  top: 4px;
+  right: -28px;
+}
+#vol-circle-5 {
+  top: 95px;
+  right: -27px;
 }
