@@ -49,7 +49,11 @@
               <!-- SWITCH -->
               <div id="vol-switches">
                 
-                <label for="switch-m" id="switch-m-l"><div>MUTE</div></label>
+                <label for="switch-m" id="switch-m-l">
+                  <div class="vol-slice">
+                    <div>MUTE</div>
+                  </div>
+                </label>
                 <label for="switch-1">
                   <div class="vol-slice" id="vol-s-1">
                     <div class="vol-c">
@@ -82,19 +86,12 @@
                 </label>
 
 
-                <input id="switch-m" type="checkbox">
+                <input id="switch-m" name="switch" type="radio" checked>
                 <input id="switch-1" name="switch" type="radio">
                 <input id="switch-2" name="switch" type="radio">
                 <input id="switch-3" name="switch" type="radio">
                 <input id="switch-4" name="switch" type="radio">
                 <input id="switch-5" name="switch" type="radio">
-                <!-- TEXT 
-                <label for="switch_1" id="switch_right_label" style="visibility:hidden;"><span><i class="fa fa-minus"></i></span></label>
-                <label for="switch_15" class="switch_label"><span><i class="fa fa-minus"></i></span></label>-->
-
-                <!-- INPUT 
-                <input id="switch_1" name="switch" type="radio">
-                <input id="switch_15" name="switch" type="radio"> -->
 
                 <!-- LIGHT -->
                 <div id="vol-light"><span></span></div>
@@ -104,17 +101,8 @@
 
                   <!-- CENTER -->
                 <div id="vol-center">
-                  <div id="vol-circle-1" class="vol-circle">
-                  </div>
-                  <div id="vol-circle-2" class="vol-circle">
-                  </div>
-                  <div id="vol-circle-3" class="vol-circle">
-                  </div>
-                  <div id="vol-circle-4" class="vol-circle">
-                  </div>
-                  <div id="vol-circle-5" class="vol-circle">
-                  </div>
                 </div>
+
               </div>
             </div>
           </div>

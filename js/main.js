@@ -163,41 +163,41 @@ $(document).on("click", ".out-nav-item", function() {
 });
 
 /* TURNS OUTLINE OF KNOB WHEN MUTED */
-$("#switch_mute").on("click", function() {
-  if ($(this).is(':checked')) {
-    $("#vol-den").addClass("red-shadow");
-    $("#switch_mute_label span").html("UNMUTE").addClass("vol-checked-muted");
-    $(".switch_label").each(function() {
-      if ($(this).children("span").children("i").hasClass("vol-checked")) {
-        $(this).children("span").children("i").addClass("vol-checked-muted")
-      }
-    });
-    $("input[name='switch']").attr('disabled',true);
+$(document).on("click","#vol-switches label", function() {
+  if ($(this).attr("id") === ("switch-m-l")) {
+    if (!$(this).children("div").children("div").hasClass("vol-muted-m")) {
+      $("#vol-switches").addClass("red-shadow");
+      $("#vol-center").addClass("red-shadow");
+      $("#switch-m-l > div > div").html("UNMUTE").addClass("vol-muted-m");
+      $("#vol-switches label").each(function() {
+        if ($(this).children("div").children("div").hasClass("vol-checked")) {
+          $(this).children("div").children("div").addClass("vol-muted")
+        }
+      });
+      $("input[name='switch']").attr('disabled',true);
+    }
+    else {
+      $("#vol-switches").removeClass("red-shadow");
+      $("#vol-center").removeClass("red-shadow");
+      $("#switch-m-l > div > div").html("MUTE").removeClass("vol-muted-m");
+      $("#vol-switches label").each(function() {
+        if ($(this).children("div").children("div").hasClass("vol-checked")) {
+          $(this).children("div").children("div").removeClass("vol-muted")
+        }
+      });
+      $("input[name='switch']").attr('disabled',false);
+    }
   }
   else {
-    $("#vol-den").removeClass("red-shadow");
-    $("#switch_mute_label span").html("MUTE").removeClass("vol-checked-muted");
-    $(".switch_label").each(function() {
-      if ($(this).children("span").children("i").hasClass("vol-checked-muted")) {
-        $(this).children("span").children("i").removeClass("vol-checked-muted");
-      }
-    });
-    $("input[name='switch']").attr('disabled',false);
-  }
-});
-
-/* Changes color of volume knob ratchets */
-$(".vol-switch label").not("#switch_mute_label").on("click", function() {
-  if (!$("#switch_mute").is(":checked")) {
-    $(this).nextAll("label").each(function() {
-      $(this).children("span").children("i").removeClass("vol-checked");
-    });
-
-    $(this).prevAll("label").each(function() {
-      $(this).children("span").children("i").addClass("vol-checked");
-    });
-
-    $(this).children("span").children("span").addClass("vol-checked");
+    if (!$("#switch-m-l").children("div").children("div").hasClass("vol-muted-m")) {
+      $(this).nextAll("label").each(function() {
+        $(this).children("div").children("div").removeClass("vol-checked");
+      });
+      $(this).prevAll("label").not("#switch-m-l").each(function() {
+        $(this).children("div").children("div").addClass("vol-checked");
+      });
+      $(this).children("div").children("div").addClass("vol-checked");
+    }
   }
 });
 
