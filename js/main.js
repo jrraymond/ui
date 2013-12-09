@@ -162,42 +162,40 @@ $(document).on("click", ".out-nav-item", function() {
   $("#" + this.dataset.tab).addClass("active");
 });
 
-/* TURNS OUTLINE OF KNOB WHEN MUTED */
-$(document).on("click","#vol-switches label", function() {
-  if ($(this).attr("id") === ("switch-m-l")) {
-    if (!$(this).children("div").children("div").hasClass("vol-muted-m")) {
-      $("#vol-switches").addClass("red-shadow");
-      $("#vol-center").addClass("red-shadow");
-      $("#switch-m-l > div > div").html("UNMUTE").addClass("vol-muted-m");
-      $("#vol-switches label").each(function() {
-        if ($(this).children("div").children("div").hasClass("vol-checked")) {
-          $(this).children("div").children("div").addClass("vol-muted")
-        }
-      });
-      $("input[name='switch']").attr('disabled',true);
-    }
-    else {
-      $("#vol-switches").removeClass("red-shadow");
-      $("#vol-center").removeClass("red-shadow");
-      $("#switch-m-l > div > div").html("MUTE").removeClass("vol-muted-m");
-      $("#vol-switches label").each(function() {
-        if ($(this).children("div").children("div").hasClass("vol-checked")) {
-          $(this).children("div").children("div").removeClass("vol-muted")
-        }
-      });
-      $("input[name='switch']").attr('disabled',false);
-    }
+/* VOLUME KNOB MUTE CONTROL */
+$(document).on("click","#vol-mute", function() {
+  if (!$(this).hasClass("vol-muted-m")) {
+    $(this).addClass("vol-muted-m");
+    $("#vol-switches > label").each(function() {
+      $(this).hide();
+      //if ($(this).children("div").children("div").hasClass("vol-checked")) {
+       // $(this).children("div").children("div").addClass("vol-muted")
+      //}
+    });
+    $("input[name='switch']").attr('disabled',true);
   }
   else {
-    if (!$("#switch-m-l").children("div").children("div").hasClass("vol-muted-m")) {
-      $(this).nextAll("label").each(function() {
-        $(this).children("div").children("div").removeClass("vol-checked");
-      });
-      $(this).prevAll("label").not("#switch-m-l").each(function() {
-        $(this).children("div").children("div").addClass("vol-checked");
-      });
+    $(this).removeClass("vol-muted-m");
+    $("#vol-switches > label").each(function() {
+      $(this).show();
+      //if ($(this).children("div").children("div").hasClass("vol-checked")) {
+       // $(this).children("div").children("div").removeClass("vol-muted")
+      //}
+    });
+    $("input[name='switch']").attr('disabled',false);
+  }
+});
+  /* VOLUME KNOB LEVEL CONTROL */
+$(document).on("click", ".vol-c", function() {
+  var label = $(this).parent().parent();
+  if (!$("#vol-mute").hasClass("vol-muted-m")) {
+    label.nextAll("label").each(function() {
+      $(this).children("div").children("div").removeClass("vol-checked");
+    });
+    label.prevAll("label").not("#switch-m-l").each(function() {
       $(this).children("div").children("div").addClass("vol-checked");
-    }
+    });
+    $(this).addClass("vol-checked");
   }
 });
 
