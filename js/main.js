@@ -178,7 +178,7 @@ function updateOutput(source) {
       break;
     default:
       output1 = source;
-      $("#out-3 i").remove();
+      $("#out-1 i").remove();
       $("#out-1 > div > div").append(icon);
   }
 }
