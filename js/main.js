@@ -1,77 +1,16 @@
+var output = 1;
+var output1;
+var output2;
+var output3;
+
 /* Prevent dragging of images */
 $("img").on("dragstart", function(event) {
   event.preventDefault();
 }); 
 
 
-/* Response to tapping of sources  */
-$(".src-img").on("click", function() {
-  var that = $(this);
-  var othersHidden = new $.Deferred()
-  $.when(othersHidden).then(function() {
-    //that.parent().parent().css("height", "90%");
-    //that.parent().parent().parent().css("height", "100%");
-    //that.children("img").
-    that.parent().animate({ height: "100%", width: "100%"});
-    that.parent().parent().attr("class","col-xs-12");
-    that.parent().children(".src-info").fadeIn();
-    /*
-    that.parent().parent().parent().children().last().animate({
-      opacity : "show"}, function() {
-        $(this).parent().attr("class", "col-xs-4");
-        $(this).parent().parent().children().last().addClass("col-xs-8");
-      }
-    );
-    */
-      
-  });
 
-  //hide sources that were not selected
-  $(".src-thumbnail").not($(this).parent()).parent().fadeOut({ 
-    duration : "slow",
-    //always : btnHidden(this),
-    done : function(){
-      othersHidden.resolve();
-    }
-  });
-});
-
-/* Closes view of source */
-$(".close-btn").on("click", function() {
-  var srcClosed = new $.Deferred()
-  //show hidded sources once selected source has been shrunk
-  $.when(srcClosed).then(function() {
-    console.log($(".src-thumbnail").not($(this).parent().parent()));
-    $(".src-thumbnail").not($(this).parent().parent()).each(function() {
-      $(this).parent().fadeIn({
-        duration : "slow"
-      });
-    });
-  });
-  //shrink current source
-  console.log($(this).parent());
-  console.log($(this).parent().parent());
-  console.log($(this).parent().parent().parent());
-  $(this).parent().fadeOut();
-  $(this).parent().parent().animate({height : "90px", width : "90px"});
-  $(this).parent().parent().parent().attr("class","col-xs-4");
-  srcClosed.resolve();
-
-  
-  
-
-});
-
-
-
-/* Sets Date */
-
-/* called when source btns are hidden */
-function btnHidden(that) {
-  console.log($(that).parent());
-  //$(that).parent().attr("class", "col-xs-12");
-};
-
+/* SETS DATE */
 var findMonth = function(num) {
   switch (num) {
     case 0 :
@@ -160,6 +99,17 @@ $(document).on("click", ".out-nav-item", function() {
   $(this).addClass("nav-selected");
   $(".active").removeClass("active");
   $("#" + this.dataset.tab).addClass("active");
+  console.log("switching to output: " + this.dataset.tab);
+  switch (this.dataset.tab) {
+    case "out-2":
+      output = 2;
+      break;
+    case "out-3":
+      output = 3;
+      break;
+    default:
+      output = 1;
+  }
 });
 
 /* VOLUME KNOB MUTE CONTROL */
@@ -199,6 +149,56 @@ $(document).on("click", ".vol-c", function() {
   }
 });
 
+/* SOURCE SELECTION LISTENER */
+$(document).on("click", ".src", function() {
+  var source = $(this).children("label").children("div").children("p").html();
+  updateOutput(source);
+});
+
+/* UPDATES THE CURRENT OUTPUT WITH THE GIVEN SOURCE */
+function updateOutput(source) {
+  console.log("switching output " + output + " to source " + source);
+  var icon = getIcon(source);
+  $(".out-name + i").remove();
+  switch (output) {
+    case 2:
+      output2 = source;
+      $("#out-2 > div > div").append(icon);
+      break;
+    case 3:
+      output3 = source;
+      $("#out-3 > div > div").append(icon);
+      break;
+    default:
+      output1 = source;
+      $("#out-1 > div > div").append(icon);
+  }
+}
+/* RETURNS HTML STRING OF CORRECT ICON */
+function getIcon(source) {
+  switch (source) {
+    case "VGA":
+      return "<i class='cf icon-vga cf-7x'></i>";
+      break;
+    case "HDMI":
+      return "<i class='cf icon-hdmi cf-7x'></i>";
+      break;
+    case "PC":
+      return "<i class='fa fa-windows fa-7x'></i>";
+      break;
+    case "MAC":
+      return "<i class='fa fa-apple fa-7x'></i>";
+      break;
+    case "DVD":
+      return "<i class='fa fa-dot-circle-o fa-7x'></i>";
+      break;
+    case "BLURAY":
+      return "<i class='fa fa-dot-circle-o fa-7x'></i>";
+      break;
+    default:
+      alert ("unknown source");
+  }
+}
 
 
 $('#switch_mute').click();
