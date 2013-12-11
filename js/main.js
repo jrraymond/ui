@@ -103,12 +103,18 @@ $(document).on("click", ".out-nav-item", function() {
   switch (this.dataset.tab) {
     case "out-2":
       output = 2;
+      console.log("selecting source " + output2 + " for output 2");
+      selectSource(output2);
       break;
     case "out-3":
       output = 3;
+      console.log("selecting source " + output3 + " for output 3");
+      selectSource(output3);
       break;
     default:
       output = 1;
+      selectSource(output1);
+      console.log("selecting source " + output1 + " for output 1");
   }
 });
 
@@ -159,18 +165,20 @@ $(document).on("click", ".src", function() {
 function updateOutput(source) {
   console.log("switching output " + output + " to source " + source);
   var icon = getIcon(source);
-  $(".out-name + i").remove();
   switch (output) {
     case 2:
       output2 = source;
+      $("#out-2 i").remove();
       $("#out-2 > div > div").append(icon);
       break;
     case 3:
       output3 = source;
+      $("#out-3 i").remove();
       $("#out-3 > div > div").append(icon);
       break;
     default:
       output1 = source;
+      $("#out-3 i").remove();
       $("#out-1 > div > div").append(icon);
   }
 }
@@ -198,6 +206,11 @@ function getIcon(source) {
     default:
       alert ("unknown source");
   }
+}
+
+/* SELECTS SOURCE BUTTON */
+function selectSource(out) {
+  $("#src-" + out + " input").prop('checked', true);
 }
 
 
