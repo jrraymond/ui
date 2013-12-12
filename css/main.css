@@ -156,7 +156,8 @@ body {
 
 /* output controls */
 .out-group {
-  padding: 20px 0px 20px 0px;
+  padding: 10px 0px 10px 20px;
+  margin: 0px 0px 30px 0px;
 }
 .out-info {
   height: 230px;
@@ -301,48 +302,45 @@ body {
 }
 /* 3D TRANSFORMS */
 #transforms {
-  -webkit-perspective: 800px; //distance between pyramid and z-plane
-  -webkit-perspective-origin: 50% 200px;  //coordinates of perspective center
+  -webkit-perspective: 400px; //distance between pyramid and z-plane
+  -webkit-perspective-origin: 50% 100px;  //coordinates of perspective center
   perspective-origin: 50% 80%;
-  background: #dddddd;
-  height: 500px;
-  width: 500px;
-  margin-top:200px;
-  margin-left: 200px;
+  height: 250px;
+  width: 250px;
 }
 #cube {
   position: relative;
-  height: 400px;
-  width: 400px;
-  margin: 100px auto 0;
+  height: 200px;
+  width: 200px;
+  margin: 50px auto 0;
   -webkit-transition: -webkit-transform 2s linear;
   -webkit-transform-style: preserve-3d;
 }
 .face {
   position: absolute;
-  height: 400px;
-  width: 400px;
-  padding: 100px;
+  height: 200px;
+  width: 200px;
+  padding: 50px;
   background-color: rgba(50, 50, 50, 0.7);
   border: 1px solid #000000;
   color: #ffffff;
 }
 #cube .fone {
-  -webkit-transform: rotateX(90deg) translateZ(200px);
+  -webkit-transform: rotateX(90deg) translateZ(100px);
 }
 #cube .ftwo {
-  -webkit-transform: translateZ(200px);
+  -webkit-transform: translateZ(100px);
 }
 #cube .fthree {
-  -webkit-transform: rotateY(90deg) translateZ(200px);
+  -webkit-transform: rotateY(90deg) translateZ(100px);
 }
 #cube .ffour {
-  -webkit-transform: rotateY(180deg) translateZ(200px);
+  -webkit-transform: rotateY(180deg) translateZ(100px);
 }
 #cube .ffive {
-  -webkit-transform: rotateY(-90deg) translateZ(200px);
+  -webkit-transform: rotateY(-90deg) translateZ(100px);
 }
 #cube .fsix {
-  -webkit-transform: rotateX(-90deg) translateZ(200px) rotate(180deg);
+  -webkit-transform: rotateX(-90deg) translateZ(100px) rotate(180deg);
 }
 
