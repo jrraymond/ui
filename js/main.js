@@ -230,10 +230,13 @@ WebKitCSSMatrix.prototype.transformVector = function(v) {
 };
 //90deg about x-axis
 var xAxis = new Vector(1, 0, 0);
+var xAm = new Vector(-1, 0, 0);
 //90 deg about y-axis
 var yAxis = new Vector(0, 1, 0);
+var yAm = new Vector(0, -1, 0);
 //90deg about z-axis
 var zAxis = new Vector(0, 0, 1);
+var zAm = new Vector(0, 0, -1);
 
 var angle = 90;
 var cM;
@@ -243,7 +246,7 @@ $(document).on('keydown',function(e) {
   cM = new WebKitCSSMatrix($("#cube").css("webkitTransform"));
   switch (e.keyCode) {
     case 37:  //down
-      yat = cM.transformVector(yAxis);
+      yat = cM.transformVector(yAm);
       nM = cM.rotateAxisAngle(yat.x, yat.y, yat.z, angle);
       break;
     case 38: //right
@@ -255,9 +258,12 @@ $(document).on('keydown',function(e) {
       nM = cM.rotateAxisAngle(yat.x, yat.y, yat.z, angle);
       break;
     case 40: //left
-      xat = cM.transformVector(xAxis);
+      xat = cM.transformVector(xAm);
       nM = cM.rotateAxisAngle(xat.x, xat.y, xat.z, angle);
       break;
+    default:
+      zat = cM.transformVector(zAxis);
+      nM = cM.rotateAxisAngle(zat.x, zat.y, zat.z, angle);
   }
   setTimeout(function() {
     $('#cube')[0].style.webkitTransform = nM;
