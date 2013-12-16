@@ -302,45 +302,49 @@ body {
 }
 /* 3D TRANSFORMS */
 #transforms {
-  -webkit-perspective: 400px; //distance between pyramid and z-plane
-  -webkit-perspective-origin: 50% 100px;  //coordinates of perspective center
+  -webkit-perspective: 300px; //distance between pyramid and z-plane
+  -webkit-perspective-origin: 50% 75px;  //coordinates of perspective center
   perspective-origin: 50% 80%;
-  height: 250px;
-  width: 250px;
+  height: 188px;
+  width: 188px;
+  margin-left: 50px;
+  margin-top: 65px;
 }
 #cube {
   position: relative;
-  height: 200px;
-  width: 200px;
-  margin: 50px auto 0;
+  height: 150px;
+  width: 150px;
+  margin: 38px auto 0;
   -webkit-transition: -webkit-transform 2s linear;
   -webkit-transform-style: preserve-3d;
 }
 .face {
   position: absolute;
-  height: 200px;
-  width: 200px;
-  padding: 50px;
-  background-color: rgba(50, 50, 50, 0.7);
-  border: 1px solid #000000;
+  height: 150px;
+  width: 150px;
+  background-color: rgba(50, 50, 50, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.13);
   color: #ffffff;
 }
+.facefa {
+  padding: 30px;
+}
 #cube .fone {
-  -webkit-transform: rotateX(90deg) translateZ(100px);
+  -webkit-transform: rotateX(90deg) translateZ(75px);
 }
 #cube .ftwo {
-  -webkit-transform: translateZ(100px);
+  -webkit-transform: translateZ(75px);
 }
 #cube .fthree {
-  -webkit-transform: rotateY(90deg) translateZ(100px);
+  -webkit-transform: rotateY(90deg) translateZ(75px);
 }
 #cube .ffour {
-  -webkit-transform: rotateY(180deg) translateZ(100px);
+  -webkit-transform: rotateY(180deg) translateZ(75px);
 }
 #cube .ffive {
-  -webkit-transform: rotateY(-90deg) translateZ(100px);
+  -webkit-transform: rotateY(-90deg) translateZ(75px);
 }
 #cube .fsix {
-  -webkit-transform: rotateX(-90deg) translateZ(100px) rotate(180deg);
+  -webkit-transform: rotateX(-90deg) translateZ(75px) rotate(180deg);
 }
 
