@@ -215,23 +215,53 @@ function selectSource(out) {
 
 /* 3D TRANSFORMATIONS */
 var xAngle = 0, yAngle = 0;
+var matrix;
+/* 3d vector object */
+var Vector = function(x, y, z) {
+  this.x = x;
+  this.y = y;
+  this.z = z;
+}
+/* function for matrix-vector multiplications */
+WebKitCSSMatrix.prototype.transformVector = function(v) {
+  return new Vector(this.m11*v.x + this.m12*v.y + this.m13*v.z, 
+                    this.m21*v.x + this.m22*v.y + this.m23*v.z,
+                    this.m31*v.x + this.m32*v.y + this.m33*v.z);
+};
+//90deg about x-axis
+var xAxis = new Vector(1, 0, 0);
+//90 deg about y-axis
+var yAxis = new Vector(0, 1, 0);
+//90deg about z-axis
+var zAxis = new Vector(0, 0, 1);
+
+var angle = 90;
+var cM;
+var nM;
+
 $(document).on('keydown',function(e) {
+  cM = new WebKitCSSMatrix($("#cube").css("webkitTransform"));
   switch (e.keyCode) {
-    case 37: 
-      yAngle -= 90;
+    case 37:  //down
+      yat = cM.transformVector(yAxis);
+      nM = cM.rotateAxisAngle(yat.x, yat.y, yat.z, angle);
       break;
-    case 38:
-      xAngle += 90;
+    case 38: //right
+      xat = cM.transformVector(xAxis);
+      nM = cM.rotateAxisAngle(xat.x, xat.y, xat.z, angle);
       break;
-    case 39:
-      yAngle += 90;
+    case 39: //up
+      yat = cM.transformVector(yAxis);
+      nM = cM.rotateAxisAngle(yat.x, yat.y, yat.z, angle);
       break;
-    case 40:
-      xAngle -= 90;
+    case 40: //left
+      xat = cM.transformVector(xAxis);
+      nM = cM.rotateAxisAngle(xat.x, xat.y, xat.z, angle);
       break;
   }
-  console.log($('#cube'));
-  $('#cube')[0].style.webkitTransform = "rotateX("+xAngle+"deg) rotateY("+yAngle+"deg)";
+  setTimeout(function() {
+    $('#cube')[0].style.webkitTransform = nM;
+  }, 5);
 });
 
 

@@ -317,6 +317,9 @@ body {
   margin: 38px auto 0;
   -webkit-transition: -webkit-transform 2s linear;
   -webkit-transform-style: preserve-3d;
+  -webkit-transition-duration: 400ms;
+  -webkit-transition-timing-function: linear;
+  transition-property: all;
 }
 .face {
   position: absolute;
