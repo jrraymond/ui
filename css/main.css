@@ -283,6 +283,9 @@ body {
   padding: 0px;
   padding-right: 12px;
 }
+.src-img {
+  width: 55px;
+}
 
 /* Custom fonts */
 .cf {

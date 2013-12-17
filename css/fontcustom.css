@@ -4,11 +4,11 @@
 
 @font-face {
   font-family: "fontcustom";
-  src: url("../fonts/fontcustom_03d2fc1b82e9c2b79ed5c341d18d802a.eot");
-  src: url("../fonts/fontcustom_03d2fc1b82e9c2b79ed5c341d18d802a.eot?#iefix") format("embedded-opentype"),
-       url("../fonts/fontcustom_03d2fc1b82e9c2b79ed5c341d18d802a.woff") format("woff"),
-       url("../fonts/fontcustom_03d2fc1b82e9c2b79ed5c341d18d802a.ttf") format("truetype"),
-       url("../fonts/fontcustom_03d2fc1b82e9c2b79ed5c341d18d802a.svg#fontcustom") format("svg");
+  src: url("../fonts/fontcustom_c4ca9b372195ebba80646e5858b6b9f0.eot");
+  src: url("../fonts/fontcustom_c4ca9b372195ebba80646e5858b6b9f0.eot?#iefix") format("embedded-opentype"),
+       url("../fonts/fontcustom_c4ca9b372195ebba80646e5858b6b9f0.woff") format("woff"),
+       url("../fonts/fontcustom_c4ca9b372195ebba80646e5858b6b9f0.ttf") format("truetype"),
+       url("../fonts/fontcustom_c4ca9b372195ebba80646e5858b6b9f0.svg#fontcustom") format("svg");
   font-weight: normal;
   font-style: normal;
 }
@@ -16,8 +16,10 @@
 [data-icon]:before { content: attr(data-icon); }
 
 [data-icon]:before,
-.icon-hdmi:before,
-.icon-vga:before {
+.icon-hdmi-nc-detailed:before,
+.icon-vga-nc-md:before,
+.icon-hdmi-nc:before,
+.icon-dvd-nc:before {
   font-family: "fontcustom";
   font-style: normal;
   font-weight: normal;
@@ -29,5 +31,7 @@
   text-decoration: inherit;
 }
 
-.icon-hdmi:before { content: "\f100"; }
-.icon-vga:before { content: "\f101"; }
+.icon-hdmi-nc-detailed:before { content: "\f100"; }
+.icon-vga-nc-md:before { content: "\f101"; }
+.icon-hdmi-nc:before { content: "\f102"; }
+.icon-dvd-nc:before { content: "\f103"; }

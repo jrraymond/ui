@@ -157,7 +157,7 @@ $(document).on("click", ".vol-c", function() {
 
 /* SOURCE SELECTION LISTENER */
 $(document).on("click", ".src", function() {
-  var source = $(this).children("label").children("div").children("p").html();
+  var source = $(this).children("label").children("div")[1].html();
   updateOutput(source);
 });
 
@@ -186,10 +186,10 @@ function updateOutput(source) {
 function getIcon(source) {
   switch (source) {
     case "VGA":
-      return "<i class='cf icon-vga cf-7x'></i>";
+      return "<i class='cf icon-vga-nc-md cf-7x'></i>";
       break;
     case "HDMI":
-      return "<i class='cf icon-hdmi cf-7x'></i>";
+      return "<i class='cf icon-hdmi-nc-detailed cf-7x'></i>";
       break;
     case "PC":
       return "<i class='fa fa-windows fa-7x'></i>";
@@ -198,7 +198,7 @@ function getIcon(source) {
       return "<i class='fa fa-apple fa-7x'></i>";
       break;
     case "DVD":
-      return "<i class='fa fa-dot-circle-o fa-7x'></i>";
+      return "<i class='cf icon-dvd-nc cf-7x'></i>";
       break;
     case "BLURAY":
       return "<i class='fa fa-dot-circle-o fa-7x'></i>";
