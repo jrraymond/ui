@@ -157,7 +157,7 @@ $(document).on("click", ".vol-c", function() {
 
 /* SOURCE SELECTION LISTENER */
 $(document).on("click", ".src", function() {
-  var source = $(this).children("label").children("div")[1].html();
+  var source = $(this).children("label").children(":last-child").html();
   updateOutput(source);
 });
 
@@ -211,6 +211,12 @@ function getIcon(source) {
 /* SELECTS SOURCE BUTTON */
 function selectSource(out) {
   $("#src-" + out + " input").prop('checked', true);
+}
+
+/* ROTATES CUBE TO SELECTED SOURCE */
+function rotateCube(source) {
+
+
 }
 
 /* 3D TRANSFORMATIONS */
