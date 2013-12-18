@@ -157,9 +157,252 @@ $(document).on("click", ".vol-c", function() {
 
 /* SOURCE SELECTION LISTENER */
 $(document).on("click", ".src", function() {
+  switch (output) {
+    case 1:
+      var oldS = output1;  
+      break;
+    case 2: 
+      var oldS = output2;
+      break;
+    case 3:
+      var oldS = output3;
+      break;
+  }
   var source = $(this).children("label").children(":last-child").html();
   updateOutput(source);
+  selectSource(source);
+  var vecs = getRotationVector(oldS, source);
+  console.log('rotation vector from '+oldS+' to '+source);
+  console.log(vecs);
+  var matrix = new WebKitCSSMatrix($('#cube').css('webkitTransform'));
+  for (var i=1;i<vecs.length;i++) {
+    var matrix = getRotationMatrix(matrix, vecs[i], vecs[0]);
+  }
+  $('#cube')[0].style.webkitTransform = matrix;
 });
+
+/* SELECTS SOURCE BUTTON */
+function selectSource(out) {
+  $("#src-" + out + " input").prop('checked', true);
+}
+
+/* 3d vector object */
+var Vector = function(x, y, z) {
+  this.x = x;
+  this.y = y;
+  this.z = z;
+}
+/* function for matrix-vector multiplications */
+WebKitCSSMatrix.prototype.transformVector = function(v) {
+  return new Vector(this.m11*v.x + this.m12*v.y + this.m13*v.z, 
+                    this.m21*v.x + this.m22*v.y + this.m23*v.z,
+                    this.m31*v.x + this.m32*v.y + this.m33*v.z);
+};
+
+/* RETURNS LIST OF CORRECT CUBE ROTATION VECTORS
+ *
+ * This relies on the representation of the unfolded cube as
+ *            4
+ *          6 1 5
+ *            2
+ *            3
+ *  where 1->Mac, 2->DVD, 3->VGA, 4->BLURAY, 5->PC, 6->HDMI
+ */
+function getRotationVector(oldSource, newSource) {
+  switch (oldSource) {
+    case "MAC":
+      switch (newSource) {
+        case "MAC":
+          return [0, new Vector(0, 0, 0)];
+          break;
+        case "PC":
+          return [90, new Vector(0, -1, 0)];
+          break;
+        case "VGA":
+          return [90, new Vector(-1, 0, 0), new Vector(-1, 0, 0)];
+          break;
+        case "HDMI":
+          return [90, new Vector(0, 1, 0)];
+          break;
+        case "DVD":
+          return [90, new Vector(1, 0, 0)];
+          break;
+        case "BLURAY":
+          return [90, new Vector(-1, 0, 0)];
+          break;
+      }
+      break;
+    case "PC":
+      switch (newSource) {
+        case "MAC":
+          return [90, new Vector(0, 1, 0)];
+          break;
+        case "PC":
+          return [0, new Vector(0, 0, 0)];
+          break;
+        case "VGA":
+          return [90, new Vector(0, -1, 0)];
+          break;
+        case "HDMI":
+          return [90, new Vector(0, -1, 0), new Vector(0, -1, 0)];
+          break;
+        case "DVD":
+          return [90, new Vector(1, 0, 0)];
+          break;
+        case "BLURAY":
+          return [90, new Vector(-1, 0, 0)];
+          break;
+      }
+      break;
+    case "VGA":
+      switch (newSource) {
+        case "MAC":
+          return [90, new Vector(1, 0, 0), new Vector(1, 0, 0)]
+          break;
+        case "PC":
+          return [90, new Vector(0, 1, 0)];
+          break;
+        case "VGA":
+          return [0, new Vector(0, 0, 0)];
+          break;
+        case "HDMI":
+          return [90, new Vector(0, 1, 0)];
+          break;
+        case "DVD":
+          return [90, new Vector(-1, 0, 0)];
+          break;
+        case "BLURAY":
+          return [90, new Vector(1, 0, 0)];
+          break;
+      }
+      break;
+    case "HDMI":
+      switch (newSource) {
+        case "MAC":
+          return [90, new Vector(0, -1, 0)];
+          break;
+        case "PC":
+          return [90, new Vector(0, -1, 0), new Vector(0, -1, 0)];
+          break;
+        case "VGA":
+          return [90, new Vector(0, 1, 0)];
+          break;
+        case "HDMI":
+          return [0, new Vector(0, 0, 0)];
+          break;
+        case "DVD":
+          return [90, new Vector(1, 0, 0)];
+          break;
+        case "BLURAY":
+          return [90, new Vector(-1, 0, 0)];
+          break;
+      }
+      break;
+    case "DVD":
+      switch (newSource) {
+        case "MAC":
+          return [90, new Vector(-1, 0, 0)];
+          break;
+        case "PC":
+          return [90, new Vector(0, -1, 0)];
+          break;
+        case "VGA":
+          return [90, new Vector(1, 0, 0)];
+          break;
+        case "HDMI":
+          return [90, new Vector(0, 1, 0)];
+          break;
+        case "DVD":
+          return [0, new Vector(0, 0, 0)];
+          break;
+        case "BLURAY":
+          return [90, new Vector(1, 0, 0), new Vector(1, 0, 0)];
+          break;
+      }
+      break;
+    case "BLURAY":
+      switch (newSource) {
+        case "MAC":
+          return [90, new Vector(0, -1, 0)];
+          break;
+        case "PC":
+          return [90, new Vector(1, 0, 0)];
+          break;
+        case "VGA":
+          return [90, new Vector(0, 1, 0)];
+          break;
+        case "HDMI":
+          return [90, new Vector(-1, 0, 0)];
+          break;
+        case "DVD":
+          return [90, new Vector(0, 1, 0), new Vector(0, 1, 0)];
+          break;
+        case "BLURAY":
+          return [0, new Vector(0, 0, 0)];
+          break;
+      }
+      break;
+    default:
+      return [0, new Vector(0, 0, 0)];
+  }
+
+}
+/* Returns the new matrix of the cube */
+function getRotationMatrix(matrix, vector, angle) {
+  console.log('vector');
+  console.log(vector);
+  var vat = matrix.transformVector(vector);
+  console.log('vector axis translated');
+  console.log(vat);
+  return matrix.rotateAxisAngle(vat.x, vat.y, vat.z, angle);
+}
+
+
+/* 3D TRANSFORMATIONS */
+var xAngle = 0, yAngle = 0;
+var matrix;
+//90deg about x-axis
+var xAxis = new Vector(1, 0, 0);
+var xAm = new Vector(-1, 0, 0);
+//90 deg about y-axis
+var yAxis = new Vector(0, 1, 0);
+var yAm = new Vector(0, -1, 0);
+//90deg about z-axis
+var zAxis = new Vector(0, 0, 1);
+var zAm = new Vector(0, 0, -1);
+
+var angle = 90;
+var cM;
+var nM;
+
+$(document).on('keydown',function(e) {
+  cM = new WebKitCSSMatrix($("#cube").css("webkitTransform"));
+  switch (e.keyCode) {
+    case 37:  //left
+      yat = cM.transformVector(yAm);
+      nM = cM.rotateAxisAngle(yat.x, yat.y, yat.z, angle);
+      break;
+    case 38: //up
+      xat = cM.transformVector(xAxis);
+      nM = cM.rotateAxisAngle(xat.x, xat.y, xat.z, angle);
+      break;
+    case 39: //right
+      yat = cM.transformVector(yAxis);
+      nM = cM.rotateAxisAngle(yat.x, yat.y, yat.z, angle);
+      break;
+    case 40: //down
+      xat = cM.transformVector(xAm);
+      nM = cM.rotateAxisAngle(xat.x, xat.y, xat.z, angle);
+      break;
+    default:
+      zat = cM.transformVector(zAxis);
+      nM = cM.rotateAxisAngle(zat.x, zat.y, zat.z, angle);
+  }
+  setTimeout(function() {
+    $('#cube')[0].style.webkitTransform = nM;
+  }, 5);
+});
+
 
 /* UPDATES THE CURRENT OUTPUT WITH THE GIVEN SOURCE */
 function updateOutput(source) {
@@ -208,77 +451,8 @@ function getIcon(source) {
   }
 }
 
-/* SELECTS SOURCE BUTTON */
-function selectSource(out) {
-  $("#src-" + out + " input").prop('checked', true);
-}
 
-/* ROTATES CUBE TO SELECTED SOURCE */
-function rotateCube(source) {
-
-
-}
-
-/* 3D TRANSFORMATIONS */
-var xAngle = 0, yAngle = 0;
-var matrix;
-/* 3d vector object */
-var Vector = function(x, y, z) {
-  this.x = x;
-  this.y = y;
-  this.z = z;
-}
-/* function for matrix-vector multiplications */
-WebKitCSSMatrix.prototype.transformVector = function(v) {
-  return new Vector(this.m11*v.x + this.m12*v.y + this.m13*v.z, 
-                    this.m21*v.x + this.m22*v.y + this.m23*v.z,
-                    this.m31*v.x + this.m32*v.y + this.m33*v.z);
-};
-//90deg about x-axis
-var xAxis = new Vector(1, 0, 0);
-var xAm = new Vector(-1, 0, 0);
-//90 deg about y-axis
-var yAxis = new Vector(0, 1, 0);
-var yAm = new Vector(0, -1, 0);
-//90deg about z-axis
-var zAxis = new Vector(0, 0, 1);
-var zAm = new Vector(0, 0, -1);
-
-var angle = 90;
-var cM;
-var nM;
-
-$(document).on('keydown',function(e) {
-  cM = new WebKitCSSMatrix($("#cube").css("webkitTransform"));
-  switch (e.keyCode) {
-    case 37:  //down
-      yat = cM.transformVector(yAm);
-      nM = cM.rotateAxisAngle(yat.x, yat.y, yat.z, angle);
-      break;
-    case 38: //right
-      xat = cM.transformVector(xAxis);
-      nM = cM.rotateAxisAngle(xat.x, xat.y, xat.z, angle);
-      break;
-    case 39: //up
-      yat = cM.transformVector(yAxis);
-      nM = cM.rotateAxisAngle(yat.x, yat.y, yat.z, angle);
-      break;
-    case 40: //left
-      xat = cM.transformVector(xAm);
-      nM = cM.rotateAxisAngle(xat.x, xat.y, xat.z, angle);
-      break;
-    default:
-      zat = cM.transformVector(zAxis);
-      nM = cM.rotateAxisAngle(zat.x, zat.y, zat.z, angle);
-  }
-  setTimeout(function() {
-    $('#cube')[0].style.webkitTransform = nM;
-  }, 5);
-});
-
-
-
-
+$('#src-MAC').click();
 $('#switch_mute').click();
 $('#switch_mute').click();
-$('#switch_1').click();
+$('#switchW1').click();
