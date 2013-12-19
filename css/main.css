@@ -1,4 +1,4 @@
-/* ==========================================================================
+/* ================================1=========================================
    custom styles
    ========================================================================== */
 /* CHANGES TO BOOTSTRAP */
@@ -324,6 +324,42 @@ body {
   -webkit-transition-timing-function: linear;
   transition-property: all;
 }
+.c-front {
+  -webkit-transform: matrix3d(1, 0, 0, 0,
+                              0, 1, 0, 0,
+                              0, 0, 1, 0,
+                              0, 0, 0, 1);
+}
+.c-top {
+  -webkit-transform: matrix3d(1, 0, 0, 0,
+                              0, 0, -1, 0,
+                              0, 1, 0, 0,
+                              0, 0, 0, 1);
+}
+.c-bottom {
+  -webkit-transform: matrix3d(1, 0, 0, 0,
+                              0, 0, 1, 0,
+                              0, -1, 0, 0,
+                              0, 0, 0, 1);
+}
+.c-left {
+  -webkit-transform: matrix3d(0, 0, -1, 0,
+                              0, 1, 0, 0,
+                              1, 0, 0, 0,
+                              0, 0, 0, 1);
+}
+.c-right {
+  -webkit-transform: matrix3d(0, 0, 1, 0,
+                              0, 1, 0, 0,
+                              -1, 0, 0, 0,
+                              0, 0, 0, 1);
+}
+.c-back {
+  -webkit-transform: matrix3d(-1, 0, 0, 0,
+                              0, 1, 0, 0,
+                              0, 0, -1, 0,
+                              0, 0, 0, 1);
+}
 .face {
   position: absolute;
   height: 150px;
@@ -335,22 +371,22 @@ body {
 .facefa {
   padding: 30px;
 }
-#cube .fone {
+#cube .f-top {
   -webkit-transform: rotateX(90deg) translateZ(75px);
 }
-#cube .ftwo {
+#cube .f-front {
   -webkit-transform: translateZ(75px);
 }
-#cube .fthree {
+#cube .f-right {
   -webkit-transform: rotateY(90deg) translateZ(75px);
 }
-#cube .ffour {
+#cube .f-back {
   -webkit-transform: rotateY(180deg) translateZ(75px);
 }
-#cube .ffive {
+#cube .f-left {
   -webkit-transform: rotateY(-90deg) translateZ(75px);
 }
-#cube .fsix {
+#cube .f-bottom {
   -webkit-transform: rotateX(-90deg) translateZ(75px) rotate(180deg);
 }
 
