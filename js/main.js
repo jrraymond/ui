@@ -2,6 +2,8 @@ var output = 1;
 var output1;
 var output2;
 var output3;
+var projOff = true;
+
 
 /* Prevent dragging of images */
 $("img").on("dragstart", function(event) {
@@ -150,7 +152,28 @@ $(document).on("click", ".vol-c", function() {
     $(this).addClass("vol-checked");
   }
 });
-
+/* POWER BUTTON LISTENER */
+$(document).on("click", ".pwr-btn > input", function() {
+  if ($(this).prop("checked")) {
+    console.log("power on");
+    $("#cube").removeClass("c-top");
+  }
+  else {
+    console.log("power off");
+    $("#cube").addClass("c-top");
+  }
+});
+/* VIDEO MUTE LISTENER */
+$(document).on("click",".vm-btn > input", function() {
+  if ($(this).prop("checked")) {
+    console.log("video muted");
+    $("#cube").addClass("cube-vm");
+  }
+  else {
+    console.log("vidoe unmuted");
+    $("#cube").removeClass("cube-vm");
+  }
+});
 /* SOURCE SELECTION LISTENER */
 $(document).on("click", ".src", function() {
   switch (output) {
@@ -180,22 +203,22 @@ function selectSource(out) {
 /* Returns correct class */
 function getMatrixClass(source) {
   switch(source) {
-    case "MAC":
+    case "mac":
       return "c-front";
       break;
-    case "PC":
-      return "c-right";
-      break;
-    case "VGA":
-      return "c-back";
-      break;
-    case "DVD":
+    case "pc":
       return "c-bottom";
       break;
-    case "HDMI":
+    case "vga":
+      return "c-back";
+      break;
+    case "dvd":
+      return "c-right";
+      break;
+    case "hdmi":
       return "c-left";
       break;
-    case "BLURAY":
+    case "bluray":
       return "c-top"
       break;
   }
@@ -225,22 +248,22 @@ function updateOutput(source) {
 /* RETURNS HTML STRING OF CORRECT ICON */
 function getIcon(source) {
   switch (source) {
-    case "VGA":
+    case "vga":
       return "<i class='cf icon-vga-nc-md cf-7x'></i>";
       break;
-    case "HDMI":
+    case "hdmi":
       return "<i class='cf icon-hdmi-nc-detailed cf-7x'></i>";
       break;
-    case "PC":
+    case "pc":
       return "<i class='fa fa-windows fa-7x'></i>";
       break;
-    case "MAC":
+    case "mac":
       return "<i class='fa fa-apple fa-7x'></i>";
       break;
-    case "DVD":
+    case "dvd":
       return "<i class='cf icon-dvd-nc cf-7x'></i>";
       break;
-    case "BLURAY":
+    case "bluray":
       return "<i class='fa fa-dot-circle-o fa-7x'></i>";
       break;
     default:
@@ -248,8 +271,7 @@ function getIcon(source) {
   }
 }
 
-
-$('#src-MAC').click();
+$("#cube").addClass("c-top");
 $('#switch_mute').click();
 $('#switch_mute').click();
 $('#switchW1').click();

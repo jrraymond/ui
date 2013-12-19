@@ -367,8 +367,6 @@ body {
   background-color: rgba(50, 50, 50, 0.8);
   border: 1px solid rgba(255, 255, 255, 0.13);
   color: #ffffff;
-}
-.facefa {
   padding: 30px;
 }
 #cube .f-top {
@@ -390,3 +388,6 @@ body {
   -webkit-transform: rotateX(-90deg) translateZ(75px) rotate(180deg);
 }
 
+.cube-vm {
+  color: #555555 !important;
+}
