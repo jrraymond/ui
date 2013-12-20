@@ -337,9 +337,9 @@ body {
                               0, 0, 0, 1);
 }
 .c-bottom {   /* windows */
-  -webkit-transform: matrix3d(1, 0, 0, 0,
+  -webkit-transform: matrix3d(-1, 0, 0, 0,
                               0, 0, 1, 0,
-                              0, -1, 0, 0,
+                              0, 1, 0, 0,
                               0, 0, 0, 1);
 }
 .c-left {   /* hdmi */
