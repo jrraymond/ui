@@ -29,6 +29,9 @@
   z-index: 99;
   border: 1px solid #555555;
 }
+.pwr-btn label i {
+  line-height: 1.7;
+}
 .pwr-btn label:before {
   content: "";
   position: absolute;

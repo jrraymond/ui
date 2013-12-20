@@ -324,37 +324,37 @@ body {
   -webkit-transition-timing-function: linear;
   transition-property: all;
 }
-.c-front {
+.c-front {    /* apple */
   -webkit-transform: matrix3d(1, 0, 0, 0,
                               0, 1, 0, 0,
                               0, 0, 1, 0,
                               0, 0, 0, 1);
 }
-.c-top {
+.c-top {   /* logo */
   -webkit-transform: matrix3d(1, 0, 0, 0,
                               0, 0, -1, 0,
                               0, 1, 0, 0,
                               0, 0, 0, 1);
 }
-.c-bottom {
+.c-bottom {   /* windows */
   -webkit-transform: matrix3d(1, 0, 0, 0,
                               0, 0, 1, 0,
                               0, -1, 0, 0,
                               0, 0, 0, 1);
 }
-.c-left {
+.c-left {   /* hdmi */
   -webkit-transform: matrix3d(0, 0, -1, 0,
                               0, 1, 0, 0,
                               1, 0, 0, 0,
                               0, 0, 0, 1);
 }
-.c-right {
+.c-right {    /* dvd */
   -webkit-transform: matrix3d(0, 0, 1, 0,
                               0, 1, 0, 0,
                               -1, 0, 0, 0,
                               0, 0, 0, 1);
 }
-.c-back {
+.c-back {   /* vga */
   -webkit-transform: matrix3d(-1, 0, 0, 0,
                               0, 1, 0, 0,
                               0, 0, -1, 0,
