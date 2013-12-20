@@ -5,11 +5,11 @@
 
 @font-face {
   font-family: "fontcustom";
-  src: url("../fonts/fontcustom_8939bc8a72e5242a8aa1475ef6770d04.eot");
-  src: url("../fonts/fontcustom_8939bc8a72e5242a8aa1475ef6770d04.eot?#iefix") format("embedded-opentype"),
-       url("../fonts/fontcustom_8939bc8a72e5242a8aa1475ef6770d04.woff") format("woff"),
-       url("../fonts/fontcustom_8939bc8a72e5242a8aa1475ef6770d04.ttf") format("truetype"),
-       url("../fonts/fontcustom_8939bc8a72e5242a8aa1475ef6770d04.svg#fontcustom") format("svg");
+  src: url("../fonts/fontcustom_59d5e7934d20983c70fdad3826b2f025.eot");
+  src: url("../fonts/fontcustom_59d5e7934d20983c70fdad3826b2f025.eot?#iefix") format("embedded-opentype"),
+       url("../fonts/fontcustom_59d5e7934d20983c70fdad3826b2f025.woff") format("woff"),
+       url("../fonts/fontcustom_59d5e7934d20983c70fdad3826b2f025.ttf") format("truetype"),
+       url("../fonts/fontcustom_59d5e7934d20983c70fdad3826b2f025.svg#fontcustom") format("svg");
   font-weight: normal;
   font-style: normal;
 }
@@ -60,8 +60,7 @@ li[class^="icon-"].icon-large:before, li[class*=" icon-"].icon-large:before {
   text-indent: -1.333em;
 }
 
-.icon-hdmi-nc-detailed:before { content: "\f100"; }
+.icon-hdmi:before { content: "\f100"; }
 .icon-cmdr:before { content: "\f101"; }
-.icon-vga-nc-md:before { content: "\f102"; }
-.icon-hdmi-nc:before { content: "\f103"; }
-.icon-dvd-nc:before { content: "\f104"; }
+.icon-vga:before { content: "\f102"; }
+.icon-dvd:before { content: "\f103"; }
