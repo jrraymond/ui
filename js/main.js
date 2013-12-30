@@ -156,22 +156,22 @@ $(document).on("click", ".vol-c", function() {
 $(document).on("click", ".pwr-btn > input", function() {
   if ($(this).prop("checked")) {
     console.log("power on");
-    $("#cube").removeClass("c-top");
+    $(".cube").removeClass("c-top");
   }
   else {
     console.log("power off");
-    $("#cube").addClass("c-top");
+    $(".cube").addClass("c-top");
   }
 });
 /* VIDEO MUTE LISTENER */
 $(document).on("click",".vm-btn > input", function() {
   if ($(this).prop("checked")) {
     console.log("video muted");
-    $("#cube").addClass("cube-vm");
+    $(".cube").addClass("cube-vm");
   }
   else {
     console.log("vidoe unmuted");
-    $("#cube").removeClass("cube-vm");
+    $(".cube").removeClass("cube-vm");
   }
 });
 /* SOURCE SELECTION LISTENER */
@@ -192,7 +192,7 @@ $(document).on("click", ".src", function() {
   selectSource(source);
   var oldClass = getMatrixClass(oldS);
   var newClass = getMatrixClass(source);
-  $("#cube").removeClass(oldClass).addClass(newClass);
+  $(".cube").removeClass(oldClass).addClass(newClass);
 });
 
 /* SELECTS SOURCE BUTTON */
@@ -271,7 +271,7 @@ function getIcon(source) {
   }
 }
 
-$("#cube").addClass("c-top");
+$(".cube").addClass("c-top");
 $('#switch_mute').click();
 $('#switch_mute').click();
 $('#switchW1').click();
@@ -310,7 +310,7 @@ var cM;
 var nM;
 
 $(document).on('keydown',function(e) {
-  cM = new WebKitCSSMatrix($("#cube").css("webkitTransform"));
+  cM = new WebKitCSSMatrix($(".cube").css("webkitTransform"));
   switch (e.keyCode) {
     case 37:  //left
       yat = cM.transformVector(yAm);
@@ -333,7 +333,7 @@ $(document).on('keydown',function(e) {
       nM = cM.rotateAxisAngle(zat.x, zat.y, zat.z, angle);
   }
   setTimeout(function() {
-    $('#cube')[0].style.webkitTransform = nM;
+    $('.cube')[0].style.webkitTransform = nM;
   }, 5);
 });
 

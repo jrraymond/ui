@@ -304,7 +304,7 @@ body {
   background: #333333;
 }
 /* 3D TRANSFORMS */
-#transforms {
+.transforms {
   -webkit-perspective: 300px; //distance between pyramid and z-plane
   -webkit-perspective-origin: 50% 75px;  //coordinates of perspective center
   perspective-origin: 50% 80%;
@@ -313,7 +313,7 @@ body {
   margin-left: 50px;
   margin-top: 65px;
 }
-#cube {
+.cube {
   position: relative;
   height: 150px;
   width: 150px;
@@ -368,25 +368,77 @@ body {
   color: #ffffff;
   padding: 30px;
 }
-#cube .f-top {
+.cube .f-top {
   -webkit-transform: rotateX(90deg) translateZ(75px);
 }
-#cube .f-front {
+.cube .f-front {
   -webkit-transform: translateZ(75px);
 }
-#cube .f-right {
+.cube .f-right {
   -webkit-transform: rotateY(90deg) translateZ(75px);
 }
-#cube .f-back {
+.cube .f-back {
   -webkit-transform: rotateY(180deg) translateZ(75px);
 }
-#cube .f-left {
+.cube .f-left {
   -webkit-transform: rotateY(-90deg) translateZ(75px);
 }
-#cube .f-bottom {
+.cube .f-bottom {
   -webkit-transform: rotateX(-90deg) translateZ(75px) rotate(180deg);
 }
 
 .cube-vm {
   color: #555555 !important;
 }
+
+/* projector cube 
+#p-transforms {
+  -webkit-perspective: 300px;
+  -webkit-perspective-origin: 50% 50%;
+  perspective-origin: 50% 80%;
+  height: 250px;
+  width: 495px;
+}
+#p-cube {
+  position: relative;
+  height: 250px;
+  width: 495px;
+  -webkit-transition: -webkit-transform 2s linear;
+  -webkit-transform-style: preserve-3d;
+  -webkit-transition-duration: 400ms;
+  -webkit-transition-timing-function: linear;
+  transition-property: all;
+}
+.p-face {
+  position: absolute;
+  height: 250px;
+  width: 495px;
+}
+.p-one {
+  -webkit-transform: matrix3d(1, 0, 0, 0,
+                              0, 0, -1, 0,
+                              0, 1, 0, 0,
+                              0, 0, 0, 1);
+}
+.p-two {
+  -webkit-transform: matrix3d(0, 0, -1, 0,
+                              0, 1, 0, 0,
+                              1, 0, 0, 0,
+                              0, 0, 0, 1);
+}
+.p-three {
+  -webkit-transform: matrix3d(0, 0, 1, 0,
+                              0, 1, 0, 0,
+                              -1, 0, 0, 0,
+                              0, 0, 0, 1);
+}
+#p-cube .p-one {
+  -webkit-transform: translateZ(75px);
+}
+#p-cube .p-two {
+  -webkit-transform: rotateY(90deg) translateZ(75px);
+}
+#p-cube .p-three {
+  -webkit-transform: rotateY(-90deg) translateZ(75px);
+}
+*/
