@@ -301,14 +301,14 @@ WebKitCSSMatrix.prototype.transformVector = function(v) {
 var xAngle = 0, yAngle = 0;
 var matrix;
 //90deg about x-axis
-var xAxis = new Vector(1, 0, 0);
-var xAm = new Vector(-1, 0, 0);
+var xAxis = new Vector(0.25, 0, 0);
+var xAm = new Vector(-0.25, 0, 0);
 //90 deg about y-axis
-var yAxis = new Vector(0, 1, 0);
-var yAm = new Vector(0, -1, 0);
+var yAxis = new Vector(0, 0.25, 0);
+var yAm = new Vector(0, -0.25, 0);
 //90deg about z-axis
-var zAxis = new Vector(0, 0, 1);
-var zAm = new Vector(0, 0, -1);
+var zAxis = new Vector(0, 0, 0.25);
+var zAm = new Vector(0, 0, -0.25);
 
 var angle = 90;
 var cM;
