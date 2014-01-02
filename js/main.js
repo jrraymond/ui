@@ -95,12 +95,16 @@ updateTime();
 
 setInterval(updateTime, 1000);
 
+
 /* TAB NAVIGATION */
 $(document).on("click", ".out-nav-item", function() {
+  var oldOut = $(".nav-selected").data() ? $(".nav-selected").data().tab : "none";
   $(".nav-selected").removeClass("nav-selected");
   $(this).addClass("nav-selected");
   $(".active").removeClass("active");
   $("#" + this.dataset.tab).addClass("active");
+  $("#p-cube").removeClass("p-" + oldOut);
+  $("#p-cube").addClass("p-" + this.dataset.tab);
   switch (this.dataset.tab) {
     case "out-2":
       output = 2;
@@ -115,6 +119,7 @@ $(document).on("click", ".out-nav-item", function() {
       selectSource(output1);
   }
 });
+
 
 /* VOLUME KNOB MUTE CONTROL */
 $(document).on("click","#vol-mute", function() {
@@ -174,6 +179,7 @@ $(document).on("click",".vm-btn > input", function() {
     $(".cube").removeClass("cube-vm");
   }
 });
+
 /* SOURCE SELECTION LISTENER */
 $(document).on("click", ".src", function() {
   switch (output) {
@@ -192,6 +198,7 @@ $(document).on("click", ".src", function() {
   selectSource(source);
   var oldClass = getMatrixClass(oldS);
   var newClass = getMatrixClass(source);
+  $(".cube").removeClass("c-top");
   $(".cube").removeClass(oldClass).addClass(newClass);
 });
 
@@ -277,13 +284,12 @@ $('#switch_mute').click();
 $('#switchW1').click();
 
 
-/* 3d vector object */
+/* 3d vector object 
 var Vector = function(x, y, z) {
   this.x = x;
   this.y = y;
   this.z = z;
 }
-/* function for matrix-vector multiplications */
 WebKitCSSMatrix.prototype.transformVector = function(v) {
   return new Vector(this.m11*v.x + this.m12*v.y + this.m13*v.z, 
                     this.m21*v.x + this.m22*v.y + this.m23*v.z,
@@ -292,7 +298,6 @@ WebKitCSSMatrix.prototype.transformVector = function(v) {
 
 
 
-/* 3D TRANSFORMATIONS */
 var xAngle = 0, yAngle = 0;
 var matrix;
 //90deg about x-axis
@@ -310,7 +315,7 @@ var cM;
 var nM;
 
 $(document).on('keydown',function(e) {
-  cM = new WebKitCSSMatrix($(".cube").css("webkitTransform"));
+  cM = new WebKitCSSMatrix($("#p-cube").css("webkitTransform"));
   switch (e.keyCode) {
     case 37:  //left
       yat = cM.transformVector(yAm);
@@ -333,7 +338,7 @@ $(document).on('keydown',function(e) {
       nM = cM.rotateAxisAngle(zat.x, zat.y, zat.z, angle);
   }
   setTimeout(function() {
-    $('.cube')[0].style.webkitTransform = nM;
+    $('#p-cube')[0].style.webkitTransform = nM;
   }, 5);
 });
-
+*/

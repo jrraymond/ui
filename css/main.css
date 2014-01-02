@@ -156,8 +156,7 @@ body {
 
 /* output controls */
 .out-group {
-  padding: 10px 0px 10px 20px;
-  margin: 0px 0px 30px 0px;
+  padding: 10px 10px 10px 10px;
 }
 .out-info {
   height: 230px;
@@ -220,13 +219,8 @@ body {
 /* source selection */
 .src-group {
   border-top: 1px solid #3c3d3f;
-  margin-left: 0px;
-  margin-right: 0px;
-  margin-bottom: 15px;
-  padding-top: 20px;
-  padding-right: 0px;
-  padding-left: 8px;
-  padding-bottom: 10px;
+  margin: 0px 0px 0px 0px;
+  padding: 20px 0px 10px 8px;
 }
 .src {
   width: 20%;
@@ -391,54 +385,86 @@ body {
   color: #555555 !important;
 }
 
-/* projector cube 
-#p-transforms {
-  -webkit-perspective: 300px;
+/* Prevents parents of floating elements from collapsing */
+.clearfix:after {
+  clear: both;
+  content: " ";
+  display: block;
+  height: 0;
+}
+/* projector cube */
+#p-trans {
+  -webkit-perspective: 0;
   -webkit-perspective-origin: 50% 50%;
-  perspective-origin: 50% 80%;
-  height: 250px;
+  height: 280px;
   width: 495px;
+  -webkit-transform-style: preserve-3d;
+  overflow: hidden;
+}
+#p-stage {
+  -webkit-transform: translateZ(0px);
+  height: 100%;
+  width: 100%;
 }
 #p-cube {
   position: relative;
-  height: 250px;
-  width: 495px;
+  height: 260px;
+  width: 475px;
   -webkit-transition: -webkit-transform 2s linear;
   -webkit-transform-style: preserve-3d;
-  -webkit-transition-duration: 400ms;
-  -webkit-transition-timing-function: linear;
+  -webkit-transition-duration: 2s;
+  -webkit-transition-timing-function: ease-in-out;
   transition-property: all;
 }
 .p-face {
   position: absolute;
-  height: 250px;
-  width: 495px;
+  height: 260px;
+  width: 475px;
+  -webkit-box-sizing: border-box;
+  -webkit-backface-visibility: hidden;
 }
-.p-one {
+#p-cube .p-one {
+  -webkit-transform: translateZ(580px);
+}
+#p-cube .p-two {
+  -webkit-transform: rotateY(45deg) translateZ(580px);
+}
+#p-cube .p-three {
+  -webkit-transform: rotateY(90deg) translateZ(580px);
+}
+#p-cube .p-four {
+  -webkit-transform: rotateY(135deg) translateZ(580px);
+}
+#p-cube .p-five {
+  -webkit-transform: rotateY(180deg) translateZ(580px);
+}
+#p-cube .p-six {
+  -webkit-transform: rotateY(225deg) translateZ(580px);
+}
+#p-cube .p-seven {
+  -webkit-transform: rotateY(270deg) translateZ(580px);
+}
+#p-cube .p-eight {
+  -webkit-transform: rotateY(315deg) translateZ(580px);
+}
+
+.p-out-1 {
   -webkit-transform: matrix3d(1, 0, 0, 0,
-                              0, 0, -1, 0,
                               0, 1, 0, 0,
+                              0, 0, 1, 0,
                               0, 0, 0, 1);
+  
 }
-.p-two {
-  -webkit-transform: matrix3d(0, 0, -1, 0,
-                              0, 1, 0, 0,
-                              1, 0, 0, 0,
-                              0, 0, 0, 1);
-}
-.p-three {
+.p-out-2 {
   -webkit-transform: matrix3d(0, 0, 1, 0,
                               0, 1, 0, 0,
                               -1, 0, 0, 0,
                               0, 0, 0, 1);
 }
-#p-cube .p-one {
-  -webkit-transform: translateZ(75px);
+.p-out-3 {
+  -webkit-transform: matrix3d(-1, 0, 0, 0,
+                               0, 1, 0, 0,
+                               0, 0, -1, 0,
+                               0, 0, 0, 1);
 }
-#p-cube .p-two {
-  -webkit-transform: rotateY(90deg) translateZ(75px);
-}
-#p-cube .p-three {
-  -webkit-transform: rotateY(-90deg) translateZ(75px);
-}
-*/
+
