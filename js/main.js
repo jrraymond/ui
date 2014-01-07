@@ -42,19 +42,18 @@ var powerOn = function(that) {
 }
 /* VIDEO MUTE LISTENER */
 $(document).on('click','.vm-btn > label', function() {
-  var current = this.dataset.output;
+  var current = outs.active;
   if (!$(this).hasClass('vm-on')) {
     console.log('video muted for '+current);
     $(this).addClass('vm-on');
     $('.cube').addClass('cube-vm');
-    outs[current].vm = true;
+    outs['out'+current].vm = true;
   }
   else {
     console.log('vidoe unmuted');
     $(this).removeClass('vm-on');
     $('.cube').removeClass('cube-vm');
-    outs[current].vm = false;
-    console.log('video muted for '+current);
+    outs['out'+current].vm = false;
   }
 });
 /* TAB NAVIGATION */

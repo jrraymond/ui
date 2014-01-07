@@ -76,5 +76,6 @@
 }
 .warming {
   box-shadow: 0px 0px 10px #B5BB1B, 0px 0px 15px #B5BB1B;
+  text-shadow: #B5BB1B 1px 1px 13px !important;
   color: #B5BB1B !important;
 }
