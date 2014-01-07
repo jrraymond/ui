@@ -69,10 +69,12 @@
   //border: 1px solid #555555;
 }
 
-.pwr-btn input:checked ~ label {
-  color: #C7FBFD;
-  text-shadow: #C7FBFD 1px 1px 13px;
+.pwr-on {
+  color: #C7FBFD !important;
+  text-shadow: #C7FBFD 1px 1px 13px !important;
   box-shadow: 0px 0px 10px #C7FBFD, 0px 0px 15px #C7FBFD;
 }
-.pwr-btn input:checked ~ label i {
+.warming {
+  box-shadow: 0px 0px 10px #B5BB1B, 0px 0px 15px #B5BB1B;
+  color: #B5BB1B !important;
 }
