@@ -120,8 +120,45 @@
       <div id="sources" class="container">
 
         <div class="container" id="out-group">
-          <div class="row out-nav">
-            <div class="col-xs-4">
+          <div class="row" id='out-nav'>
+          </div>
+
+          <div class="out-group row" id="transform">
+            <div id="stage">
+              <div id="octagon">
+
+                <div id='o-1' class="o-face clearfix"></div>
+                <div id="o-2" class="o-face clearfix"></div>
+                <div id="o-3" class="o-face clearfix"></div>
+                <div id="o-4" class="o-face clearfix"></div>
+                <div id="o-5" class="o-face clearfix"></div>
+                <div id="o-6" class="o-face clearfix"></div>
+                <div id="o-7" class="o-face clearfix"></div>
+                <div id="o-8" class="o-face clearfix"></div>
+
+              </div>
+            </div>
+          </div>
+            
+          <div class="row" id="src-group">
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.1.min.js"><\/script>')</script>
+
+    <script src="js/vendor/bootstrap.min.js"></script>
+
+    <script src="js/plugins.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>
+
+            <!--div class="col-xs-4">
               <div class="out-nav-item" data-tab="1">
                 <i class="fa fa-video-camera"></i>
                 <span>PROJ 1</span>
@@ -138,15 +175,10 @@
                 <i class="fa fa-desktop"></i>
                 <span>TV</span>
               </div>
-            </div>
-          </div>
+            </div-->
 
-          <div class="out-group row" id="p-trans">
-            <div id="p-stage">
-              <div id="p-cube">
 
-                <div class="p-1 p-face clearfix">
-                  <div class="col-xs-6 out-info">
+                  <!--div class="col-xs-6 out-info">
                     <div class="transforms">
                       <div class="cube p-front">
                         <div class="face f-top">
@@ -184,107 +216,10 @@
                         <span class="vm-txt">VIDEO MUTE</span>
                       </label>
                     </div>
-                  </div>
-                </div>
+                  </div-->
 
 
-                <div class="p-2 p-face clearfix">
-                  <div class="col-xs-6 out-info">
-                    <div class="transforms">
-                      <div class="cube">
-                        <div class="face f-top">
-                          <i class="cf icon-cmdr fa-7x"></i>
-                        </div>
-                        <div class="face f-front">
-                          <i class="fa fa-apple fa-7x"></i>
-                        </div>
-                        <div class="face f-bottom">
-                          <i class="fa fa-windows fa-7x"></i>
-                        </div>
-                        <div class="face f-back">
-                          <i class="cf icon-vga fa-7x"></i>
-                        </div>
-                        <div class="face f-left">
-                          <i class="cf icon-hdmi fa-7x"></i>
-                        </div>
-                        <div class="face f-right">
-                          <i class="cf icon-dvd fa-7x"></i>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="col-xs-3">
-                    <div class="pwr-btn">
-                      <label>
-                        <i class="fa fa-power-off fa-3x"></i>
-                      </label>
-                    </div>
-                  </div>
-                  <div class="col-xs-3">
-                    <div class="vm-btn">
-                      <label>
-                        <span class="vm-txt">VIDEO MUTE</span>
-                      </label>
-                    </div>
-                  </div>
-                </div>
-                
-
-                <div class="p-3 p-face clearfix">
-                  <div class="col-xs-6 out-info">
-                    <div class="transforms">
-                      <div class="cube">
-                        <div class="face f-top">
-                          <i class="cf icon-cmdr fa-7x"></i>
-                        </div>
-                        <div class="face f-front">
-                          <i class="fa fa-apple fa-7x"></i>
-                        </div>
-                        <div class="face f-bottom">
-                          <i class="fa fa-windows fa-7x"></i>
-                        </div>
-                        <div class="face f-back">
-                          <i class="cf icon-vga fa-7x"></i>
-                        </div>
-                        <div class="face f-left">
-                          <i class="cf icon-hdmi fa-7x"></i>
-                        </div>
-                        <div class="face f-right">
-                          <i class="cf icon-dvd fa-7x"></i>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="col-xs-3">
-                    <div class="pwr-btn">
-                      <label>
-                        <i class="fa fa-power-off fa-3x"></i>
-                      </label>
-                    </div>
-                  </div>
-                  <div class="col-xs-3">
-                    <div class="vm-btn">
-                      <label>
-                        <span class="vm-txt">VIDEO MUTE</span>
-                      </label>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="p-face p-4 clearfix"><h1>FOUR FACE</h1></div>
-                <div class="p-face p-5 clearfix"><h1>FACE FIVE</h1></div>
-                <div class="p-face p-6 clearfix"><h1>FACE SIX</h1></div>
-                <div class="p-face p-7 clearfix"><h1>FACE SEVEN</h1></div>
-                <div class="p-face p-8 clearfix"><h1>FACE EIGHT</h1></div>
-
-              </div>
-            </div>
-          </div>
-            
-          <div class="row src-group">
-            <div class="src src-custom" id="src-hdmi">
+            <!--div class="src src-custom" id="src-hdmi">
               <input type="radio" name="source">
               <label>
                 <div><i class="cf icon-hdmi"></i></div>
@@ -318,30 +253,4 @@
                 <div><i class="cf icon-dvd"></i></div>
                 <div>dvd</div>
               </label>
-            </div>
-          </div>
-
-        </div>
-      </div>
-
-
-        <!--div id="output-1" class="output">
-
-        </div-->
-
-        <!--div id="output-2" class="output">
-
-
-        </div-->
-    </div>
-
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
-    <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.1.min.js"><\/script>')</script>
-
-    <script src="js/vendor/bootstrap.min.js"></script>
-
-    <script src="js/plugins.js"></script>
-    <script src="js/main.js"></script>
-  </body>
-</html>
-
+            </div-->
