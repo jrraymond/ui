@@ -2,10 +2,13 @@ var SOURCE = Object.freeze({ PC: 'pc', MAC: 'mac', HDMI: 'hdmi', VGA: 'vga', DVD
 var OUTPUT = Object.freeze({ PROJECTOR: 'projector', TELEVISION: 'television' });
 
 /* DYNAMICALLY CREATE PROJECTORS AND SOURCES */
-var sources = [SOURCE.PC, SOURCE.MAC];
+var sources = { 1: SOURCE.PC, 2: SOURCE.MAC, 3: SOURCE.HDMI,
+                4: SOURCE.VGA, 5: SOURCE.DVD };
+
 var outs = { 1: { name: 'west', type: OUTPUT.PROJECTOR, source: undefined, on: false, vm: false },
              2: { name: 'east', type: OUTPUT.PROJECTOR, source: undefined, on: false, vm: false },
              3: { name: 'north', type: OUTPUT.TELEVISION, source: undefined, on: false, vm: false } };
+
 var state = { active: 1};
 
 var getSourceIcon = function(s) {
@@ -41,23 +44,6 @@ var getOutputIcon = function(o) {
       return 'fa fa-video-camera';
   }
 }
-var addSources = function(sources) {
-  var html = '';
-  for (var s in sources) {
-    if (sources.hasOwnProperty(s)) {
-      html += '<div class="src" id="src-'+sources[s]+'">'+
-                '<input type="radio" name="source">'+
-                '<label>'+
-                  '<div><i class="'+getSourceIcon(sources[s])+'"></i></div>'+
-                  '<div>'+sources[s]+'</div>'+
-                '</label>'+
-              '</div>';
-    }
-  }
-  $('#src-group').html(html);
-}
-
-addSources(sources);
 
 var addOutputs = function(outputs) {
   var navHtml = '';
@@ -74,23 +60,23 @@ var addOutputs = function(outputs) {
       octHtml = '<div class="col-xs-6 out-info">'+
                   '<div class="transforms">'+
                     '<div class="cube p-front">'+
-                      '<div class="face f-top">'+
-                        '<i class="cf icon-cmdr fa-7x"></i>'+
+                      '<div class="face f-top" id="f-1">'+
+                        '<i class="fa-7x"></i>'+
                       '</div>'+
-                      '<div class="face f-front">'+
-                        '<i class="fa fa-apple fa-7x"></i>'+
+                      '<div class="face f-front" id="f-2">'+
+                        '<i class="fa-7x"></i>'+
                       '</div>'+
-                      '<div class="face f-bottom">'+
-                        '<i class="fa fa-windows fa-7x"></i>'+
+                      '<div class="face f-bottom" id="f-3">'+
+                        '<i class="fa-7x"></i>'+
                       '</div>'+
-                      '<div class="face f-back">'+
-                        '<i class="cf icon-vga fa-7x"></i>'+
+                      '<div class="face f-back" id="f-4">'+
+                        '<i class="fa-7x"></i>'+
                       '</div>'+
-                      '<div class="face f-left">'+
-                        '<i class="cf icon-hdmi fa-7x"></i>'+
+                      '<div class="face f-left" id="f-5">'+
+                        '<i class="fa-7x"></i>'+
                       '</div>'+
-                      '<div class="face f-right">'+
-                        '<i class="cf icon-dvd fa-7x"></i>'+
+                      '<div class="face f-right" id="f-6">'+
+                        '<i class="fa-7x"></i>'+
                       '</div>'+
                     '</div>'+
                   '</div>'+
@@ -110,7 +96,6 @@ var addOutputs = function(outputs) {
                   '</div>'+
                 '</div>';
       $('#o-'+c).html(octHtml);
-      console.log($('#o-'+c));
       c++;
     }
   }
@@ -118,6 +103,29 @@ var addOutputs = function(outputs) {
 }
 
 addOutputs(outs);
+
+var addSources = function(sources) {
+  var html = '';
+  var c = 2;
+  $('#f-1 > i').addClass('cf icon-cmdr');
+  for (var s in sources) {
+    if (sources.hasOwnProperty(s)) {
+      html += '<div class="src" id="src-'+sources[s]+'">'+
+                '<input type="radio" name="source">'+
+                '<label>'+
+                  '<div><i class="'+getSourceIcon(sources[s])+'"></i></div>'+
+                  '<div>'+sources[s]+'</div>'+
+                '</label>'+
+              '</div>';
+      $('#f-'+c+' > i').addClass(getSourceIcon(sources[s]));
+      console.log($('#f-'+c+' > i'));
+      c++;
+    }
+  }
+  $('#src-group').html(html);
+}
+
+addSources(sources);
 
 /* POWER BUTTON LISTENER */
 $(document).on('click', '.pwr-btn > label', function() {
