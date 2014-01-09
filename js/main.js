@@ -2,7 +2,7 @@ var SOURCE = Object.freeze({ PC: 'pc', MAC: 'mac', HDMI: 'hdmi', VGA: 'vga', DVD
 var OUTPUT = Object.freeze({ PROJECTOR: 'projector', TELEVISION: 'television' });
 
 /* DYNAMICALLY CREATE PROJECTORS AND SOURCES */
-var sources = { 1: SOURCE.PC, 2: SOURCE.MAC, 3: SOURCE.HDMI,
+var sources = { 1: SOURCE.MAC, 2: SOURCE.PC, 3: SOURCE.HDMI,
                 4: SOURCE.VGA, 5: SOURCE.DVD };
 
 var outs = { 1: { name: 'west', type: OUTPUT.PROJECTOR, source: undefined, on: false, vm: false },
@@ -11,39 +11,32 @@ var outs = { 1: { name: 'west', type: OUTPUT.PROJECTOR, source: undefined, on: f
 
 var state = { active: 1};
 
-var getSourceIcon = function(s) {
+var getSourceIcon = function(s, x) {
   switch(s) {
     case SOURCE.HDMI:
-      return 'cf icon-hdmi';
-      break;
+      return 'cf icon-hdmi cf-' + x + 'x';
     case SOURCE.VGA:
-      return 'cf icon-vga';
-      break;
+      return 'cf icon-vga cf-' + x + 'x';
     case SOURCE.MAC:
-      return 'fa fa-apple';
-      break;
+      return 'fa fa-apple fa-' + x + 'x';
     case SOURCE.PC:
-      return 'fa fa-windows';
-      break;
+      return 'fa fa-windows fa-' + x + 'x';
     case SOURCE.DVD:
-      return 'cf icon-dvd';
-      break;
+      return 'cf icon-dvd cf-' + x + 'x';
     default:
-      return 'cf icon-cmdr';
+      return 'cf icon-cmdr cf-' + x + 'x';
   }
-}
+};
 var getOutputIcon = function(o) {
   switch(o) {
     case OUTPUT.PROJECTOR:
       return 'fa fa-video-camera';
-      break;
     case OUTPUT.TELEVISION:
       return 'fa fa-desktop';
-      break;
     default:
       return 'fa fa-video-camera';
   }
-}
+};
 
 var addOutputs = function(outputs) {
   var navHtml = '';
@@ -52,30 +45,30 @@ var addOutputs = function(outputs) {
   for (var o in outputs) {
     if (outputs.hasOwnProperty(o)) {
       navHtml += '<div class="col-xs-4">'+
-                '<div class="out-nav-item" data-tab="'+o+'">'+
-                  '<i class="'+getOutputIcon(outputs[o].type)+'"></i>'+
-                  '<span>'+outputs[o].name+'</span>'+
-                '</div>'+
-              '</div>';
+                    '<div class="out-nav-item" data-tab="'+o+'">'+
+                      '<i class="'+getOutputIcon(outputs[o].type)+'"></i>'+
+                      '<span>'+outputs[o].name+'</span>'+
+                    '</div>'+
+                  '</div>';
       octHtml = '<div class="col-xs-6 out-info">'+
                   '<div class="transforms">'+
-                    '<div class="cube p-front">'+
-                      '<div class="face f-top" id="f-1">'+
+                    '<div class="cube c-6">'+
+                      '<div class="face f-1">'+
                         '<i class="fa-7x"></i>'+
                       '</div>'+
-                      '<div class="face f-front" id="f-2">'+
+                      '<div class="face f-2">'+
                         '<i class="fa-7x"></i>'+
                       '</div>'+
-                      '<div class="face f-bottom" id="f-3">'+
+                      '<div class="face f-3">'+
                         '<i class="fa-7x"></i>'+
                       '</div>'+
-                      '<div class="face f-back" id="f-4">'+
+                      '<div class="face f-4">'+
                         '<i class="fa-7x"></i>'+
                       '</div>'+
-                      '<div class="face f-left" id="f-5">'+
+                      '<div class="face f-5">'+
                         '<i class="fa-7x"></i>'+
                       '</div>'+
-                      '<div class="face f-right" id="f-6">'+
+                      '<div class="face f-6">'+
                         '<i class="fa-7x"></i>'+
                       '</div>'+
                     '</div>'+
@@ -100,30 +93,28 @@ var addOutputs = function(outputs) {
     }
   }
   $('#out-nav').html(navHtml);
-}
+};
 
 addOutputs(outs);
 
 var addSources = function(sources) {
   var html = '';
-  var c = 2;
-  $('#f-1 > i').addClass('cf icon-cmdr');
+  $('.f-6 > i').addClass('cf icon-cmdr');
   for (var s in sources) {
     if (sources.hasOwnProperty(s)) {
       html += '<div class="src" id="src-'+sources[s]+'">'+
-                '<input type="radio" name="source">'+
+                '<input type="radio" name="source" data-face="'+s+'">'+
                 '<label>'+
-                  '<div><i class="'+getSourceIcon(sources[s])+'"></i></div>'+
+                  '<div><i class="'+getSourceIcon(sources[s], 2)+'"></i></div>'+
                   '<div>'+sources[s]+'</div>'+
                 '</label>'+
               '</div>';
-      $('#f-'+c+' > i').addClass(getSourceIcon(sources[s]));
-      console.log($('#f-'+c+' > i'));
-      c++;
+      $('.f-'+s+' > i').addClass(getSourceIcon(sources[s], 7));
+      console.log('s: '+s+'\tsources[s]: '+sources[s]+'\t'+getSourceIcon(sources[s],7));
     }
   }
   $('#src-group').html(html);
-}
+};
 
 addSources(sources);
 
@@ -139,45 +130,39 @@ $(document).on('click', '.pwr-btn > label', function() {
   }
   else {
     $(this).removeClass('pwr-on');
-    console.log('power off for '+state.active);
     $('#o-'+state.active+' .cube').addClass('c-top');
     current.on = false;
   }
 });
 var warming = function() {
   var label = $('#o-'+state.active+' .pwr-btn > label');
-  console.log();
   if (label.hasClass('warming')) {
-    console.log('blink off');
     label.removeClass('warming');
   }
   else {
-    console.log('blink on');
-    label.addClass('warming')
+    label.addClass('warming');
   }
-}
+};
 var powerOn = function(that) {
-  console.log('power on for '+state.active);
   $(that).removeClass('warming');
   $(that).addClass('pwr-on');
   $('#o-'+state.active+' .cube').removeClass('c-top');
-}
+};
 /* VIDEO MUTE LISTENER */
 $(document).on('click','.vm-btn > label', function() {
   var current = state.active;
   if (!$(this).hasClass('vm-on')) {
-    console.log('video muted for '+current);
     $(this).addClass('vm-on');
     $('.cube').addClass('cube-vm');
     outs[current].vm = true;
   }
   else {
-    console.log('vidoe unmuted');
     $(this).removeClass('vm-on');
     $('.cube').removeClass('cube-vm');
     outs[current].vm = false;
   }
 });
+
 /* TAB NAVIGATION */
 $(document).on('click', '.out-nav-item', function() {
   var oldOut = $('.nav-selected').data() ? $('.nav-selected').data().tab : 1;
@@ -196,7 +181,6 @@ $(document).on('click', '.out-nav-item', function() {
     $('.src > input').prop('checked', false);
   }
 
-  console.log(outs);
 });
 
 
@@ -206,39 +190,34 @@ $(document).on('click', '.src', function() {
   var s = $(this).children('label').children(':last-child').html();
   console.log('switching '+cur+' to '+s);
   $('#src-' + s + ' input').prop('checked', true);
-  var newClass = getMatrixClass(s);
-  $('#o-'+cur+' .cube').removeClass('c-top c-front c-left c-right c-back c-bottom').addClass(newClass);
+  var newClass = $(this).children('input').data('face');
+  console.log('new Class: '+newClass);
+  $('#o-'+cur+' .cube').removeClass('c-1 c-2 c-3 c-4 c-5 c-6').addClass('c-'+newClass);
   outs[cur].source = s;
 });
 
 
 /* Returns correct class */
-function getMatrixClass(s) {
+var getMatrixClass = function(s) {
   switch(s) {
     case 'mac':
       return 'c-front';
-      break;
     case 'pc':
       return 'c-bottom';
-      break;
     case 'vga':
       return 'c-back';
-      break;
     case 'dvd':
       return 'c-right';
-      break;
     case 'hdmi':
       return 'c-left';
-      break;
     case 'bluray':
-      return 'c-top'
-      break;
+      return 'c-top';
   }
-}
+};
 
 
 /* Initial configuration */
-$('.cube').addClass('c-top');
+//   /* vga */$('.cube').addClass('c-6');
 $('.out-nav-item')[0].click();
 
 
@@ -277,7 +256,7 @@ var findMonth = function(num) {
     case 11 :
       return 'Dec';
   }
-}
+};
 var daySuffix = function(num) {
   switch (num) {
     case (num === 1 || num === 21 || num === 31) : 
@@ -289,7 +268,7 @@ var daySuffix = function(num) {
     default :
       return 'th';
   }
-}
+};
 
 /* Pads single digits with zeros */
 var pad = function(x) {
@@ -306,7 +285,7 @@ var fromMilitary = function(hours) {
   else {
     return [hours, 'am'];
   }
-}
+};
 
 /* updates the clock */
 var updateTime = function() {
@@ -338,9 +317,9 @@ $(document).on('click','#vol-mute', function() {
   if (!$(this).hasClass('vol-muted-m')) {
     $(this).addClass('vol-muted-m');
     $('#vol-switches > label').each(function() {
-      $(this).children('div').children('div').addClass('vol-muted')
+      $(this).children('div').children('div').addClass('vol-muted');
       if ($(this).children('div').children('div').hasClass('vol-checked')) {
-        $(this).children('div').children('div').addClass('vol-checked-muted')
+        $(this).children('div').children('div').addClass('vol-checked-muted');
       }
     });
     $('input[name="switch"]').attr('disabled',true);
@@ -348,9 +327,9 @@ $(document).on('click','#vol-mute', function() {
   else {
     $(this).removeClass('vol-muted-m');
     $('#vol-switches > label').each(function() {
-      $(this).children('div').children('div').removeClass('vol-muted')
+      $(this).children('div').children('div').removeClass('vol-muted');
       if ($(this).children('div').children('div').hasClass('vol-checked')) {
-        $(this).children('div').children('div').removeClass('vol-checked-muted')
+        $(this).children('div').children('div').removeClass('vol-checked-muted');
       }
     });
     $('input[name="switch"]').attr('disabled',false);
@@ -369,4 +348,3 @@ $(document).on('click', '.vol-c', function() {
     $(this).addClass('vol-checked');
   }
 });
-

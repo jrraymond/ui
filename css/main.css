@@ -11,14 +11,19 @@
   margin: 0px;
 }
 /* MORE SIZES FOR FONT AWESOME */
+.fa-2x {
+  font-size: 1.5em;
+  margin-top: 5px;
+}
 .fa-6x {
   font-size: 6em;
 }
 .fa-7x {
   font-size: 7em;
 }
-.cf-7x {
-  font-size: 7em;
+.cf-2x {
+  font-size: 2em;
+  margin: 5px 0px -30px -3px;
 }
 
 html, body {
@@ -319,37 +324,37 @@ body {
   -webkit-transition-timing-function: linear;
   transition-property: all;
 }
-.c-front {    /* apple */
+.c-2 { 
   -webkit-transform: matrix3d(1, 0, 0, 0,
                               0, 1, 0, 0,
                               0, 0, 1, 0,
                               0, 0, 0, 1);
 }
-.c-top {   /* logo */
+.c-1 {
   -webkit-transform: matrix3d(1, 0, 0, 0,
                               0, 0, -1, 0,
                               0, 1, 0, 0,
                               0, 0, 0, 1);
 }
-.c-bottom {   /* windows */
+.c-3 {
   -webkit-transform: matrix3d(-1, 0, 0, 0,
                               0, 0, 1, 0,
                               0, 1, 0, 0,
                               0, 0, 0, 1);
 }
-.c-left {   /* hdmi */
+.c-5 {
   -webkit-transform: matrix3d(0, 0, -1, 0,
                               0, 1, 0, 0,
                               1, 0, 0, 0,
                               0, 0, 0, 1);
 }
-.c-right {    /* dvd */
+.c-6 {
   -webkit-transform: matrix3d(0, 0, 1, 0,
                               0, 1, 0, 0,
                               -1, 0, 0, 0,
                               0, 0, 0, 1);
 }
-.c-back {   /* vga */
+.c-4 {
   -webkit-transform: matrix3d(-1, 0, 0, 0,
                               0, 1, 0, 0,
                               0, 0, -1, 0,
@@ -363,23 +368,23 @@ body {
   color: #ffffff;
   padding: 30px;
 }
-.cube .f-top {
+.cube .f-1 {
   -webkit-transform: rotateX(90deg) translateZ(75px);
 }
-.cube .f-front {
+.cube .f-2 {
   -webkit-transform: translateZ(75px);
 }
-.cube .f-right {
-  -webkit-transform: rotateY(90deg) translateZ(75px);
+.cube .f-3 {
+  -webkit-transform: rotateX(-90deg) translateZ(75px) rotate(180deg);
 }
-.cube .f-back {
+.cube .f-4 {
   -webkit-transform: rotateY(180deg) translateZ(75px);
 }
-.cube .f-left {
+.cube .f-5 {
   -webkit-transform: rotateY(-90deg) translateZ(75px);
 }
-.cube .f-bottom {
-  -webkit-transform: rotateX(-90deg) translateZ(75px) rotate(180deg);
+.cube .f-6 {
+  -webkit-transform: rotateY(90deg) translateZ(75px);
 }
 
 .cube-vm {
