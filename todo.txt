@@ -1,5 +1,3 @@
-projector selection vs source selection may not be intuitive
-what to do with projector rotation vs source cube rotation
-startup configuration
-power on/warming/off transformations
-make svgs larger
+extendable sources
+extendable outputs
+output icon by type

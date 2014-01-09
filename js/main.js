@@ -40,17 +40,7 @@ var getOutputIcon = function(o) {
 
 var addOutputs = function(outputs) {
   var navHtml = '';
-  var octHtml = '';
-  var c = 1;
-  for (var o in outputs) {
-    if (outputs.hasOwnProperty(o)) {
-      navHtml += '<div class="col-xs-4">'+
-                    '<div class="out-nav-item" data-tab="'+o+'">'+
-                      '<i class="'+getOutputIcon(outputs[o].type)+'"></i>'+
-                      '<span>'+outputs[o].name.substring(0,6)+'</span>'+
-                    '</div>'+
-                  '</div>';
-      octHtml = '<div class="col-xs-6 out-info">'+
+  var octHtml = '<div class="col-xs-6 out-info">'+
                   '<div class="transforms">'+
                     '<div class="cube c-6">'+
                       '<div class="face f-1">'+
@@ -88,8 +78,30 @@ var addOutputs = function(outputs) {
                     '</label>'+
                   '</div>'+
                 '</div>';
-      $('#o-'+c).html(octHtml);
-      c++;
+  var c = 1;
+
+  if (Object.keys(outputs).length < 4) {
+    for (var o in outputs) {
+      if (outputs.hasOwnProperty(o)) {
+        navHtml += '<div class="col-xs-4">'+
+                      '<div class="out-nav-item" data-tab="'+o+'">'+
+                        '<i class="'+getOutputIcon(outputs[o].type)+'"></i>'+
+                        '<span>'+outputs[o].name.substring(0,4)+'</span>'+
+                      '</div>'+
+                    '</div>';
+        $('#o-'+c).html(octHtml);
+        c++;
+      }
+    }
+  }
+  else {
+    navHtml += '<div id="nav-left" class="col-xs-1"><i class="fa fa-chevron-left"></i></div>'+
+               '<div id="nav-carousel"><div id="nav-stage"><div id="nav-shape"></div></div></div>'+
+               '<div id="nav-right" class="col-xs-1"><i class="fa fa-chevron-right"></i></div>';
+    for (var o in outputs) {
+      if (outputs.hasOwnProperty(o)) {
+
+      }
     }
   }
   $('#out-nav').html(navHtml);
