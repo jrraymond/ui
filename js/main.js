@@ -5,7 +5,7 @@ var OUTPUT = Object.freeze({ PROJECTOR: 'projector', TELEVISION: 'television' })
 var sources = { 1: SOURCE.MAC, 2: SOURCE.PC, 3: SOURCE.HDMI,
                 4: SOURCE.VGA, 5: SOURCE.DVD };
 
-var outs = { 1: { name: 'west', type: OUTPUT.PROJECTOR, source: undefined, on: false, vm: false },
+var outs = { 1: { name: '0123456789', type: OUTPUT.PROJECTOR, source: undefined, on: false, vm: false },
              2: { name: 'east', type: OUTPUT.PROJECTOR, source: undefined, on: false, vm: false },
              3: { name: 'north', type: OUTPUT.TELEVISION, source: undefined, on: false, vm: false } };
 
@@ -47,7 +47,7 @@ var addOutputs = function(outputs) {
       navHtml += '<div class="col-xs-4">'+
                     '<div class="out-nav-item" data-tab="'+o+'">'+
                       '<i class="'+getOutputIcon(outputs[o].type)+'"></i>'+
-                      '<span>'+outputs[o].name+'</span>'+
+                      '<span>'+outputs[o].name.substring(0,6)+'</span>'+
                     '</div>'+
                   '</div>';
       octHtml = '<div class="col-xs-6 out-info">'+
@@ -123,6 +123,7 @@ $(document).on('click', '.pwr-btn > label', function() {
   var current = outs[state.active];
   var that = this;
   if (!$(this).hasClass('pwr-on')) {
+    this.disabled = true;
     var blink = setInterval(warming, 500);
     window.setTimeout(clearInterval, 5000, blink);
     window.setTimeout(powerOn, 5000, that);
@@ -147,6 +148,7 @@ var powerOn = function(that) {
   $(that).removeClass('warming');
   $(that).addClass('pwr-on');
   $('#o-'+state.active+' .cube').removeClass('c-top');
+  that.disabled = false;
 };
 /* VIDEO MUTE LISTENER */
 $(document).on('click','.vm-btn > label', function() {
