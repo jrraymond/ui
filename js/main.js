@@ -83,49 +83,38 @@ var addOutputs = function(outputs) {
                     '</label>'+
                   '</div>'+
                 '</div>';
-
-  if (Object.keys(outputs).length < 4) {
+  var n = Object.keys(outputs).length;
+  if (n < 4) {
     for (var o in outputs) {
       if (outputs.hasOwnProperty(o)) {
-        navHtml += '<div class="col-xs-4">'+
-                      '<div class="out-nav-item" data-tab="'+o+'">'+
-                        '<i class="'+getOutputIcon(outputs[o].type)+'"></i>'+
-                        '<span>'+outputs[o].name.substring(0,4)+'</span>'+
-                      '</div>'+
-                    '</div>';
-        $('#o-'+o).html(octHtml);
+        $('#o-'+o).prepend('<div class="col-xs-'+(12/n)+'">'+
+                             '<div class="out-nav-item" data-tab="'+o+'">'+
+                               '<i class="'+getOutputIcon(outputs[o].type)+'"></i>'+
+                               '<span>'+outputs[o].name.substring(0,Math.round(12/n))+'</span>'+
+                             '</div>'+
+                           '</div>'
+                  ).append(octHtml);
+        $('#n-1').addClass('active');
       }
     }
-    $('#out-nav').html(navHtml);
   }
   else {
-    $('#out-nav').html('<div id="nav-left" class="col-xs-1"><i class="fa fa-chevron-left fa-3x"></i></div>'+
-               '<div id="nav-carousel" class="col-xs-10">'+
-                 '<div id="nav-stage">'+
-                   '<div id="nav-shape">'+
-                      '<div id="n-1" class="n-face"></div>'+
-                      '<div id="n-2" class="n-face"></div>'+
-                      '<div id="n-3" class="n-face"></div>'+
-                      '<div id="n-4" class="n-face"></div>'+
-                      '<div id="n-5" class="n-face"></div>'+
-                      '<div id="n-6" class="n-face"></div>'+
-                      '<div id="n-7" class="n-face"></div>'+
-                      '<div id="n-8" class="n-face"></div>'+
-                   '</div>'+
-                 '</div>'+
-               '</div>'+
-               '<div id="nav-right" class="col-xs-1"><i class="fa fa-chevron-right fa-3x"></i></div>');
+    $('#transform').prepend('<div id="nav-left" class="col-xs-1">'+
+                              '<i class="fa fa-chevron-left fa-3x"></i>'+
+                            '</div>'
+                  ).append('<div id="nav-right" class="col-xs-1">'+
+                              '<i class="fa fa-chevron-right fa-3x"></i>'+
+                            '</div>');
     for (var o in outputs) {
       if (outputs.hasOwnProperty(o)) {
         console.log(o);
-        $('#n-'+o).html('<div class="carousel-nav-item" data-tab="'+o+'">'+
-                          '<i class="'+getOutputIcon(outputs[o].type)+'"></i>'+
-                          '<span>'+outputs[o].name.substring(0,9)+'"</span>'+
-                        '</div>');
-        $('#o-'+o).html(octHtml);
+        $('#o-'+o).prepend('<div class="nav-item" data-tab="'+o+'">'+
+                             '<i class="'+getOutputIcon(outputs[o].type)+'"></i>'+
+                             '<span>'+outputs[o].name.substring(0,9)+'"</span>'+
+                           '</div>'
+                 ).append(octHtml);
       }
     }
-    $('#n-1').addClass('active');
   }
 };
 

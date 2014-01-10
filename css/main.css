@@ -132,7 +132,6 @@ body {
   width: 100%;
   list-style: none;
   margin-top: 15px;
-  border-bottom: 1px solid #444444;
 }
 #out-nav:before {
   display: table;
@@ -171,10 +170,16 @@ body {
 }
 
 /* NAVIGATION BAR CAROUSEL */
+#nav-left {
+  display: inline-block;
+}
 #nav-left i {
   color: #DDDDDD;
   position: absolute;
   right: 0;
+}
+#nav-right {
+  display: inline-block;
 }
 #nav-right i {
   color: #DDDDDD;
@@ -447,9 +452,10 @@ body {
   overflow: hidden;
 }
 #stage {
+  display: inline-block;
   -webkit-transform: translateZ(0px);
   height: 100%;
-  width: 100%;
+  width: 90%;
 }
 #octagon {
   position: relative;
