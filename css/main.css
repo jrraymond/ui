@@ -155,9 +155,87 @@ body {
   border-radius: 10px;
   transition: all 0.3s
 }
-.out-nav-item .fa {
+.carousel-nav-item {
+  color: #A8A8A8;
+  text-align: center;
+  font-size: 2em;
+  transition: all 0.3s
+}
+.out-nav-item i {
   color: #555555;
   padding-right: 10px;
+}
+.carousel-nav-item i {
+  color: #555555;
+  padding-right: 10px;
+}
+
+/* NAVIGATION BAR CAROUSEL */
+#nav-left i {
+  color: #DDDDDD;
+  position: absolute;
+  right: 0;
+}
+#nav-right i {
+  color: #DDDDDD;
+  position: absolute;
+  left: 0;
+}
+
+#nav-carousel {
+  -webkit-perspective: 0;
+  -webkit-perspective-origin: 50% 50%;
+  height: 50px;
+  width: 400px;
+  -webkit-transform-style: preserve-3d;
+  overflow: hidden;
+}
+#nav-stage {
+  -webkit-transform: translateZ(0px);
+  height: 100%;
+  width: 100%;
+}
+#nav-shape {
+  position: relative;
+  height: 50px;
+  width: 400px;
+  -webkit-transition: -webkit-transform 2s linear;
+  -webkit-transform-style: preserve-3d;
+  -webkit-transition-duration: 2s;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-property: all;
+}
+
+.n-face {
+  position: absolute;
+  height: 40px;
+  width: 380px;
+  -webkit-box-sizing: border-box;
+  -webkit-backface-visibility: hidden;
+}
+#n-1 {
+  -webkit-transform: translateZ(580px);
+}
+#n-2 {
+  -webkit-transform: rotateY(45deg) translateZ(580px);
+}
+#n-3 {
+  -webkit-transform: rotateY(90deg) translateZ(580px);
+}
+#n-4 {
+  -webkit-transform: rotateY(135deg) translateZ(580px);
+}
+#n-5 {
+  -webkit-transform: rotateY(180deg) translateZ(580px);
+}
+#n-6 {
+  -webkit-transform: rotateY(225deg) translateZ(580px);
+}
+#n-7 {
+  -webkit-transform: rotateY(270deg) translateZ(580px);
+}
+#n-8 {
+  -webkit-transform: rotateY(315deg) translateZ(580px);
 }
 
 /* output controls */
@@ -170,46 +248,7 @@ body {
   color: #ffffff;
   margin-left: 15px;
 }
-.out-pane {
-  display: none;
-}
 .active {
-  display: block;
-}
-
-.out-panel {
-  display: block;
-  width: 268px;
-  height: 199px;
-  margin: 15px;
-}
-.out-panel div {
-  display: block;
-  width: 100%;
-  height: 100%;
-  position: relative;
-  transition: all 0.5s ease-out;
-  z-index: 99;
-  border-radius: 5px;
-  text-align: center;
-  color: #000000;
-}
-.out-panel p {
-  color: #000000;
-  padding-top: 10px;
-  font-size: 35px;
-  font-family: 'Open Sans Condensed', sans-serif;
-}
-.out-panel i {
-  padding-left: 10px;
-  padding-right: 10px;
-  margin-top: -5px;
-}
-.out-name {
-  width: 240px;
-  margin-left: auto;
-  margin-right: auto;
-  display: block;
 }
 
 .pwr-btn {

@@ -4,10 +4,15 @@ var OUTPUT = Object.freeze({ PROJECTOR: 'projector', TELEVISION: 'television' })
 /* DYNAMICALLY CREATE PROJECTORS AND SOURCES */
 var sources = { 1: SOURCE.MAC, 2: SOURCE.PC, 3: SOURCE.HDMI,
                 4: SOURCE.VGA, 5: SOURCE.DVD };
-
+/*
 var outs = { 1: { name: '0123456789', type: OUTPUT.PROJECTOR, source: undefined, on: false, vm: false },
              2: { name: 'east', type: OUTPUT.PROJECTOR, source: undefined, on: false, vm: false },
              3: { name: 'north', type: OUTPUT.TELEVISION, source: undefined, on: false, vm: false } };
+*/
+var outs = { 1: { name: '0123456789', type: OUTPUT.PROJECTOR, source: undefined, on: false, vm: false },
+             2: { name: 'east', type: OUTPUT.PROJECTOR, source: undefined, on: false, vm: false },
+             3: { name: 'north', type: OUTPUT.TELEVISION, source: undefined, on: false, vm: false },
+             4: { name: 'north', type: OUTPUT.TELEVISION, source: undefined, on: false, vm: false } };
 
 var state = { active: 1};
 
@@ -78,7 +83,6 @@ var addOutputs = function(outputs) {
                     '</label>'+
                   '</div>'+
                 '</div>';
-  var c = 1;
 
   if (Object.keys(outputs).length < 4) {
     for (var o in outputs) {
@@ -89,22 +93,40 @@ var addOutputs = function(outputs) {
                         '<span>'+outputs[o].name.substring(0,4)+'</span>'+
                       '</div>'+
                     '</div>';
-        $('#o-'+c).html(octHtml);
-        c++;
+        $('#o-'+o).html(octHtml);
       }
     }
+    $('#out-nav').html(navHtml);
   }
   else {
-    navHtml += '<div id="nav-left" class="col-xs-1"><i class="fa fa-chevron-left"></i></div>'+
-               '<div id="nav-carousel"><div id="nav-stage"><div id="nav-shape"></div></div></div>'+
-               '<div id="nav-right" class="col-xs-1"><i class="fa fa-chevron-right"></i></div>';
+    $('#out-nav').html('<div id="nav-left" class="col-xs-1"><i class="fa fa-chevron-left fa-3x"></i></div>'+
+               '<div id="nav-carousel" class="col-xs-10">'+
+                 '<div id="nav-stage">'+
+                   '<div id="nav-shape">'+
+                      '<div id="n-1" class="n-face"></div>'+
+                      '<div id="n-2" class="n-face"></div>'+
+                      '<div id="n-3" class="n-face"></div>'+
+                      '<div id="n-4" class="n-face"></div>'+
+                      '<div id="n-5" class="n-face"></div>'+
+                      '<div id="n-6" class="n-face"></div>'+
+                      '<div id="n-7" class="n-face"></div>'+
+                      '<div id="n-8" class="n-face"></div>'+
+                   '</div>'+
+                 '</div>'+
+               '</div>'+
+               '<div id="nav-right" class="col-xs-1"><i class="fa fa-chevron-right fa-3x"></i></div>');
     for (var o in outputs) {
       if (outputs.hasOwnProperty(o)) {
-
+        console.log(o);
+        $('#n-'+o).html('<div class="carousel-nav-item" data-tab="'+o+'">'+
+                          '<i class="'+getOutputIcon(outputs[o].type)+'"></i>'+
+                          '<span>'+outputs[o].name.substring(0,9)+'"</span>'+
+                        '</div>');
+        $('#o-'+o).html(octHtml);
       }
     }
+    $('#n-1').addClass('active');
   }
-  $('#out-nav').html(navHtml);
 };
 
 addOutputs(outs);
@@ -194,9 +216,50 @@ $(document).on('click', '.out-nav-item', function() {
   else {
     $('.src > input').prop('checked', false);
   }
-
 });
+$(document).on('click', '#nav-left', function() {
+  var active = $('.active > .carousel-nav-item').data().tab;
+  if (active - 1 > 0) {
+    state.active = active - 1;
 
+    document.querySelector('#nav-shape').style.WebkitTransform = 'rotateY('+
+                                          ((active - 2) * (-45)) + 'deg)';
+
+    $('.active').removeClass('active');
+    $('#nav-shape div:nth-child('+(active-1)+')').addClass('active');
+    $('#octagon').removeClass('p-out-' + active).addClass('p-out-' + (active - 1));
+
+    var nextSource = outs[state.active].source;
+    if (nextSource) {
+      $('#src-'+nextSource).click();
+    }
+    else {
+      $('.src > input').prop('checked', false);
+    }
+  }
+});
+$(document).on('click', '#nav-right', function() {
+  var active = $('.active > .carousel-nav-item').data().tab;
+  if (active < Object.keys(outs).length) {
+    state.active = active + 1;
+
+    document.querySelector('#nav-shape').style.WebkitTransform = 'rotateY('+
+                                          ((active) * (-45)) + 'deg)';
+
+    $('.active').removeClass('active');
+    console.log(active);
+    $('#nav-shape div:nth-child('+(active+1)+')').addClass('active');
+    $('#octagon').removeClass('p-out-' + active).addClass('p-out-' + (active + 1));
+
+    var nextSource = outs[state.active].source;
+    if (nextSource) {
+      $('#src-'+nextSource).click();
+    }
+    else {
+      $('.src > input').prop('checked', false);
+    }
+  }
+});
 
 /* SOURCE SELECTION LISTENER */
 $(document).on('click', '.src', function() {
@@ -232,7 +295,7 @@ var getMatrixClass = function(s) {
 
 /* Initial configuration */
 //   /* vga */$('.cube').addClass('c-6');
-$('.out-nav-item')[0].click();
+//$('.out-nav-item')[0].click();
 
 
 /* Prevent dragging of images */
