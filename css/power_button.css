@@ -3,10 +3,7 @@
   width: 75px;
   height: 75px;
   position: relative;
-  margin: 10px;
-  display: inline-block;
-  margin-top: 23px;
-  margin-left: 25px;
+  display: block;
 }
 .pwr-btn input {
   position: absolute;

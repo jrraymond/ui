@@ -45,7 +45,7 @@ var getOutputIcon = function(o) {
 
 var addOutputs = function(outputs) {
   var navHtml = '';
-  var octHtml = '<div class="col-xs-6 out-info">'+
+  var octHtml = '<div class="out-info">'+
                   '<div class="transforms">'+
                     '<div class="cube c-6">'+
                       '<div class="face f-1">'+
@@ -69,53 +69,35 @@ var addOutputs = function(outputs) {
                     '</div>'+
                   '</div>'+
                 '</div>'+
-                '<div class="col-xs-3">'+
+                '<div class="out-ctrl">'+
                   '<div class="pwr-btn">'+
                     '<label>'+
                       '<i class="fa fa-power-off fa-3x"></i>'+
                     '</label>'+
                   '</div>'+
-                '</div>'+
-                '<div class="col-xs-3">'+
                   '<div class="vm-btn">'+
                     '<label>'+
                       '<span class="vm-txt">VIDEO MUTE</span>'+
                     '</label>'+
                   '</div>'+
                 '</div>';
-  var n = Object.keys(outputs).length;
-  if (n < 4) {
-    for (var o in outputs) {
-      if (outputs.hasOwnProperty(o)) {
-        $('#o-'+o).prepend('<div class="col-xs-'+(12/n)+'">'+
-                             '<div class="out-nav-item" data-tab="'+o+'">'+
-                               '<i class="'+getOutputIcon(outputs[o].type)+'"></i>'+
-                               '<span>'+outputs[o].name.substring(0,Math.round(12/n))+'</span>'+
-                             '</div>'+
-                           '</div>'
-                  ).append(octHtml);
-        $('#n-1').addClass('active');
-      }
+  $('#out-group').prepend('<div id="nav-left" class="col-xs-1">'+
+                            '<i class="fa fa-chevron-left fa-3x"></i>'+
+                          '</div>'
+                ).append('<div id="nav-right" class="col-xs-1">'+
+                            '<i class="fa fa-chevron-right fa-3x"></i>'+
+                          '</div>');
+  for (var o in outputs) {
+    if (outputs.hasOwnProperty(o)) {
+      console.log(o);
+      $('#o-'+o).prepend('<div class="nav-item" data-tab="'+o+'">'+
+                           '<i class="'+getOutputIcon(outputs[o].type)+'"></i>'+
+                           '<span>'+outputs[o].name.substring(0,9)+'</span>'+
+                         '</div>'
+               ).append(octHtml);
     }
   }
-  else {
-    $('#transform').prepend('<div id="nav-left" class="col-xs-1">'+
-                              '<i class="fa fa-chevron-left fa-3x"></i>'+
-                            '</div>'
-                  ).append('<div id="nav-right" class="col-xs-1">'+
-                              '<i class="fa fa-chevron-right fa-3x"></i>'+
-                            '</div>');
-    for (var o in outputs) {
-      if (outputs.hasOwnProperty(o)) {
-        console.log(o);
-        $('#o-'+o).prepend('<div class="nav-item" data-tab="'+o+'">'+
-                             '<i class="'+getOutputIcon(outputs[o].type)+'"></i>'+
-                             '<span>'+outputs[o].name.substring(0,9)+'"</span>'+
-                           '</div>'
-                 ).append(octHtml);
-      }
-    }
-  }
+  $('#o-1 > .nav-item').addClass('active');
 };
 
 addOutputs(outs);
@@ -189,33 +171,12 @@ $(document).on('click','.vm-btn > label', function() {
 });
 
 /* TAB NAVIGATION */
-$(document).on('click', '.out-nav-item', function() {
-  var oldOut = $('.nav-selected').data() ? $('.nav-selected').data().tab : 1;
-  $('.nav-selected').removeClass('nav-selected');
-  $(this).addClass('nav-selected');
-  $('.active').removeClass('active');
-  $('#out' + this.dataset.tab).addClass('active');
-  $('#octagon').removeClass('p-out-' + oldOut);
-  $('#octagon').addClass('p-out-' + this.dataset.tab);
-  state.active = this.dataset.tab;
-  var nextSource = outs[state.active].source;
-  if (nextSource) {
-    $('#src-'+nextSource).click();
-  }
-  else {
-    $('.src > input').prop('checked', false);
-  }
-});
 $(document).on('click', '#nav-left', function() {
-  var active = $('.active > .carousel-nav-item').data().tab;
+  var active = $('.active').data().tab;
   if (active - 1 > 0) {
     state.active = active - 1;
-
-    document.querySelector('#nav-shape').style.WebkitTransform = 'rotateY('+
-                                          ((active - 2) * (-45)) + 'deg)';
-
     $('.active').removeClass('active');
-    $('#nav-shape div:nth-child('+(active-1)+')').addClass('active');
+    $('#octagon div:nth-child('+(active-1)+') > .nav-item').addClass('active');
     $('#octagon').removeClass('p-out-' + active).addClass('p-out-' + (active - 1));
 
     var nextSource = outs[state.active].source;
@@ -228,16 +189,12 @@ $(document).on('click', '#nav-left', function() {
   }
 });
 $(document).on('click', '#nav-right', function() {
-  var active = $('.active > .carousel-nav-item').data().tab;
+  var active = $('.active').data().tab;
   if (active < Object.keys(outs).length) {
     state.active = active + 1;
-
-    document.querySelector('#nav-shape').style.WebkitTransform = 'rotateY('+
-                                          ((active) * (-45)) + 'deg)';
-
     $('.active').removeClass('active');
     console.log(active);
-    $('#nav-shape div:nth-child('+(active+1)+')').addClass('active');
+    $('#octagon div:nth-child('+(active+1)+') > .nav-item').addClass('active');
     $('#octagon').removeClass('p-out-' + active).addClass('p-out-' + (active + 1));
 
     var nextSource = outs[state.active].source;
