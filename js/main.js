@@ -6,8 +6,7 @@ var sources = { 1: SOURCE.MAC, 2: SOURCE.PC, 3: SOURCE.HDMI,
                 4: SOURCE.VGA, 5: SOURCE.DVD };
 /*
 var outs = { 1: { name: '0123456789', type: OUTPUT.PROJECTOR, source: undefined, on: false, vm: false },
-             2: { name: 'east', type: OUTPUT.PROJECTOR, source: undefined, on: false, vm: false },
-             3: { name: 'north', type: OUTPUT.TELEVISION, source: undefined, on: false, vm: false } };
+             2: { name: 'east', type: OUTPUT.PROJECTOR, source: undefined, on: false, vm: false } };
 */
 var outs = { 1: { name: '0123456789', type: OUTPUT.PROJECTOR, source: undefined, on: false, vm: false },
              2: { name: 'east', type: OUTPUT.PROJECTOR, source: undefined, on: false, vm: false },
@@ -90,6 +89,7 @@ var addOutputs = function(outputs) {
   for (var o in outputs) {
     if (outputs.hasOwnProperty(o)) {
       console.log(o);
+      $('#stage').append('<div id="o-'+o+'" class="o-face clearface"></div');
       $('#o-'+o).prepend('<div class="nav-item" data-tab="'+o+'">'+
                            '<i class="'+getOutputIcon(outputs[o].type)+'"></i>'+
                            '<span>'+outputs[o].name.substring(0,9)+'</span>'+
@@ -97,7 +97,9 @@ var addOutputs = function(outputs) {
                ).append(octHtml);
     }
   }
+  $('#o-1').addClass('o-front');
   $('#o-1 > .nav-item').addClass('active');
+  $('#stage > div').not('#o-1').addClass('o-right');
 };
 
 addOutputs(outs);
@@ -171,31 +173,26 @@ $(document).on('click','.vm-btn > label', function() {
 });
 
 /* TAB NAVIGATION */
-$(document).on('click', '#nav-left', function() {
+$(document).on('click', '#nav-left, #nav-right', function() {
   var active = $('.active').data().tab;
-  if (active - 1 > 0) {
-    state.active = active - 1;
-    $('.active').removeClass('active');
-    $('#octagon div:nth-child('+(active-1)+') > .nav-item').addClass('active');
-    $('#octagon').removeClass('p-out-' + active).addClass('p-out-' + (active - 1));
-
-    var nextSource = outs[state.active].source;
-    if (nextSource) {
-      $('#src-'+nextSource).click();
+  console.log('active: '+active);
+  var prev = $('#o-'+active);
+  var n = this.id === 'nav-left' ? active - 1 : active + 1;
+  state.active = n;
+  var next = $('#o-'+n);
+  console.log('next: '+n);
+  console.log(next);
+  if (n > 0 && n <= Object.keys(outs).length) {
+    prev.removeClass('o-front');
+    if (this.id === 'nav-left') {
+      prev.addClass('o-right');
     }
     else {
-      $('.src > input').prop('checked', false);
+      prev.addClass('o-left');
     }
-  }
-});
-$(document).on('click', '#nav-right', function() {
-  var active = $('.active').data().tab;
-  if (active < Object.keys(outs).length) {
-    state.active = active + 1;
+    next.removeClass('o-left o-right').addClass('o-front');
     $('.active').removeClass('active');
-    console.log(active);
-    $('#octagon div:nth-child('+(active+1)+') > .nav-item').addClass('active');
-    $('#octagon').removeClass('p-out-' + active).addClass('p-out-' + (active + 1));
+    $('#o-'+n+' > .nav-item').addClass('active');
 
     var nextSource = outs[state.active].source;
     if (nextSource) {
