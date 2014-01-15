@@ -4,7 +4,7 @@
 /* SWITCH
 * --------------------------------------------- */
 #volume-knob {
-  height: 275px;
+  height: 300px;
   width: 305px;
 }
 #vol-container {
@@ -16,7 +16,7 @@
   transition: all 0.5s;
   position: absolute;
   left: 36px;
-  top: 100px;
+  top: 90px;
 }
 
 #vol-knob, #vol-center {
