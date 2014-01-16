@@ -1,3 +1,12 @@
-extendable sources
-extendable outputs
-output icon by type
+INVERTED CAROUSEL BRANCH
+  flickering of cube when the output carousel is rotated
+  extendable sources dodecohedron cube or something
+  room recorder control
+  help box
+  centerizing some elements
+
+CAROUSEL BRANCH
+  extendable sources dodecohedron cube or something
+  room recorder control
+  help box
+  centerizing some elements

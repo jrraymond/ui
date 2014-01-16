@@ -60,13 +60,8 @@ body {
   font-family: "digitalfontmono";
   color: #ffffff;
   font-size: 50px;
-  padding: 10px;
-  width: 280px;
-  height: 70px;
-  border-radius: 35px;
   text-align: center;
-  line-height: 1.2;
-  padding-top: 3px;
+  padding: 0px 10px 0px 0px;
 }
 #date {
   color: #ffffff;
@@ -94,20 +89,27 @@ body {
 #nav-left {
   display: inline-block;
   z-index: 2;
+  height: 340px;
 }
 #nav-left i {
   color: #DDDDDD;
-  position: absolute;
-  right: 0px;
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
 }
 #nav-right {
   display: inline-block;
   z-index: 2;
+  height: 340px;
 }
 #nav-right i {
   color: #DDDDDD;
-  position: absolute;
-  left: 0px;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translateY(-50%) translateX(-50%);
+  transform: translateY(-50%) translateX(-50%);
 }
 
 
@@ -122,6 +124,7 @@ body {
   color: #ffffff;
   display: inline-block;
   vertical-align: top;
+  padding-top: 15px;
 }
 .active {
 }
@@ -141,15 +144,15 @@ body {
   display: inline-block;
   width: 90px;
   position: relative;
-  padding-top: 40px;
+  padding-top: 55px;
 }
 
 
 /* source selection */
 #src-group {
   border-top: 1px solid #3c3d3f;
-  margin: 0px 0px 0px 0px;
-  padding: 20px 0px 10px 8px;
+  margin: 10px 0px 0px 0px;
+  padding: 15px 0px 10px 8px;
 }
 .src {
   width: 20%;
@@ -327,8 +330,9 @@ body {
   -webkit-transition: -webkit-transform 2s ease-in-out;
   -webkit-transform-style: preserve-3d;
   transition-property: all;
-  border: 1px solid #FFFFFF;
-  background: #444444;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 5px;
+  background: #333333;
   -webkit-backface-visibility: hidden;
   -webkit-transform: translateZ(0);
 }
