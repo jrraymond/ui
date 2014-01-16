@@ -2,13 +2,15 @@ var SOURCE = Object.freeze({ PC: 'pc', MAC: 'mac', HDMI: 'hdmi', VGA: 'vga', DVD
 var OUTPUT = Object.freeze({ PROJECTOR: 'projector', TELEVISION: 'television' });
 
 /* DYNAMICALLY CREATE PROJECTORS AND SOURCES */
-var sources = { 1: SOURCE.MAC, 2: SOURCE.PC, 3: SOURCE.HDMI,
-                4: SOURCE.VGA, 5: SOURCE.DVD };
-/*
-var outs = { 1: { name: '0123456789', type: OUTPUT.PROJECTOR, source: undefined, on: false, vm: false },
-             2: { name: 'east', type: OUTPUT.PROJECTOR, source: undefined, on: false, vm: false },
-             3: { name: 'north', type: OUTPUT.TELEVISION, source: undefined, on: false, vm: false } };
-*/
+//var sources = { 1: SOURCE.MAC };
+//var sources = { 1: SOURCE.MAC, 2: SOURCE.PC };
+//var sources = { 1: SOURCE.MAC, 2: SOURCE.PC, 3: SOURCE.HDMI };
+var sources = { 1: SOURCE.MAC, 2: SOURCE.PC, 3: SOURCE.HDMI, 4: SOURCE.VGA };
+//var sources = { 1: SOURCE.MAC, 2: SOURCE.PC, 3: SOURCE.HDMI, 4: SOURCE.VGA, 5: SOURCE.DVD };
+
+//var outs = { 1: { name: '0123456789', type: OUTPUT.PROJECTOR, source: undefined, on: false, vm: false },
+//             2: { name: 'east', type: OUTPUT.PROJECTOR, source: undefined, on: false, vm: false } };
+
 var outs = { 1: { name: '0123456789', type: OUTPUT.PROJECTOR, source: undefined, on: false, vm: false },
              2: { name: 'east', type: OUTPUT.PROJECTOR, source: undefined, on: false, vm: false },
              3: { name: 'north', type: OUTPUT.TELEVISION, source: undefined, on: false, vm: false },
@@ -141,6 +143,7 @@ $(document).on('click', '.pwr-btn > label', function() {
   }
 });
 var warming = function() {
+  console.log('warming on o-'+state.active);
   var label = $('#o-'+state.active+' .pwr-btn > label');
   if (label.hasClass('warming')) {
     label.removeClass('warming');
