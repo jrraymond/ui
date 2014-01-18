@@ -7,6 +7,7 @@ INVERTED CAROUSEL BRANCH
 
 CAROUSEL BRANCH
   extendable sources dodecohedron cube or something
+  id system for sources does not work for more than one source of same type
   room recorder control
   help box
   centerizing some elements

@@ -5,8 +5,10 @@ var OUTPUT = Object.freeze({ PROJECTOR: 'projector', TELEVISION: 'television' })
 //var sources = { 1: SOURCE.MAC };
 //var sources = { 1: SOURCE.MAC, 2: SOURCE.PC };
 //var sources = { 1: SOURCE.MAC, 2: SOURCE.PC, 3: SOURCE.HDMI };
-var sources = { 1: SOURCE.MAC, 2: SOURCE.PC, 3: SOURCE.HDMI, 4: SOURCE.VGA };
+//var sources = { 1: SOURCE.MAC, 2: SOURCE.PC, 3: SOURCE.HDMI, 4: SOURCE.VGA };
 //var sources = { 1: SOURCE.MAC, 2: SOURCE.PC, 3: SOURCE.HDMI, 4: SOURCE.VGA, 5: SOURCE.DVD };
+var sources = { 1: SOURCE.MAC, 2: SOURCE.PC, 3: SOURCE.HDMI, 4: SOURCE.VGA, 5: SOURCE.DVD,
+                6: SOURCE.MAC, 7: SOURCE.PC, 8: SOURCE.HDMI, 9: SOURCE.VGA, 10: SOURCE.DVD};
 
 //var outs = { 1: { name: '0123456789', type: OUTPUT.PROJECTOR, source: undefined, on: false, vm: false },
 //             2: { name: 'east', type: OUTPUT.PROJECTOR, source: undefined, on: false, vm: false } };
@@ -15,6 +17,15 @@ var outs = { 1: { name: '0123456789', type: OUTPUT.PROJECTOR, source: undefined,
              2: { name: 'east', type: OUTPUT.PROJECTOR, source: undefined, on: false, vm: false },
              3: { name: 'north', type: OUTPUT.TELEVISION, source: undefined, on: false, vm: false },
              4: { name: 'north', type: OUTPUT.TELEVISION, source: undefined, on: false, vm: false } };
+
+//var outs = { 1: { name: '0123456789', type: OUTPUT.PROJECTOR, source: undefined, on: false, vm: false },
+//             2: { name: 'east', type: OUTPUT.PROJECTOR, source: undefined, on: false, vm: false },
+//             3: { name: 'north', type: OUTPUT.TELEVISION, source: undefined, on: false, vm: false },
+//             4: { name: 'east', type: OUTPUT.PROJECTOR, source: undefined, on: false, vm: false },
+//             5: { name: 'north', type: OUTPUT.TELEVISION, source: undefined, on: false, vm: false },
+//             6: { name: 'east', type: OUTPUT.PROJECTOR, source: undefined, on: false, vm: false },
+//             7: { name: 'north', type: OUTPUT.TELEVISION, source: undefined, on: false, vm: false },
+//             8: { name: 'north', type: OUTPUT.TELEVISION, source: undefined, on: false, vm: false } };
 
 var state = { active: 1};
 
@@ -91,7 +102,6 @@ var addOutputs = function(outputs) {
                           '</div>');
   for (var o in outputs) {
     if (outputs.hasOwnProperty(o)) {
-      console.log(o);
       $('#o-'+o).prepend('<div class="nav-item" data-tab="'+o+'">'+
                            '<i class="'+getOutputIcon(outputs[o].type)+'"></i>'+
                            '<span>'+outputs[o].name.substring(0,9)+'</span>'+
@@ -106,21 +116,49 @@ addOutputs(outs);
 
 var addSources = function(sources) {
   var html = '';
+
   $('.f-6 > i').addClass('cf icon-cmdr');
-  for (var s in sources) {
-    if (sources.hasOwnProperty(s)) {
-      html += '<div class="src" id="src-'+sources[s]+'">'+
-                '<input type="radio" name="source" data-face="'+s+'">'+
-                '<label>'+
-                  '<div><i class="'+getSourceIcon(sources[s], 2)+'"></i></div>'+
-                  '<div>'+sources[s]+'</div>'+
-                '</label>'+
-              '</div>';
-      $('.f-'+s+' > i').addClass(getSourceIcon(sources[s], 7));
-      console.log('s: '+s+'\tsources[s]: '+sources[s]+'\t'+getSourceIcon(sources[s],7));
+
+  if (Object.keys(sources).length < 6) {
+    for (var s in sources) {
+      if (sources.hasOwnProperty(s)) {
+        html += '<div class="src" id="src-'+sources[s]+'">'+
+                  '<input type="radio" name="source" data-face="'+s+'">'+
+                  '<label>'+
+                    '<div><i class="'+getSourceIcon(sources[s], 2)+'"></i></div>'+
+                    '<div>'+sources[s]+'</div>'+
+                  '</label>'+
+                '</div>';
+        $('.f-'+s+' > i').addClass(getSourceIcon(sources[s], 7));
+      }
     }
+    $('#src-group').html(html);
   }
-  $('#src-group').html(html);
+  else {
+    var panels = Object.keys(sources).length;
+    for (var s in sources) {
+      if (sources.hasOwnProperty(s)) {
+        html += '<div class="src" id="src-'+sources[s]+'" style="-webkit-transform: translateX('+(s-1)*100+'px)">'+
+                  '<input type="radio" name="source" data-face="'+s+'">'+
+                  '<label>'+
+                    '<div><i class="'+getSourceIcon(sources[s], 2)+'"></i></div>'+
+                    '<div>'+sources[s]+'</div>'+
+                  '</label>'+
+                '</div>';
+      }
+    }
+    $('#src-group').append(
+                    '<div id="src-stage"><div id="src-slide"></div></div>'
+                  ).prepend(
+                    '<div id="src-left"><i class="fa fa-chevron-left fa-3x">'
+                  ).append(
+                    '<div id="src-right"><i class="fa fa-chevron-right fa-3x">'
+                  ).addClass(
+                    'overflow-hidden'
+                  );
+
+    $('#src-slide').append(html);
+  }
 };
 
 addSources(sources);
@@ -143,7 +181,6 @@ $(document).on('click', '.pwr-btn > label', function() {
   }
 });
 var warming = function() {
-  console.log('warming on o-'+state.active);
   var label = $('#o-'+state.active+' .pwr-btn > label');
   if (label.hasClass('warming')) {
     label.removeClass('warming');
@@ -196,7 +233,6 @@ $(document).on('click', '#nav-right', function() {
   if (active < Object.keys(outs).length) {
     state.active = active + 1;
     $('.active').removeClass('active');
-    console.log(active);
     $('#octagon div:nth-child('+(active+1)+') > .nav-item').addClass('active');
     $('#octagon').removeClass('p-out-' + active).addClass('p-out-' + (active + 1));
 
@@ -222,6 +258,12 @@ $(document).on('click', '.src', function() {
   outs[cur].source = s;
 });
 
+/* SOURCE ROTATION LISTENER */
+$(document).on('click', '#src-left, #src-right', function() {
+  var dir = this.id === 'src-left' ? -100 : 100;
+
+  $('#src-slide').css('-webkit-transform', 'translateX('+dir+'px)');
+});
 
 /* Returns correct class */
 var getMatrixClass = function(s) {
@@ -374,3 +416,32 @@ $(document).on('click', '.vol-c', function() {
     $(this).addClass('vol-checked');
   }
 });
+
+/* CAROUSEL CLASS 
+ *
+ *  e : element to append carousel too, should be a stage for 3d
+ *  p : the number of panels on the carousel
+ *  h : boolean for is carousel horizontal
+ *  w : width of each panel on the carousel
+ *  h : height of each panel on the carousel
+ * 
+*/
+var Carousel = function(e, p, h, w, h) {
+  var x = h ? w : h;
+  this.element = e;
+  this.rotation = 0;
+  this.radius = Math.round(x / 2 / Math.tan(Math.PI / this.panels));
+  this.panels = p;
+  this.theta = Math.round(p / 360);
+  this.isHorizontal = h;
+  this.rotateAxis = this.isHorizontal ? 'rotateY' : 'rotateX';
+
+  for (var i=0;i<p;i++) {
+    $(this.element).append('<div style="-webkit-transform: '+
+                            rotateAxis+'('+i*rotation+'deg)'+
+                            'translateZ('+this.radius+'deg)"></div>');
+  }
+}
+Carousel.prototype.rotate = function(n) {
+  this.element.style.WebkitTransform = 'translateZ(-'+this.radius+'px) '+this.rotateAxis+'(';
+}
