@@ -5,8 +5,16 @@ var OUTPUT = Object.freeze({ PROJECTOR: 'projector', TELEVISION: 'television' })
 //var sources = { 1: SOURCE.MAC };
 //var sources = { 1: SOURCE.MAC, 2: SOURCE.PC };
 //var sources = { 1: SOURCE.MAC, 2: SOURCE.PC, 3: SOURCE.HDMI };
+<<<<<<< HEAD
 var sources = { 1: SOURCE.MAC, 2: SOURCE.PC, 3: SOURCE.HDMI, 4: SOURCE.VGA };
 //var sources = { 1: SOURCE.MAC, 2: SOURCE.PC, 3: SOURCE.HDMI, 4: SOURCE.VGA, 5: SOURCE.DVD };
+=======
+//var sources = { 1: SOURCE.MAC, 2: SOURCE.PC, 3: SOURCE.HDMI, 4: SOURCE.VGA };
+var sources = { 1: SOURCE.MAC, 2: SOURCE.PC, 3: SOURCE.HDMI, 4: SOURCE.VGA, 5: SOURCE.DVD };
+//var sources = { 1: SOURCE.MAC, 2: SOURCE.PC, 3: SOURCE.HDMI, 4: SOURCE.VGA, 5: SOURCE.DVD, 6: SOURCE.MAC };
+//var sources = { 1: SOURCE.MAC, 2: SOURCE.PC, 3: SOURCE.HDMI, 4: SOURCE.VGA, 5: SOURCE.DVD,
+//                6: SOURCE.MAC, 7: SOURCE.PC, 8: SOURCE.HDMI, 9: SOURCE.VGA, 10: SOURCE.DVD};
+>>>>>>> ea81c92... unstaged changes
 
 //var outs = { 1: { name: '0123456789', type: OUTPUT.PROJECTOR, source: undefined, on: false, vm: false },
 //             2: { name: 'east', type: OUTPUT.PROJECTOR, source: undefined, on: false, vm: false } };
@@ -48,28 +56,6 @@ var getOutputIcon = function(o) {
 var addOutputs = function(outputs) {
   var navHtml = '';
   var octHtml = '<div class="out-info">'+
-                  '<div class="transforms">'+
-                    '<div class="cube c-6">'+
-                      '<div class="face f-1">'+
-                        '<i class="fa-7x"></i>'+
-                      '</div>'+
-                      '<div class="face f-2">'+
-                        '<i class="fa-7x"></i>'+
-                      '</div>'+
-                      '<div class="face f-3">'+
-                        '<i class="fa-7x"></i>'+
-                      '</div>'+
-                      '<div class="face f-4">'+
-                        '<i class="fa-7x"></i>'+
-                      '</div>'+
-                      '<div class="face f-5">'+
-                        '<i class="fa-7x"></i>'+
-                      '</div>'+
-                      '<div class="face f-6">'+
-                        '<i class="fa-7x"></i>'+
-                      '</div>'+
-                    '</div>'+
-                  '</div>'+
                 '</div>'+
                 '<div class="out-ctrl">'+
                   '<div class="pwr-btn">'+
@@ -106,6 +92,7 @@ addOutputs(outs);
 
 var addSources = function(sources) {
   var html = '';
+<<<<<<< HEAD
   $('.f-6 > i').addClass('cf icon-cmdr');
   for (var s in sources) {
     if (sources.hasOwnProperty(s)) {
@@ -121,6 +108,105 @@ var addSources = function(sources) {
     }
   }
   $('#src-group').html(html);
+=======
+  var n = Object.keys(sources).length;
+  var shape = n < 7 ? '.f-' : '.d-';
+
+  if (n < 7) {
+    $('.out-info').html('<div class="transforms">'+
+                          '<div class="cube c-6">'+
+                            '<div class="face f-1">'+
+                              '<i class="fa-7x"></i>'+
+                            '</div>'+
+                            '<div class="face f-2">'+
+                              '<i class="fa-7x"></i>'+
+                            '</div>'+
+                            '<div class="face f-3">'+
+                              '<i class="fa-7x"></i>'+
+                            '</div>'+
+                            '<div class="face f-4">'+
+                              '<i class="fa-7x"></i>'+
+                            '</div>'+
+                            '<div class="face f-5">'+
+                              '<i class="fa-7x"></i>'+
+                            '</div>'+
+                            '<div class="face f-6">'+
+                              '<i class="fa-7x"></i>'+
+                            '</div>'+
+                          '</div>'+
+                        '</div>');
+
+  }
+  else {
+    var panels = Object.keys(sources).length;
+
+    $('.out-info').html('<div id="stage-12">'+
+                          '<div id="dodecahedron">'+
+                            '<div class="d-face d-1"><i class="fa fa-3x"></i></div>'+
+                            '<div class="d-face d-2"><i class="fa fa-3x"></i></div>'+
+                            '<div class="d-face d-3"><i class="fa fa-3x"></i></div>'+
+                            '<div class="d-face d-4"><i class="fa fa-3x"></i></div>'+
+                            '<div class="d-face d-5"><i class="fa fa-3x"></i></div>'+
+                            '<div class="d-face d-6"><i class="fa fa-3x"></i></div>'+
+                            '<div class="d-face d-7"><i class="fa fa-3x"></i></div>'+
+                            '<div class="d-face d-8"><i class="fa fa-3x"></i></div>'+
+                            '<div class="d-face d-9"><i class="fa fa-3x"></i></div>'+
+                            '<div class="d-face d-10"><i class="fa fa-3x"></i></div>'+
+                            '<div class="d-face d-11"><i class="fa fa-3x"></i></div>'+
+                            '<div class="d-face d-12"><i class="fa fa-3x"></i></div>'+
+                          '</div>'+
+                        '</div>');
+
+    $('#src-group').append(
+                    '<div id="src-stage"><div id="src-slide"></div></div>'
+                  ).prepend(
+                    '<div id="src-left"><i class="fa fa-chevron-left fa-3x">'
+                  ).append(
+                    '<div id="src-right"><i class="fa fa-chevron-right fa-3x">'
+                  ).addClass(
+                    'overflow-hidden'
+                  );
+
+  }
+  if (n < 6) {
+    console.log('no source slide');
+    for (var s in sources) {
+      if (sources.hasOwnProperty(s)) {
+        html += '<div class="src" id="src-'+sources[s]+'">'+
+                  '<input type="radio" name="source" data-face="'+s+'">'+
+                  '<label>'+
+                    '<div><i class="'+getSourceIcon(sources[s], 2)+'"></i></div>'+
+                    '<div>'+sources[s]+'</div>'+
+                  '</label>'+
+                '</div>';
+        console.log(shape+s+' > i');
+        console.log($(shape+s+' > i'));
+        console.log(getSourceIcon(sources[s], 7));
+        console.log(sources[s]);
+        $(shape+s+' > i').addClass(getSourceIcon(sources[s], 7));
+      }
+    }
+    console.log(html);
+    $('#src-group').html(html);
+  }
+  else {
+    console.log('source slide');
+    for (var s in sources) {
+      if (sources.hasOwnProperty(s)) {
+        html += '<div class="src" id="src-'+sources[s]+'" style="-webkit-transform: translateX('+(s-1)*100+'px)">'+
+                  '<input type="radio" name="source" data-face="'+s+'">'+
+                  '<label>'+
+                    '<div><i class="'+getSourceIcon(sources[s], 2)+'"></i></div>'+
+                    '<div>'+sources[s]+'</div>'+
+                  '</label>'+
+                '</div>';
+        $(shape+s+' > i').addClass(getSourceIcon(sources[s], 7));
+      } 
+    }
+    $('#src-slide').append(html);
+  }
+
+>>>>>>> ea81c92... unstaged changes
 };
 
 addSources(sources);
