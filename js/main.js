@@ -2,11 +2,11 @@ var SOURCE = Object.freeze({ PC: 'pc', MAC: 'mac', HDMI: 'hdmi', VGA: 'vga', DVD
 var OUTPUT = Object.freeze({ PROJECTOR: 'projector', TELEVISION: 'television' });
 
 /* DYNAMICALLY CREATE PROJECTORS AND SOURCES */
-//var sources = { 1: SOURCE.MAC };
+var sources = { 1: SOURCE.MAC };
 //var sources = { 1: SOURCE.MAC, 2: SOURCE.PC };
 //var sources = { 1: SOURCE.MAC, 2: SOURCE.PC, 3: SOURCE.HDMI };
 //var sources = { 1: SOURCE.MAC, 2: SOURCE.PC, 3: SOURCE.HDMI, 4: SOURCE.VGA };
-var sources = { 1: SOURCE.MAC, 2: SOURCE.PC, 3: SOURCE.HDMI, 4: SOURCE.VGA, 5: SOURCE.DVD };
+//var sources = { 1: SOURCE.MAC, 2: SOURCE.PC, 3: SOURCE.HDMI, 4: SOURCE.VGA, 5: SOURCE.DVD };
 //var sources = { 1: SOURCE.MAC, 2: SOURCE.PC, 3: SOURCE.HDMI, 4: SOURCE.VGA, 5: SOURCE.DVD, 6: SOURCE.MAC };
 //var sources = { 1: SOURCE.MAC, 2: SOURCE.PC, 3: SOURCE.HDMI, 4: SOURCE.VGA, 5: SOURCE.DVD,
 //                6: SOURCE.MAC, 7: SOURCE.PC, 8: SOURCE.HDMI, 9: SOURCE.VGA, 10: SOURCE.DVD};
@@ -90,62 +90,39 @@ var addSources = function(sources) {
   var n = Object.keys(sources).length;
   var shape = n < 7 ? '.f-' : '.d-';
 
-  if (n < 7) {
-    $('.out-info').html('<div class="transforms">'+
-                          '<div class="cube c-6">'+
-                            '<div class="face f-1">'+
-                              '<i class="fa-7x"></i>'+
-                            '</div>'+
-                            '<div class="face f-2">'+
-                              '<i class="fa-7x"></i>'+
-                            '</div>'+
-                            '<div class="face f-3">'+
-                              '<i class="fa-7x"></i>'+
-                            '</div>'+
-                            '<div class="face f-4">'+
-                              '<i class="fa-7x"></i>'+
-                            '</div>'+
-                            '<div class="face f-5">'+
-                              '<i class="fa-7x"></i>'+
-                            '</div>'+
-                            '<div class="face f-6">'+
-                              '<i class="fa-7x"></i>'+
-                            '</div>'+
+  $('.out-info').html('<div class="transforms">'+
+                        '<div class="cube c-6">'+
+                          '<div class="face f-1">'+
+                            '<i class="fa-7x"></i>'+
                           '</div>'+
-                        '</div>');
-
-  }
-  else {
-    var panels = Object.keys(sources).length;
-
-    $('.out-info').html('<div id="stage-12">'+
-                          '<div id="dodecahedron">'+
-                            '<div class="d-face d-1"><i class="fa fa-3x"></i></div>'+
-                            '<div class="d-face d-2"><i class="fa fa-3x"></i></div>'+
-                            '<div class="d-face d-3"><i class="fa fa-3x"></i></div>'+
-                            '<div class="d-face d-4"><i class="fa fa-3x"></i></div>'+
-                            '<div class="d-face d-5"><i class="fa fa-3x"></i></div>'+
-                            '<div class="d-face d-6"><i class="fa fa-3x"></i></div>'+
-                            '<div class="d-face d-7"><i class="fa fa-3x"></i></div>'+
-                            '<div class="d-face d-8"><i class="fa fa-3x"></i></div>'+
-                            '<div class="d-face d-9"><i class="fa fa-3x"></i></div>'+
-                            '<div class="d-face d-10"><i class="fa fa-3x"></i></div>'+
-                            '<div class="d-face d-11"><i class="fa fa-3x"></i></div>'+
-                            '<div class="d-face d-12"><i class="fa fa-3x"></i></div>'+
+                          '<div class="face f-2">'+
+                            '<i class="fa-7x"></i>'+
                           '</div>'+
-                        '</div>');
+                          '<div class="face f-3">'+
+                            '<i class="fa-7x"></i>'+
+                          '</div>'+
+                          '<div class="face f-4">'+
+                            '<i class="fa-7x"></i>'+
+                          '</div>'+
+                          '<div class="face f-5">'+
+                            '<i class="fa-7x"></i>'+
+                          '</div>'+
+                          '<div class="face f-6">'+
+                            '<i class="fa-7x"></i>'+
+                          '</div>'+
+                        '</div>'+
+                      '</div>');
 
-    $('#src-group').append(
-                    '<div id="src-stage"><div id="src-slide"></div></div>'
-                  ).prepend(
-                    '<div id="src-left"><i class="fa fa-chevron-left fa-3x">'
-                  ).append(
-                    '<div id="src-right"><i class="fa fa-chevron-right fa-3x">'
-                  ).addClass(
-                    'overflow-hidden'
-                  );
+  $('#src-group').append(
+                  '<div id="src-stage"><div id="src-slide"></div></div>'
+                ).prepend(
+                  '<div id="src-left"><i class="fa fa-chevron-left fa-3x">'
+                ).append(
+                  '<div id="src-right"><i class="fa fa-chevron-right fa-3x">'
+                ).addClass(
+                  'overflow-hidden'
+                );
 
-  }
   if (n < 6) {
     console.log('no source slide');
     for (var s in sources) {
@@ -181,12 +158,20 @@ var addSources = function(sources) {
         $(shape+s+' > i').addClass(getSourceIcon(sources[s], 7));
       } 
     }
-    $('#src-slide').append(html);
+    $('#src-slide').append(html).addClass('src-slide-left');
   }
 
 };
 
 addSources(sources);
+
+/* SLIDE LISTENER */
+$(document).on('click', '#src-left', function() {
+  var s = $('#src-slide').addClass('src-slide-left').removeClass('src-slide-right');
+});
+$(document).on('click', '#src-right', function() {
+  var s = $('#src-slide').addClass('src-slide-right').removeClass('src-slide-left');
+});
 
 /* POWER BUTTON LISTENER */
 $(document).on('click', '.pwr-btn > label', function() {
