@@ -1,4 +1,4 @@
-/* ================================1=========================================
+  /* ================================1=========================================
    custom styles
    ========================================================================== */
 /* CHANGES TO BOOTSTRAP */
@@ -153,12 +153,9 @@ body {
   border-top: 1px solid #3c3d3f;
   margin: 10px 0px 0px 0px;
   padding: 15px 0px 10px 8px;
-<<<<<<< HEAD
-=======
   position: absolute;
   left: 0;
   right: 0;
->>>>>>> ea81c92... unstaged changes
 }
 .src {
   width: 20%;
@@ -405,8 +402,6 @@ body {
 .p-out-8 {
   -webkit-transform: matrix3d(0.7071067811865474, 0, -0.7071067811865477, 0, 0, 1, 0, 0, 0.7071067811865477, 0, 0.7071067811865474, 0, 0, 0, 0, 1);
 }
-<<<<<<< HEAD
-=======
 
 /* SOURCE CAROUSEL */
 .overflow-hidden {
@@ -564,4 +559,3 @@ body {
   -webkit-transform: rotateZ(0deg) rotateX(180deg) rotateY(0deg) rotate(0deg) translateZ(160px);
   border:1px solid green;
 }
->>>>>>> ea81c92... unstaged changes

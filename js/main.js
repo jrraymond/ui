@@ -5,16 +5,11 @@ var OUTPUT = Object.freeze({ PROJECTOR: 'projector', TELEVISION: 'television' })
 //var sources = { 1: SOURCE.MAC };
 //var sources = { 1: SOURCE.MAC, 2: SOURCE.PC };
 //var sources = { 1: SOURCE.MAC, 2: SOURCE.PC, 3: SOURCE.HDMI };
-<<<<<<< HEAD
-var sources = { 1: SOURCE.MAC, 2: SOURCE.PC, 3: SOURCE.HDMI, 4: SOURCE.VGA };
-//var sources = { 1: SOURCE.MAC, 2: SOURCE.PC, 3: SOURCE.HDMI, 4: SOURCE.VGA, 5: SOURCE.DVD };
-=======
 //var sources = { 1: SOURCE.MAC, 2: SOURCE.PC, 3: SOURCE.HDMI, 4: SOURCE.VGA };
 var sources = { 1: SOURCE.MAC, 2: SOURCE.PC, 3: SOURCE.HDMI, 4: SOURCE.VGA, 5: SOURCE.DVD };
 //var sources = { 1: SOURCE.MAC, 2: SOURCE.PC, 3: SOURCE.HDMI, 4: SOURCE.VGA, 5: SOURCE.DVD, 6: SOURCE.MAC };
 //var sources = { 1: SOURCE.MAC, 2: SOURCE.PC, 3: SOURCE.HDMI, 4: SOURCE.VGA, 5: SOURCE.DVD,
 //                6: SOURCE.MAC, 7: SOURCE.PC, 8: SOURCE.HDMI, 9: SOURCE.VGA, 10: SOURCE.DVD};
->>>>>>> ea81c92... unstaged changes
 
 //var outs = { 1: { name: '0123456789', type: OUTPUT.PROJECTOR, source: undefined, on: false, vm: false },
 //             2: { name: 'east', type: OUTPUT.PROJECTOR, source: undefined, on: false, vm: false } };
@@ -92,23 +87,6 @@ addOutputs(outs);
 
 var addSources = function(sources) {
   var html = '';
-<<<<<<< HEAD
-  $('.f-6 > i').addClass('cf icon-cmdr');
-  for (var s in sources) {
-    if (sources.hasOwnProperty(s)) {
-      html += '<div class="src" id="src-'+sources[s]+'">'+
-                '<input type="radio" name="source" data-face="'+s+'">'+
-                '<label>'+
-                  '<div><i class="'+getSourceIcon(sources[s], 2)+'"></i></div>'+
-                  '<div>'+sources[s]+'</div>'+
-                '</label>'+
-              '</div>';
-      $('.f-'+s+' > i').addClass(getSourceIcon(sources[s], 7));
-      console.log('s: '+s+'\tsources[s]: '+sources[s]+'\t'+getSourceIcon(sources[s],7));
-    }
-  }
-  $('#src-group').html(html);
-=======
   var n = Object.keys(sources).length;
   var shape = n < 7 ? '.f-' : '.d-';
 
@@ -206,7 +184,6 @@ var addSources = function(sources) {
     $('#src-slide').append(html);
   }
 
->>>>>>> ea81c92... unstaged changes
 };
 
 addSources(sources);
