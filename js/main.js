@@ -14,10 +14,10 @@ var sources = { 1: SOURCE.MAC, 2: SOURCE.PC, 3: SOURCE.HDMI, 4: SOURCE.VGA, 5: S
 //var outs = { 1: { name: '0123456789', type: OUTPUT.PROJECTOR, source: undefined, on: false, vm: false },
 //             2: { name: 'east', type: OUTPUT.PROJECTOR, source: undefined, on: false, vm: false } };
 
-var outs = { 1: { name: '0123456789', type: OUTPUT.PROJECTOR, source: undefined, on: false, vm: false },
+var outs = { 1: { name: 'west', type: OUTPUT.PROJECTOR, source: undefined, on: false, vm: false },
              2: { name: 'east', type: OUTPUT.PROJECTOR, source: undefined, on: false, vm: false },
              3: { name: 'north', type: OUTPUT.TELEVISION, source: undefined, on: false, vm: false },
-             4: { name: 'north', type: OUTPUT.TELEVISION, source: undefined, on: false, vm: false } };
+             4: { name: 'south', type: OUTPUT.TELEVISION, source: undefined, on: false, vm: false } };
 
 var state = { active: 1};
 
