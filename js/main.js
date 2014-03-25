@@ -11,10 +11,10 @@ var sources = { 1: SOURCE.MAC, 2: SOURCE.PC, 3: SOURCE.HDMI, 4: SOURCE.VGA };
 //var outs = { 1: { name: '0123456789', type: OUTPUT.PROJECTOR, source: undefined, on: false, vm: false },
 //             2: { name: 'east', type: OUTPUT.PROJECTOR, source: undefined, on: false, vm: false } };
 
-var outs = { 1: { name: '0123456789', type: OUTPUT.PROJECTOR, source: undefined, on: false, vm: false },
+var outs = { 1: { name: 'west', type: OUTPUT.PROJECTOR, source: undefined, on: false, vm: false },
              2: { name: 'east', type: OUTPUT.PROJECTOR, source: undefined, on: false, vm: false },
              3: { name: 'north', type: OUTPUT.TELEVISION, source: undefined, on: false, vm: false },
-             4: { name: 'north', type: OUTPUT.TELEVISION, source: undefined, on: false, vm: false } };
+             4: { name: 'south', type: OUTPUT.TELEVISION, source: undefined, on: false, vm: false } };
 
 var state = { active: 1};
 
@@ -91,7 +91,6 @@ var addOutputs = function(outputs) {
                           '</div>');
   for (var o in outputs) {
     if (outputs.hasOwnProperty(o)) {
-      console.log(o);
       $('#stage').append('<div id="o-'+o+'" class="o-face clearface"></div');
       $('#o-'+o).prepend('<div class="nav-item" data-tab="'+o+'">'+
                            '<i class="'+getOutputIcon(outputs[o].type)+'"></i>'+
@@ -109,7 +108,6 @@ addOutputs(outs);
 
 var addSources = function(sources) {
   var html = '';
-  $('.f-6 > i').addClass('cf icon-cmdr');
   for (var s in sources) {
     if (sources.hasOwnProperty(s)) {
       html += '<div class="src" id="src-'+sources[s]+'">'+
@@ -120,8 +118,10 @@ var addSources = function(sources) {
                 '</label>'+
               '</div>';
       $('.f-'+s+' > i').addClass(getSourceIcon(sources[s], 7));
-      console.log('s: '+s+'\tsources[s]: '+sources[s]+'\t'+getSourceIcon(sources[s],7));
     }
+  }
+  for (var i = 6; i > Object.keys(sources).length; i = i - 1) {
+    $('.f-'+i).children('i').addClass(getSourceIcon(undefined, 7));
   }
   $('#src-group').html(html);
 };
