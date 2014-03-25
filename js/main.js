@@ -2,11 +2,11 @@ var SOURCE = Object.freeze({ PC: 'pc', MAC: 'mac', HDMI: 'hdmi', VGA: 'vga', DVD
 var OUTPUT = Object.freeze({ PROJECTOR: 'projector', TELEVISION: 'television' });
 
 /* DYNAMICALLY CREATE PROJECTORS AND SOURCES */
-var sources = { 1: SOURCE.MAC };
+//var sources = { 1: SOURCE.MAC };
 //var sources = { 1: SOURCE.MAC, 2: SOURCE.PC };
 //var sources = { 1: SOURCE.MAC, 2: SOURCE.PC, 3: SOURCE.HDMI };
 //var sources = { 1: SOURCE.MAC, 2: SOURCE.PC, 3: SOURCE.HDMI, 4: SOURCE.VGA };
-//var sources = { 1: SOURCE.MAC, 2: SOURCE.PC, 3: SOURCE.HDMI, 4: SOURCE.VGA, 5: SOURCE.DVD };
+var sources = { 1: SOURCE.MAC, 2: SOURCE.PC, 3: SOURCE.HDMI, 4: SOURCE.VGA, 5: SOURCE.DVD };
 //var sources = { 1: SOURCE.MAC, 2: SOURCE.PC, 3: SOURCE.HDMI, 4: SOURCE.VGA, 5: SOURCE.DVD, 6: SOURCE.MAC };
 //var sources = { 1: SOURCE.MAC, 2: SOURCE.PC, 3: SOURCE.HDMI, 4: SOURCE.VGA, 5: SOURCE.DVD,
 //                6: SOURCE.MAC, 7: SOURCE.PC, 8: SOURCE.HDMI, 9: SOURCE.VGA, 10: SOURCE.DVD};
@@ -134,12 +134,12 @@ var addSources = function(sources) {
                     '<div>'+sources[s]+'</div>'+
                   '</label>'+
                 '</div>';
-        console.log(shape+s+' > i');
-        console.log($(shape+s+' > i'));
-        console.log(getSourceIcon(sources[s], 7));
-        console.log(sources[s]);
         $(shape+s+' > i').addClass(getSourceIcon(sources[s], 7));
       }
+    }
+    for (var i = 6; i > Object.keys(sources).length; i = i - 1) {
+      console.log(i);
+      $('.f-'+i).children('i').addClass(getSourceIcon(undefined, 7));
     }
     console.log(html);
     $('#src-group').html(html);
