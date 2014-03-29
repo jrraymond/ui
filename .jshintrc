@@ -36,7 +36,7 @@
   "expr"           : false,      // expressions where assignment or function calls expected
   "funcscope"      : false,      // functions vs block scope
   "gcl"            : false,      // compatible with Google Closure Compiler
-  "globalstrict"   : true,      // suppresses warning about global strict mode
+  "globalstrict"   : false,      // suppresses warning about global strict mode
   "iterator"       : false,      // __iterator__ property
   "lastsemic"      : false,      // missing semicolons
   "laxbreak"       : false,      // possible unsafe line breaks

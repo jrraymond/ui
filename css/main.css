@@ -41,3 +41,8 @@ body {
 #sources {
   background: #999999;
 }
+.src {
+  border: 1px solid #000000;
+  margin: 5px;
+  height: 100px;
+}
