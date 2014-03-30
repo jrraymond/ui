@@ -4,13 +4,22 @@ var srcEl;
 
 var onDragStart = function(e) {
   'use strict';
-  this.style.opacity = '0.4';
   console.log('dragging');
   console.log(e);
 
   srcEl = this;
-  e.originalEvent.dataTransfer.effectAllowed = 'move';
+  console.log(this);
   e.originalEvent.dataTransfer.setData('text/html', this.innerHTML);
+  if (this.parentNode.classList.contains('srcs')) {
+    console.log('copy');
+    this.classList.add('src-selected');
+    e.originalEvent.dataTransfer.effectAllowed = 'copy';
+  }
+  else {
+    console.log('move');
+    this.classList.remove('src-selected');
+    e.originalEvent.dataTransfer.effectAllowed = 'move';
+  }
   console.log(this.innerHTML);
 };
 var onDragOver = function(e) {
@@ -18,7 +27,15 @@ var onDragOver = function(e) {
   if (e.preventDefault) {
     e.preventDefault();
   }
-  e.originalEvent.dataTransfer.dropEffect = 'move';
+  if (e.originalEvent.dataTransfer.effectAllowed === 'move') {
+    console.log('move drop');
+    srcEl.innerHTML = '';
+    e.originalEvent.dataTransfer.dropEffect = 'move';
+  }
+  else {
+    console.log('copy drop');
+    e.originalEvent.dataTransfer.dropEffect = 'copy';
+  }
   //console.log('drag over');
   //console.log(e);
   return false;
@@ -43,7 +60,6 @@ var onDrop = function(e) {
   if (srcEl != this) {
     console.log(srcEl.innerHTML);
     console.log(this.innerHTML);
-    srcEl.innerHTML = this.innerHTML;
     this.innerHTML = e.originalEvent.dataTransfer.getData('text/html');
   }
   this.classList.remove('drag-over');
