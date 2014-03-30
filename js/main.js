@@ -46,6 +46,7 @@ var onDrop = function(e) {
     srcEl.innerHTML = this.innerHTML;
     this.innerHTML = e.originalEvent.dataTransfer.getData('text/html');
   }
+  this.classList.remove('drag-over');
   console.log('drop');
   console.log(e);
   return false;
