@@ -14,11 +14,6 @@
   margin: 5px 0px -30px -3px;
 }
 
-html, body {
-}
-
-body {
-}
 /* INFORMATION */
 @font-face {
   font-family: "digitalfont";
@@ -29,49 +24,6 @@ body {
   src: url("../fonts/digital-7__mono_.ttf");
 }
 
-/* css to make draggable look nice */
-[draggable] {
-  -webkit-user-select: none;
-  /* oldwebkit make elements draggeble*/ 
-  -webkit-user-drag: element; 
+.btn > span {
+  font-size: 2em;
 }
-#outputs {
-  background: #EEEEEE;
-  height: 100%;
-}
-#sources {
-  background: #999999;
-  height: 100%;
-}
-.src {
-  border: 1px solid #000000;
-  padding: 5px;
-  height: 100px;
-}
-.navbar-inverse {
-  color: #ffffff;
-}
-.drag-over {
-  border: 2px dashed #000;
-}
-#info-bar {
-  display: table;
-  border-spacing: 20px;
-}
-.vol {
-  display: table-cell;
-  vertical-align: middle;
-}
-#vol-m { font-size: 5em; }
-#vol-1 { font-size: 3em; }
-#vol-2 { font-size: 3.2em; }
-#vol-3 { font-size: 3.4em; }
-#vol-4 { font-size: 3.6em; }
-#vol-5 { font-size: 3.8em; }
-#vol-6 { font-size: 4.0em; }
-#vol-7 { font-size: 4.2em; }
-#vol-8 { font-size: 4.4em; }
-#vol-9 { font-size: 4.6em; }
-#vol-10 { font-size: 4.8em; }
-#vol-11 { font-size: 5em; }
-

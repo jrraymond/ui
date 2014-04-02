@@ -20,93 +20,114 @@
     <script src="js/vendor/modernizr-2.6.2.min.js"></script>
   </head>
   <body>
-    <div id="page" class="container-fluid">
-      <div class="row">
-
-        <div id="outputs" class="col-xs-4">
-          <div class="container-fluid">
-            <div class="row">
-              <div class="col-xs-6">
-                <div><i class="fa fa-camera"></i></div>
-                <div>proj</div>
-                <div class="pwr-btn">
-                  <i class="fa fa-power-off"></i>
-                </div>
-                <div class="vm-btn">
-                  <span>video mute</span>
-                </div>
-              </div>
-              <div class="src col-xs-6" draggable="true">
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-xs-6">
-                <div><i class="fa fa-camera"></i></div>
-                <div>proj</div>
-                <div class="pwr-btn">
-                  <i class="fa fa-power-off"></i>
-                </div>
-                <div class="vm-btn">
-                  <span>video mute</span>
-                </div>
-              </div>
-              <div class="src col-xs-6" draggable="true">
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div id="sources" class="col-xs-8">
-          <div class="container-fluid">
-            <div class="row srcs">
-              <div class="src col-xs-4" draggable="true">
-                <div><i class="fa fa-apple"></i></div>
-                <div>mac</div>
-              </div>
-              <div class="src col-xs-4" draggable="true">
-                <div><i class="fa fa-apple"></i></div>
-                <div>mac</div>
-              </div>
-              <div class="src col-xs-4" draggable="true">
-                <div><i class="fa fa-windows"></i></div>
-                <div>pc</div>
-              </div>
-              <div class="src col-xs-4" draggable="true">
-                <div><i class="fa fa-windows"></i></div>
-                <div>pc</div>
-              </div>
-            </div>
-          </div>
-
-        </div>
-
-      </div>
-
-    </div>
     <div class="container-fluid">
+      <div class="panel-group" id="outputs">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h4 class="panel-title">
+              <a data-toggle="collapse" data-parent="#outputs" href="#out-1">
+                <i class="fa fa-video-camera"></i> Projector East
+              </a>
+            </h4>
+          </div>
+          <div id="out-1" class="panel-collapse collapse in">
+            <div class="panel-body">
+              <div class="btn-group">
+                <button type="button" class="btn btn-default"><span>PC</span></button>
+                <button type="button" class="btn btn-default"><span>MAC</span></button>
+                <button type="button" class="btn btn-success"><span>VGA</span></button>
+                <button type="button" class="btn btn-default"><span>HDMI</span></button>
+                <button type="button" class="btn btn-warning"><span>DVD</span></button>
+                <button type="button" class="btn btn-default"><span>BLUERAY</span></button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h4 class="panel-title">
+              <a data-toggle="collapse" data-parent="#outputs" href="#out-2">
+                <i class="fa fa-video-camera"></i> Projector West
+              </a>
+            </h4>
+          </div>
+          <div id="out-2" class="panel-collapse collapse">
+            <div class="panel-body">
+              <div class="btn-group">
+                <button type="button" class="btn btn-default"><span>PC</span></button>
+                <button type="button" class="btn btn-default"><span>MAC</span></button>
+                <button type="button" class="btn btn-success"><span>VGA</span></button>
+                <button type="button" class="btn btn-default"><span>HDMI</span></button>
+                <button type="button" class="btn btn-warning"><span>DVD</span></button>
+                <button type="button" class="btn btn-default"><span>BLUERAY</span></button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h4 class="panel-title">
+              <a data-toggle="collapse" data-parent="#outputs" href="#out-3">
+                <i class="fa fa-desktop"></i> TV
+              </a>
+            </h4>
+          </div>
+          <div id="out-3" class="panel-collapse collapse">
+            <div class="panel-body">
+              <div class="btn-group">
+                <button type="button" class="btn btn-success">
+                  <i class="fa fa-windows fa-3x"></i>
+                  <span>PC</span>
+                </button>
+                <button type="button" class="btn btn-default">
+                  <i class="fa fa-apple fa-3x"></i>
+                  <span>MAC</span>
+                </button>
+                <button type="button" class="btn btn-default">
+                  <i class="cf icon-vga fa-3x"></i>
+                  <span>VGA</span>
+                </button>
+                <button type="button" class="btn btn-default">
+                  <i class="cf icon-hdmi fa-3x"></i>
+                  <span>HDMI</span>
+                </button>
+                <button type="button" class="btn btn-warning">
+                  <i class="fa fa-desktop fa-3x"></i>
+                  <span>DVD</span>
+                </button>
+                <button type="button" class="btn btn-default">
+                  <i class="fa fa-desktop fa-3x"></i>
+                  <span>BLUERAY</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="info_bar" class="container-fluid">
       <nav class="navbar navbar-inverse navbar-fixed-bottom">
-        <div id="info-bar"class="navbar-inner navbar-content-center">
-          <span id="clock"></span>
-          <span id="month"></span>
-          <span id="day"></span>
-          <span id="year"></span>
-          <span id="room"></span>
-          <span class="vol"><i id="vol-m" class="fa fa-volume-off"></i></span>
-          <span class="vol"><i id="vol-1" class="fa fa-volume-down"></i></span>
-          <span class="vol"><i id="vol-2" class="fa fa-sun-o"></i></span>
-          <span class="vol"><i id="vol-3" class="fa fa-sun-o"></i></span>
-          <span class="vol"><i id="vol-4" class="fa fa-sun-o"></i></span>
-          <span class="vol"><i id="vol-5" class="fa fa-sun-o"></i></span>
-          <span class="vol"><i id="vol-6" class="fa fa-sun-o"></i></span>
-          <span class="vol"><i id="vol-7" class="fa fa-sun-o"></i></span>
-          <span class="vol"><i id="vol-8" class="fa fa-sun-o"></i></span>
-          <span class="vol"><i id="vol-9" class="fa fa-sun-o"></i></span>
-          <span class="vol"><i id="vol-10" class="fa fa-sun-"></i></span>
-          <span class="vol"><i id="vol-11" class="fa fa-volume-up"></i></span>
+        <div class="navbar-inner navbar-content-center">
+        <span id="clock"></span>
+        <span id="month"></span>
+        <span id="day"></span>
+        <span id="year"></span>
+        <span id="room"></span>
+        <input id="switch-m" name="switch" type="radio" checked>
+        <input id="switch-1" name="switch" type="radio">
+        <input id="switch-2" name="switch" type="radio">
+        <input id="switch-3" name="switch" type="radio">
+        <input id="switch-4" name="switch" type="radio">
+        <input id="switch-5" name="switch" type="radio">
+        <input id="switch-6" name="switch" type="radio">
+        <input id="switch-7" name="switch" type="radio">
+        <input id="switch-8" name="switch" type="radio">
+        <input id="switch-9" name="switch" type="radio">
+        <input id="switch-10" name="switch" type="radio">
+        <input id="switch-11" name="switch" type="radio">
         </div>
       </nav>
     </div>
-
 
     <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.1.min.js"><\/script>')</script>
 
