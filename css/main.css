@@ -23,7 +23,84 @@
   font-family: "digitalfontmono";
   src: url("../fonts/digital-7__mono_.ttf");
 }
-
-.btn > span {
+.panel-heading div {
+  display: inline-block;
+  float: right;
+  margin-left: 50px;
+}
+.panel-heading {
+  overflow: hidden;
+}
+.alert {
+  padding: 5px 5px 5px 5px;
+  margin: 0px 0px 0px 0px;
+}
+#info-bar {
+  border-top: 1px solid #000;
+  display: table;
+  border-spacing: 20px;
+}
+#info-bar > div {
+  display: table-cell;
   font-size: 2em;
+}
+.vol {
+  display: table-cell;
+  vertical-align: middle;
+}
+.vol > div {
+  border-radius: 50%;
+  border: 1px solid #000;
+}
+#vol-m { 
+  height: 40px;
+  width: 40px;
+}
+#vol-0 { 
+  height: 42px;
+  width: 42px;
+}
+#vol-1 { 
+  height: 44px;
+  width: 44px;
+  text-align: center;
+}
+#vol-1 > i {
+  margin-top: 20%;
+}
+#vol-2 { 
+  height: 46px;
+  width: 46px;
+}
+#vol-3 { 
+  height: 48px;
+  width: 48px;
+}
+#vol-4 { 
+  height: 50px;
+  width: 50px;
+}
+#vol-5 { 
+  height: 52px;
+  width: 52px;
+}
+#vol-6 { 
+  height: 54px;
+  width: 54px;
+}
+#vol-7 { 
+  height: 56px;
+  width: 56px;
+}
+#vol-8 { 
+  height: 58px;
+  width: 58px;
+}
+#vol-9 { 
+  height: 60px;
+  width: 60px;
+  text-align: center;
+}
+#vol-9 > i {
+  margin-top: 25%;
 }
