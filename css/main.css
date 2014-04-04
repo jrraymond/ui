@@ -36,11 +36,11 @@ body {
   -webkit-user-drag: element; 
 }
 #outputs {
-  background: #EEEEEE;
+  background: #ffffff;
   height: 100%;
 }
 #sources {
-  background: #999999;
+  background: #ffffff;
   height: 100%;
 }
 .src {
@@ -48,30 +48,75 @@ body {
   padding: 5px;
   height: 100px;
 }
-.navbar-inverse {
-  color: #ffffff;
-}
 .drag-over {
   border: 2px dashed #000;
 }
 #info-bar {
+  border-top: 1px solid #000;
   display: table;
   border-spacing: 20px;
+}
+#info-bar > div {
+  display: table-cell;
+  font-size: 2em;
 }
 .vol {
   display: table-cell;
   vertical-align: middle;
 }
-#vol-m { font-size: 5em; }
-#vol-1 { font-size: 3em; }
-#vol-2 { font-size: 3.2em; }
-#vol-3 { font-size: 3.4em; }
-#vol-4 { font-size: 3.6em; }
-#vol-5 { font-size: 3.8em; }
-#vol-6 { font-size: 4.0em; }
-#vol-7 { font-size: 4.2em; }
-#vol-8 { font-size: 4.4em; }
-#vol-9 { font-size: 4.6em; }
-#vol-10 { font-size: 4.8em; }
-#vol-11 { font-size: 5em; }
-
+.vol > div {
+  border-radius: 50%;
+  border: 1px solid #000;
+}
+#vol-m { 
+  height: 40px;
+  width: 40px;
+}
+#vol-0 { 
+  height: 42px;
+  width: 42px;
+}
+#vol-1 { 
+  height: 44px;
+  width: 44px;
+  text-align: center;
+}
+#vol-1 > i {
+  margin-top: 20%;
+}
+#vol-2 { 
+  height: 46px;
+  width: 46px;
+}
+#vol-3 { 
+  height: 48px;
+  width: 48px;
+}
+#vol-4 { 
+  height: 50px;
+  width: 50px;
+}
+#vol-5 { 
+  height: 52px;
+  width: 52px;
+}
+#vol-6 { 
+  height: 54px;
+  width: 54px;
+}
+#vol-7 { 
+  height: 56px;
+  width: 56px;
+}
+#vol-8 { 
+  height: 58px;
+  width: 58px;
+}
+#vol-9 { 
+  height: 60px;
+  width: 60px;
+  text-align: center;
+}
+#vol-9 > i {
+  margin-top: 25%;
+}

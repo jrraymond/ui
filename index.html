@@ -26,30 +26,42 @@
         <div id="outputs" class="col-xs-4">
           <div class="container-fluid">
             <div class="row">
-              <div class="col-xs-6">
-                <div><i class="fa fa-camera"></i></div>
-                <div>proj</div>
-                <div class="pwr-btn">
+              <div class="alert alert-info">
+                <i class="fa fa-video-camera"></i>
+                <span>PROJECTOR WEST</span>
+              </div>
+            </div>
+            <div class="row">
+              <div class="btn btn-group col-xs-6">
+                <button type="button" class="btn btn-default">
                   <i class="fa fa-power-off"></i>
-                </div>
-                <div class="vm-btn">
-                  <span>video mute</span>
-                </div>
+                  <span>ON</span>
+                </button>
+                <button type="button" class="btn btn-default">
+                  <i class="fa fa-eye"></i>
+                  <span>VIDEO MUTE</span>
+                </button>
               </div>
               <div class="src col-xs-6" draggable="true">
               </div>
             </div>
             <div class="row">
-              <div class="col-xs-6">
-                <div><i class="fa fa-camera"></i></div>
-                <div>proj</div>
-                <div class="pwr-btn">
-                  <i class="fa fa-power-off"></i>
-                </div>
-                <div class="vm-btn">
-                  <span>video mute</span>
-                </div>
+              <div class="alert alert-info">
+                <i class="fa fa-video-camera"></i>
+                <span>PROJECTOR EAST</span>
               </div>
+              <div class="btn btn-group">
+                <button type="button" class="btn btn-default">
+                  <i class="fa fa-power-off"></i>
+                  <span>ON</span>
+                </button>
+                <button type="button" class="btn btn-default">
+                  <i class="fa fa-eye"></i>
+                  <span>VIDEO MUTE</span>
+                </button>
+              </div>
+            </div>
+            <div class="row">
               <div class="src col-xs-6" draggable="true">
               </div>
             </div>
@@ -83,30 +95,28 @@
       </div>
 
     </div>
+
     <div class="container-fluid">
-      <nav class="navbar navbar-inverse navbar-fixed-bottom">
+      <nav class="navbar navbar-fixed-bottom">
         <div id="info-bar"class="navbar-inner navbar-content-center">
-          <span id="clock"></span>
-          <span id="month"></span>
-          <span id="day"></span>
-          <span id="year"></span>
-          <span id="room"></span>
-          <span class="vol"><i id="vol-m" class="fa fa-volume-off"></i></span>
-          <span class="vol"><i id="vol-1" class="fa fa-volume-down"></i></span>
-          <span class="vol"><i id="vol-2" class="fa fa-sun-o"></i></span>
-          <span class="vol"><i id="vol-3" class="fa fa-sun-o"></i></span>
-          <span class="vol"><i id="vol-4" class="fa fa-sun-o"></i></span>
-          <span class="vol"><i id="vol-5" class="fa fa-sun-o"></i></span>
-          <span class="vol"><i id="vol-6" class="fa fa-sun-o"></i></span>
-          <span class="vol"><i id="vol-7" class="fa fa-sun-o"></i></span>
-          <span class="vol"><i id="vol-8" class="fa fa-sun-o"></i></span>
-          <span class="vol"><i id="vol-9" class="fa fa-sun-o"></i></span>
-          <span class="vol"><i id="vol-10" class="fa fa-sun-"></i></span>
-          <span class="vol"><i id="vol-11" class="fa fa-volume-up"></i></span>
+          <div id="clock"></div>
+          <div id="month"></div>
+          <div id="day"></div>
+          <div id="year"></div>
+          <div id="room"></div>
+          <div class="vol"><i class="fa fa-volume-off"></i></div>
+          <div class="vol"><div id="vol-1"><i class="fa fa-volume-down"></i></div></div>
+          <div class="vol"><div id="vol-2"></div></div>
+          <div class="vol"><div id="vol-3"></div></div>
+          <div class="vol"><div id="vol-4"></div></div>
+          <div class="vol"><div id="vol-5"></div></div>
+          <div class="vol"><div id="vol-6"></div></div>
+          <div class="vol"><div id="vol-7"></div></div>
+          <div class="vol"><div id="vol-8"></div></div>
+          <div class="vol"><div id="vol-9"><i class="fa fa-volume-up"></i></div></div>
         </div>
       </nav>
     </div>
-
 
     <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.1.min.js"><\/script>')</script>
 
