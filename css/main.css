@@ -28,7 +28,16 @@ body {
   font-family: "digitalfontmono";
   src: url("../fonts/digital-7__mono_.ttf");
 }
-
+.alert {
+  margin-bottom: 0px;
+}
+.out-btn {
+  width: 80px;
+  height: 80px;
+}
+.out-src {
+  
+}
 /* css to make draggable look nice */
 [draggable] {
   -webkit-user-select: none;
@@ -56,8 +65,28 @@ body {
   bottom: 0;
   left: 0;
   right: 0;
+  text-align: center;
+  border: 1px solid #ddd;
 }
-
+.src > div:before {
+  content: "";
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+  margin-right: -0.25em;
+}
+.src > div {
+  display: inline-block;
+  vertical-align: middle;
+}
+/*
+.src > i {
+  -webkit-transform: translateY(50%);
+}
+.src > div {
+  -webkit-transform: translateY(60%);
+}
+*/
 .drag-over {
   border: 2px dashed #000;
 }
