@@ -44,6 +44,11 @@
   display: table-cell;
   font-size: 2em;
 }
+.out-btns {
+  margin-bottom: 20px;
+}
+
+/* VOLUME BAR ---------------------*/
 .vol {
   display: table-cell;
   vertical-align: middle;
